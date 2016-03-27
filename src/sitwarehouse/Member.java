@@ -1,13 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package sitwarehouse;
-/**
- *
- * @author Superz
- */
+
 public class Member extends People {
     private long memId;
     private String accId;
@@ -17,6 +9,9 @@ public class Member extends People {
     
     public enum status{
         INUSE, BANNED, STANDBY, GOOD 
+    }
+
+    public Member() {
     }
 
     public Member(long memId, String accId, String accPass, String bankName, String bankId, String name, String address, String phoneNumber) {

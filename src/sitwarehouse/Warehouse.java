@@ -1,4 +1,3 @@
-
 package sitwarehouse;
 
 public class Warehouse {

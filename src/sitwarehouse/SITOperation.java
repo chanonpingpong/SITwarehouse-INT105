@@ -1,10 +1,9 @@
-
 package sitwarehouse;
 import java.util.Scanner;
 import java.sql.*;
 
 public class SITOperation {
-   
+   private static Member mem = new Member();
 //Member Section    
     public static void createMember(String name, String address, String phoneNumber , String accId, String accPass, String bankName, String bankId, int gender){
         try{
@@ -31,7 +30,7 @@ public class SITOperation {
                 pstmt.setString(9, phoneNumber);
                 pstmt.executeUpdate();
                 pstmt.close();
-                System.out.println("------------MEMBER ADDED------------");
+                System.out.println("-----------MEMBER ADDED-----------");
             }
         }
         catch(SQLException err){
@@ -127,7 +126,7 @@ public class SITOperation {
             Connection cnb = ConnectionBuilder.connect();
             Statement stmt = cnb.createStatement();
             ResultSet rs = stmt.executeQuery("SELECT * FROM MYDB.MEMBER");
-            System.out.println("\n----------LIST OF MEMBER----------");
+            System.out.println("\n------------LIST OF MEMBER-----------");
             while(rs.next()){
                 long memId = rs.getLong(1);
                 String accId = rs.getString(2);
@@ -180,7 +179,7 @@ public class SITOperation {
                 pstmt.setString(9, accPass);
                 pstmt.executeUpdate();
                 pstmt.close();
-                System.out.println("------------EMPLOYEE ADDED------------");
+                System.out.println("-----------EMPLOYEE ADDED-----------");
             }
         }
         catch(SQLException err){
@@ -276,7 +275,7 @@ public class SITOperation {
             Connection cnb = ConnectionBuilder.connect();
             Statement stmt = cnb.createStatement();
             ResultSet rs = stmt.executeQuery("SELECT * FROM MYDB.EMPLOYEE");
-            System.out.println("\n----------LIST OF EMPLOYEE----------");
+            System.out.println("\n-----------LIST OF EMPLOYEE-----------");
             while(rs.next()){
                 long empId = rs.getLong(1);
                 String empBankName = rs.getString(2);
@@ -309,7 +308,7 @@ public class SITOperation {
             Statement stmt = cnb.createStatement();    
             ResultSet rs = stmt.executeQuery("SELECT * FROM MYDB.SYSTEMDB");
             
-            System.out.println("\n---------------ADD PRODUCT---------------");
+            System.out.println("\n-----------ADD PRODUCT-----------");
             System.out.print("Name: "); String inputName = sc.next().toUpperCase();
             System.out.print("Size: "); String inputSize = sc.next().toUpperCase();
             System.out.print("Price: "); Double inputPrice = sc.nextDouble();
@@ -341,7 +340,7 @@ public class SITOperation {
                     + " '"+inputStatus+"')";
             stmt.execute(sql);
             cnb.close();
-            System.out.println("---------------PRODUCT ADDED---------------");
+            System.out.println("-----------PRODUCT ADDED-----------");
         }
         catch(SQLException err){
             System.out.print(err);
@@ -391,7 +390,7 @@ public class SITOperation {
             Connection cnb = ConnectionBuilder.connect();
             Statement stmt = cnb.createStatement();
             ResultSet rs = stmt.executeQuery("SELECT * FROM MYDB.WAREHOUSE");
-            System.out.println("\n----------LIST OF WAREHOUSE---------");
+            System.out.println("\n-----------LIST OF WAREHOUSE-----------");
             System.out.println("ID  NAME  SIZE  PRICE  STATUS");
             while(rs.next()){
                 long whId = rs.getLong(1);
@@ -436,7 +435,7 @@ public class SITOperation {
     }
 //End of Agreement Section    
     
-//System Section    
+//Main System Section    
     public static void login(){
         try{
             System.out.println("\n-----------LOGIN-----------");
@@ -456,12 +455,17 @@ public class SITOperation {
             }            
             ResultSet rs = stmt.executeQuery(sql);
             rs.next();
+            long memId = rs.getLong(1);
+            String accId = rs.getString(2);
+            String accPass = rs.getString(3);
+            String bankName = rs.getString(4);
+            String bankId = rs.getString(5);
             String name = rs.getString(6);
-            String id = rs.getString(2);
+            String address = rs.getString(7);
             String gender = rs.getString(8);
+            String phoneNumber = rs.getString(9);
             
-            System.out.println("Hello "+name+"\nHow are you today? ");
-
+            objMapping(memId, accId, accPass, bankName, bankId, name, address, phoneNumber);   
             System.out.println("-----------LOGIN SUCCESS----------");
             cnb.close();
         }
@@ -473,8 +477,15 @@ public class SITOperation {
         }
     }
     
+    public static void objMapping(long memId, String accId, String accPass, String bankName, String bankId, String name, String address, String phoneNumber){    
+        Member mem = new Member(memId, accId, accPass, bankName, bankId, name, address, phoneNumber);
+        System.out.println("Hello "+mem.getName()+"\nHow are you today? ");
+    } 
+    
     public static void logout(){
-        
+        mem = null;
+        System.out.println("\n-----------LOGOUT SUCCESS-----------");
     }
-//End of System Section
+//End of Main System Section
+
 }
