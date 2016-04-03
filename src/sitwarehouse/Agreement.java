@@ -1,20 +1,19 @@
 package sitwarehouse;
 
 public class Agreement {
-    private Warehouse warehouse;
+    private long warehouseId;
     private double totalDepts;
     private String startDate;
     private String endDate;
     private double nextPaid;
     private String nPaidDate;
     private double arrears;
-    
-    public enum type {
-        MONTH, ONETIME;
+
+    public Agreement() {
     }
 
-    public Agreement(Warehouse warehouse, double totalDepts, String startDate, String endDate, double nextPaid, String nPaidDate, double arrears) {
-        this.warehouse = warehouse;
+    public Agreement(long warehouseId, double totalDepts, String startDate, String endDate, double nextPaid, String nPaidDate, double arrears) {
+        this.warehouseId = warehouseId;
         this.totalDepts = totalDepts;
         this.startDate = startDate;
         this.endDate = endDate;
@@ -23,13 +22,14 @@ public class Agreement {
         this.arrears = arrears;
     }
 
-    public Warehouse getWarehouse() {
-        return warehouse;
+    public long getWarehouseId() {
+        return warehouseId;
     }
 
-    public void setWarehouse(Warehouse warehouse) {
-        this.warehouse = warehouse;
+    public void setWarehouseId(long warehouseId) {
+        this.warehouseId = warehouseId;
     }
+    
 
     public double getTotalDepts() {
         return totalDepts;
@@ -88,8 +88,7 @@ public class Agreement {
 
     @Override
     public String toString() {
-        return "Agreement{" + "warehouse=" + warehouse + ", totalDepts=" + totalDepts + ", startDate=" + startDate + ", endDate=" + endDate + ", nextPaid=" + nextPaid + ", nPaidDate=" + nPaidDate + ", arrears=" + arrears + '}';
+        return "Agreement{" + "warehouseId=" + warehouseId + ", totalDepts=" + totalDepts + ", startDate=" + startDate + ", endDate=" + endDate + ", nextPaid=" + nextPaid + ", nPaidDate=" + nPaidDate + ", arrears=" + arrears + '}';
     }
-    
     
 }

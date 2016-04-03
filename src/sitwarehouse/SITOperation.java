@@ -77,11 +77,7 @@ public class SITOperation {
         }
         return 0;
     }
-    
-    public static void changeStatusMember(){
-        
-    }
-    
+      
     public static void getMemberDetails(){
         try{
             System.out.println("\n-----------GET MEMBER DETAILS-----------");
@@ -226,11 +222,7 @@ public class SITOperation {
             }
             return alrHave;
     }
-    
-    public static void changeStatusEmployee(){
-        
-    }
-        
+            
     public static void getEmployeeDetails(){
         try{
             System.out.println("\n-----------GET MEMBER DETAILS-----------");
@@ -309,7 +301,6 @@ public class SITOperation {
             ResultSet rs = stmt.executeQuery("SELECT * FROM MYDB.SYSTEMDB");
             
             System.out.println("\n-----------ADD PRODUCT-----------");
-            System.out.print("Name: "); String inputName = sc.next().toUpperCase();
             System.out.print("Size: "); String inputSize = sc.next().toUpperCase();
             System.out.print("Price: "); Double inputPrice = sc.nextDouble();
             String inputStatus = "STANDBY";
@@ -334,7 +325,6 @@ public class SITOperation {
             
             String sql = "INSERT INTO MYDB.WAREHOUSE(WAREHOUSEID, WAREHOUSENAME, SIZE, PRICE, STATUS) "
                     + "VALUES ("+warehouseId+","
-                    + " '"+inputName+"',"
                     + " '"+inputSize+"',"
                     + " "+inputPrice+","
                     + " '"+inputStatus+"')";
@@ -349,11 +339,7 @@ public class SITOperation {
             System.out.print(err);
         }        
     }
-    
-    public static void changeStatusWarehouse(){
         
-    }
-    
     public static void getWarehouseDetails(){
         try{
             System.out.println("\n-----------GET WAREHOUSE DETAILS-----------");
@@ -365,12 +351,11 @@ public class SITOperation {
             ResultSet rs = stmt.executeQuery(sql);
             rs.next();
             long warehouseId = rs.getLong(1);
-            String name = rs.getString(2);
-            String size = rs.getString(3);
-            String price = rs.getString(4);
-            String status = rs.getString(5);
+            String size = rs.getString(2);
+            String price = rs.getString(3);
+            String status = rs.getString(4);
             
-            System.out.println("ID: "+warehouseId+"\nName: "+name+"\nSize: "+size+"\nPrice: "+price+"\nStatus: "+status);
+            System.out.println("ID: "+warehouseId+"\nSize: "+size+"\nPrice: "+price+"\nStatus: "+status);
             cnb.close();
         }
         catch(SQLException err){
@@ -382,7 +367,58 @@ public class SITOperation {
     }
     
     public static void changeWarehouseDetails(){
-        
+        try{
+            System.out.println("\n-----------SELECT WAREHOUSE TO CHANGE BY ID-----------");
+            Scanner sc = new Scanner(System.in);
+            System.out.print("Warehouse ID: "); long whId = sc.nextLong();
+            Connection cnb = ConnectionBuilder.connect();
+            Statement stmt = cnb.createStatement();
+            String sqlSelect = "SELECT * FROM MYDB.WAREHOUSE WHERE WAREHOUSEID="+whId;
+            ResultSet rs = stmt.executeQuery(sqlSelect);
+            rs.next();
+            long warehouseId = rs.getLong(1);
+            String size = rs.getString(2);
+            Double price = rs.getDouble(3);
+            String status = rs.getString(4);
+            System.out.println("---- BEFORE CHANGE ----");
+            System.out.println("ID: "+warehouseId+"\nSize: "+size+"\nPrice: "+price+"\nStatus: "+status);
+            cnb.close();
+            
+            System.out.println("\n---- INPUT FOR CHANGE TO ----");
+            System.out.print("Size: "); String inputSize = sc.next().toUpperCase();
+            System.out.print("Price: "); Double inputPrice = sc.nextDouble();
+            System.out.print("Status: "); String inputStatus = sc.next().toUpperCase();
+            String reSize = "", reStatus = "";
+            Double rePrice = 0.0;
+            if(inputSize.equalsIgnoreCase("n")){
+                reSize = size;
+            }else{
+                reSize = inputSize;
+            }
+            if(inputPrice == -1){
+                rePrice = price;
+            }else{
+                rePrice = inputPrice;
+            }
+            if(inputStatus.equalsIgnoreCase("n")){
+                reStatus = status;
+            }else{
+                reStatus = inputStatus;
+            }
+            String sqlUpdate = "UPDATE MYDB.WAREHOUSE SET SIZE='"+reSize+"',PRICE="+rePrice+",STATUS='"+reStatus+"' "
+                    + "WHERE WAREHOUSEID="+warehouseId;
+            Connection cnb2 = ConnectionBuilder.connect();
+            Statement stmt2 = cnb2.createStatement();
+            stmt2.executeUpdate(sqlUpdate);
+            System.out.println("---- CHANGE DETAILS SUCCESSFULLY ----");
+            cnb2.close();
+        }
+        catch(SQLException err){
+            System.out.println("Warehouse ID is wrong, Please try again.");
+        }
+        catch(ClassNotFoundException err){
+            System.out.println(err);
+        }
     }
     
     public static void listWarehouse(){
@@ -391,14 +427,13 @@ public class SITOperation {
             Statement stmt = cnb.createStatement();
             ResultSet rs = stmt.executeQuery("SELECT * FROM MYDB.WAREHOUSE");
             System.out.println("\n-----------LIST OF WAREHOUSE-----------");
-            System.out.println("ID  NAME  SIZE  PRICE  STATUS");
+            System.out.println("ID  SIZE  PRICE  STATUS");
             while(rs.next()){
                 long whId = rs.getLong(1);
-                String whName = rs.getString(2);
-                String whSize = rs.getString(3);
-                Double whPrice = rs.getDouble(4);
-                String whStatus = rs.getString(5);
-                System.out.println(whId+" "+whName+" "+whSize+" "+whPrice+" "+whStatus);  
+                String whSize = rs.getString(2);
+                Double whPrice = rs.getDouble(3);
+                String whStatus = rs.getString(4);
+                System.out.println(whId+" "+whSize+" "+whPrice+" "+whStatus);  
             }
             cnb.close();
         }
@@ -413,12 +448,126 @@ public class SITOperation {
     
     
 //Agreement Section    
-    public static void createAgreement(){
-        
+    public static void createAgreement(long warehouseId, long memId,String startDate, String endDate, double nextPaid, String nPaidDate, double arrears){
+        try{
+                Connection cnb = ConnectionBuilder.connect();
+                String SQL = "INSERT INTO AGREEMENT VALUES(?,?,?,?,?,?,?,?,?)";
+                PreparedStatement pstmt = cnb.prepareStatement(SQL);
+                pstmt.setLong(1, genAmtId());
+                pstmt.setLong(2, memId);
+                pstmt.setLong(3, warehouseId);
+                pstmt.setDouble(4, 250000);
+                pstmt.setString(5, startDate);
+                pstmt.setString(6, endDate);
+                pstmt.setString(7, nPaidDate);
+                pstmt.setDouble(8, arrears);
+                pstmt.setDouble(9, nextPaid);
+                pstmt.executeUpdate();
+                pstmt.close();
+                System.out.println("----------- AGREEMENT ADDED -----------");
+        }
+        catch(SQLException err){
+            System.err.println(err);
+        }
+        catch(ClassNotFoundException err){
+            System.err.println(err);
+        }         
     }
     
-    public static void getAgreementDetails(){
-        
+    public static long genAmtId(){
+        try{
+            String SQL = "SELECT * FROM MYDB.SYSTEMDB";
+            Connection cnb = ConnectionBuilder.connect();
+            Statement stmt = cnb.createStatement();
+            ResultSet rs = stmt.executeQuery(SQL);
+            rs.next();
+            long id = rs.getLong(6);
+            id++;
+            stmt.executeUpdate("UPDATE MYDB.SYSTEMDB SET EMPID="+id+"");
+            return id;
+        }
+        catch(SQLException err){
+            System.err.println(err);
+        }
+        catch(ClassNotFoundException err){
+            System.err.println(err);
+        }
+        return 0;
+    }    
+    
+    public static void getAgreementDetailsByMemId(){
+        try{
+            System.out.println("\n----------- GET AGREEMENT DETAILS -----------");
+            Scanner sc = new Scanner(System.in);
+            System.out.print("Member ID: "); long memId = sc.nextLong();
+            Connection cnb = ConnectionBuilder.connect();
+            Statement stmt = cnb.createStatement();
+            String sql = "SELECT * FROM MYDB.MEMBER WHERE MEMID="+memId;
+            ResultSet rs = stmt.executeQuery(sql);
+            rs.next();
+            long memberId = rs.getLong(1);
+            String accId = rs.getString(2);
+            String bankName = rs.getString(4);
+            String bankId = rs.getString(5);
+            String name = rs.getString(6);
+            String addr = rs.getString(7);
+            String gd = rs.getString(8);
+            String phoneNumber = rs.getString(9);
+            String gender = "Female";
+            if(gd.equalsIgnoreCase("m")){
+                gender = "Male";
+            }
+            System.out.println("ID: "+memberId+""
+                    + "\nName: "+name+""
+                    + "\nGender: "+gender+""
+                    + "\nBank: "+bankName+""
+                    + "\nBank Id: "+bankId+""
+                    + "\nAddress: "+addr+""
+                    + "\nPhone Number: "+phoneNumber);
+            cnb.close();
+        }
+        catch(SQLException err){
+            System.out.println("Wrong Member Id, Please try again.");
+        }
+        catch(ClassNotFoundException err){
+            System.out.println(err);
+        }        
+    }
+    
+    public static void getAgreementDetailsByAmtId(){
+        try{
+            System.out.println("\n----------- GET AGREEMENT DETAILS -----------");
+            Scanner sc = new Scanner(System.in);
+            System.out.print("Agreement ID: "); long amtId = sc.nextLong();
+            Connection cnb = ConnectionBuilder.connect();
+            Statement stmt = cnb.createStatement();
+            String sql = "SELECT * FROM MYDB.AGREEMENT WHERE AMTID="+amtId;
+            ResultSet rs = stmt.executeQuery(sql);
+            rs.next();
+            long getAmtId = rs.getLong(1);
+            long memId = rs.getLong(2);
+            long whId = rs.getLong(3);
+            String totalDepts = rs.getString(5);
+            String startDate = rs.getString(6);
+            String endDate = rs.getString(7);
+            String nPaidDate = rs.getString(8);
+            String arrears = rs.getString(9);
+            System.out.println("Agreement ID: "+getAmtId+""
+                    + "\nMember ID: "+memId+""
+                    + "\nWharehouse ID: "+whId+""
+                    + "\nTotal Dept: "+totalDepts+""
+                    + "\nStart Date: "+startDate+""
+                    + "\nLast Date: "+endDate+""
+                    + "\nNext Date: "+nPaidDate+""
+                    + "\nAmount of Arrears: "+arrears);
+            cnb.close();
+        }
+        catch(SQLException err){
+            System.out.println("Wrong Member Id, Please try again.");
+        }
+        catch(ClassNotFoundException err){
+            System.out.println(err);
+        }        
     }
     
     public static void changeAgreementDetails(){
