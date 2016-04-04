@@ -483,7 +483,7 @@ public class SITOperation {
             rs.next();
             long id = rs.getLong(6);
             id++;
-            stmt.executeUpdate("UPDATE MYDB.SYSTEMDB SET EMPID="+id+"");
+            stmt.executeUpdate("UPDATE MYDB.SYSTEMDB SET AMTID="+id+"");
             return id;
         }
         catch(SQLException err){
@@ -497,33 +497,35 @@ public class SITOperation {
     
     public static void getAgreementDetailsByMemId(){
         try{
-            System.out.println("\n----------- GET AGREEMENT DETAILS -----------");
+            System.out.println("\n----------- GET AGREEMENT DETAILS BY MEMBER ID-----------");
             Scanner sc = new Scanner(System.in);
-            System.out.print("Member ID: "); long memId = sc.nextLong();
+            System.out.print("Member ID: "); long id = sc.nextLong();
             Connection cnb = ConnectionBuilder.connect();
             Statement stmt = cnb.createStatement();
-            String sql = "SELECT * FROM MYDB.MEMBER WHERE MEMID="+memId;
+            String sql = "SELECT * FROM MYDB.AGREEMENT WHERE MEMID="+id;
             ResultSet rs = stmt.executeQuery(sql);
-            rs.next();
-            long memberId = rs.getLong(1);
-            String accId = rs.getString(2);
-            String bankName = rs.getString(4);
-            String bankId = rs.getString(5);
-            String name = rs.getString(6);
-            String addr = rs.getString(7);
-            String gd = rs.getString(8);
-            String phoneNumber = rs.getString(9);
-            String gender = "Female";
-            if(gd.equalsIgnoreCase("m")){
-                gender = "Male";
+            int count = 0;
+            while(rs.next()){
+                long getAmtId = rs.getLong(1);
+                long memId = rs.getLong(2);
+                long whId = rs.getLong(3);
+                String totalDepts = rs.getString(5);
+                String startDate = rs.getString(6);
+                String endDate = rs.getString(7);
+                String nPaidDate = rs.getString(8);
+                String arrears = rs.getString(9);
+                System.out.println("Agreement ID: "+getAmtId+""
+                        + "\nMember ID: "+memId+""
+                        + "\nWharehouse ID: "+whId+""
+                        + "\nTotal Dept: "+totalDepts+""
+                        + "\nStart Date: "+startDate+""
+                        + "\nLast Date: "+endDate+""
+                        + "\nNext Date: "+nPaidDate+""
+                        + "\nAmount of Arrears: "+arrears);
+                System.out.println("---------------------------------------");
+                count++;
             }
-            System.out.println("ID: "+memberId+""
-                    + "\nName: "+name+""
-                    + "\nGender: "+gender+""
-                    + "\nBank: "+bankName+""
-                    + "\nBank Id: "+bankId+""
-                    + "\nAddress: "+addr+""
-                    + "\nPhone Number: "+phoneNumber);
+            System.out.println(count+" Result out");
             cnb.close();
         }
         catch(SQLException err){
@@ -536,7 +538,7 @@ public class SITOperation {
     
     public static void getAgreementDetailsByAmtId(){
         try{
-            System.out.println("\n----------- GET AGREEMENT DETAILS -----------");
+            System.out.println("\n----------- GET AGREEMENT DETAILS BY AMT ID-----------");
             Scanner sc = new Scanner(System.in);
             System.out.print("Agreement ID: "); long amtId = sc.nextLong();
             Connection cnb = ConnectionBuilder.connect();
@@ -563,7 +565,7 @@ public class SITOperation {
             cnb.close();
         }
         catch(SQLException err){
-            System.out.println("Wrong Member Id, Please try again.");
+            System.out.println("Wrong Agreement Id, Please try again.");
         }
         catch(ClassNotFoundException err){
             System.out.println(err);
@@ -574,14 +576,92 @@ public class SITOperation {
         
     }
     
-    public static void createPermission(){
+    public static void createPermission(long amtId, String paidDate, double paidAmount){
         //for member when they want to tell employee that they just paid for warehouse dept
+        try{
+                Connection cnb = ConnectionBuilder.connect();
+                String SQL = "INSERT INTO PERMISSION VALUES(?,?,?,?,?)";
+                PreparedStatement pstmt = cnb.prepareStatement(SQL);
+                pstmt.setLong(1, genPmsId());
+                pstmt.setLong(2, amtId);
+                pstmt.setString(3, paidDate);
+                pstmt.setDouble(4, paidAmount);
+                pstmt.setBoolean(5, false);
+                pstmt.executeUpdate();
+                pstmt.close();
+                System.out.println("----------- PERMISSION HAS BEEN ADDED -----------");
+        }
+        catch(Exception err){
+            err.printStackTrace();
+        }         
+    }
+    
+    public static long genPmsId(){
+        try{
+            String SQL = "SELECT * FROM MYDB.SYSTEMDB";
+            Connection cnb = ConnectionBuilder.connect();
+            Statement stmt = cnb.createStatement();
+            ResultSet rs = stmt.executeQuery(SQL);
+            rs.next();
+            long id = rs.getLong(7);
+            id++;
+            stmt.executeUpdate("UPDATE MYDB.SYSTEMDB SET PMSID="+id+"");
+            return id;
+        }
+        catch(Exception err){
+            err.printStackTrace();
+        }
+        return 0;        
     }
     
     public static void submitPermission(){
         // when employee checked permission from member they have to submit that it the truth
         // change the agreement for total price for that user
+        try{
+            Connection cnb = ConnectionBuilder.connect();
+            Statement stmt = cnb.createStatement();
+            System.out.println("");
+            Scanner sc = new Scanner(System.in);
+            System.out.print("Enter Permission id: "); long id = sc.nextLong();
+            String SQL = "SELECT * FROM PERMISSION WHERE PERMISSIONID="+id;
+            ResultSet rs = stmt.executeQuery(SQL);
+            rs.next();
+            long outputId = rs.getLong(1);
+            Boolean isCheck = rs.getBoolean(5);
+            System.out.println("Permission ID: "+outputId);
+            if(isCheck == true){
+                System.out.println("Status: CONFIRMED");                
+            }else{
+                System.out.println("Status: NOT CONFIRM YET");
+                System.out.print("DO YOU WANT TO CONFIRM? (Y/N): "); char cf = sc.next().charAt(0);
+                if(cf == 'y' || cf == 'Y'){
+                    confirmPermission(id);
+                }else if(cf == 'n' || cf == 'N'){
+                    System.out.println("-------- THIS PERMISSION HAVE NOTHING CHANGE ---------");
+                }else{
+                    System.out.println("-------- THIS METHOD ARE UNDER TESTING AND YOU INPUT THE WRONG ANSWER ----------");
+                }
+            }
+
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
     }
+    
+    public static void confirmPermission(long id){
+        try{
+            Connection cnb = ConnectionBuilder.connect();
+            Statement stmt = cnb.createStatement();
+            String SQL = "UPDATE PERMISSION SET ISCHECK=TRUE WHERE PERMISSIONID="+id;
+            stmt.executeUpdate(SQL);
+            System.out.println("----------- CONFIRM PERMISSION NUMBER "+id+" SUCCESSFULLY ------------");
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        } 
+    }
+    
 //End of Agreement Section    
     
 //Main System Section    
