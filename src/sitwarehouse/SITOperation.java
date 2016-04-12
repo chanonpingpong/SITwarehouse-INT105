@@ -4,6 +4,7 @@ import java.sql.*;
 
 public class SITOperation {
    private static Member mem = new Member();
+  // private static Employee em = new Employee();
 //Member Section    
     public static void createMember(String name, String address, String phoneNumber , String accId, String accPass, String bankName, String bankId, int gender){
         try{
@@ -682,7 +683,10 @@ public class SITOperation {
             }else{
                 System.out.println("You have to select 1 or 0 only!");
             }            
-            ResultSet rs = stmt.executeQuery(sql);
+           
+            
+           if(check==1){ 
+                ResultSet rs = stmt.executeQuery(sql);
             rs.next();
             long memId = rs.getLong(1);
             String accId = rs.getString(2);
@@ -693,8 +697,23 @@ public class SITOperation {
             String address = rs.getString(7);
             String gender = rs.getString(8);
             String phoneNumber = rs.getString(9);
-            
-            objMapping(memId, accId, accPass, bankName, bankId, name, address, phoneNumber);   
+            objMapping(memId, accId, accPass, bankName, bankId, name, address, phoneNumber); 
+           
+           }else if(check==0){
+                  ResultSet rs = stmt.executeQuery(sql);
+            rs.next();
+            long memId = rs.getLong(1);
+          //  String accId = rs.getString(2);
+            String accPass = rs.getString(9);
+            String bankName = rs.getString(2);
+            String bankId = rs.getString(8);
+            String name = rs.getString(4);
+            String address = rs.getString(5);
+            String gender = rs.getString(7);
+            String phoneNumber = rs.getString(6);
+               objMappingEmployee(memId, memId, bankName, bankId, name, address, phoneNumber);
+           }
+           
             System.out.println("-----------LOGIN SUCCESS----------");
             cnb.close();
         }
@@ -710,7 +729,10 @@ public class SITOperation {
         Member mem = new Member(memId, accId, accPass, bankName, bankId, name, address, phoneNumber);
         System.out.println("Hello "+mem.getName()+"\nHow are you today? ");
     } 
-    
+     public static void objMappingEmployee(long emId, double emSalary, String emBankName, String emBankId, String name, String address, String phoneNumber){    
+        Employee em = new Employee(emId, emSalary, emBankName, emBankId, name, address, phoneNumber);
+        System.out.println("Hello "+em.getName()+"\nHow are you today? ");
+    } 
     public static void logout(){
         mem = null;
         System.out.println("\n-----------LOGOUT SUCCESS-----------");

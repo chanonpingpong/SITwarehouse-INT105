@@ -5,6 +5,10 @@ public class Employee extends People{
     private double emSalary;
     private String emBankName;
     private String emBankId;
+    private String empName;
+
+    public Employee() {
+    }
 
     public Employee(long emId, double emSalary, String emBankName, String emBankId, String name, String address, String phoneNumber) {
         super(name, address, phoneNumber);
@@ -12,6 +16,14 @@ public class Employee extends People{
         this.emSalary = emSalary;
         this.emBankName = emBankName;
         this.emBankId = emBankId;
+    }
+
+    public String getEmpName() {
+        return empName;
+    }
+
+    public void setEmpName(String empName) {
+        this.empName = empName;
     }
 
     public long getEmId() {
