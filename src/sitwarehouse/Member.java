@@ -6,10 +6,6 @@ public class Member extends People {
     private String accPass;
     private String bankName;
     private String bankId;
-    
-    public enum status{
-        INUSE, BANNED, STANDBY, GOOD 
-    }
 
     public Member() {
     }
