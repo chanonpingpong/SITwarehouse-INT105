@@ -1,12 +1,25 @@
 package sitwarehouse;
 
+import java.text.DateFormat;
+import java.util.Date;
+import java.util.GregorianCalendar;
+
 public class SITwarehouse {
     
     public static void main(String[] args) {
         
-       // SITOperation.getAgreementDetailsByMemId();
-        SITOperation.createEmployee("chaloemchai", "bangkok", "08644242", "jamemez", "kittisak", "kitt", "321", 3);
-        SITOperation.login();
+       GregorianCalendar startDate,endDate;
+                startDate = new GregorianCalendar();
+                endDate = new GregorianCalendar();
+                DateFormat df = DateFormat.getDateInstance(DateFormat.LONG);
+                
+                Date firstDate = startDate.getTime();
+                Date lastDate = endDate.getTime();
+                String fd = df.format(firstDate);
+                String ld = df.format(lastDate);
+                
+                System.out.println(fd);
+                System.out.println(ld);
     }
     
 }
