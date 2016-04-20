@@ -16,6 +16,7 @@ public class SITwarehouse extends javax.swing.JFrame {
      */
     public SITwarehouse() {
         initComponents();
+        
     }
 
     /**
@@ -295,7 +296,13 @@ public class SITwarehouse extends javax.swing.JFrame {
     }//GEN-LAST:event_phoneNumberNumberActionPerformed
 
     private void backLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backLoginActionPerformed
-        // TODO add your handling code here:
+        Container.removeAll();
+        Container.repaint();
+        Container.revalidate();
+        
+        Container.add(Login);
+        Container.repaint();
+        Container.revalidate();
     }//GEN-LAST:event_backLoginActionPerformed
 
     private void userNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userNameActionPerformed
@@ -303,7 +310,13 @@ public class SITwarehouse extends javax.swing.JFrame {
     }//GEN-LAST:event_userNameActionPerformed
 
     private void registerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerActionPerformed
-        // TODO add your handling code here: 
+        Container.removeAll();
+        Container.repaint();
+        Container.revalidate();
+        
+        Container.add(Register);
+        Container.repaint();
+        Container.revalidate();
         
     }//GEN-LAST:event_registerActionPerformed
 
