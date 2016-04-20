@@ -350,7 +350,10 @@ public class SITwarehouse extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new SITwarehouse().setVisible(true);
+                SITwarehouse Jframe = new SITwarehouse();
+                Jframe.setVisible(true);
+                Jframe.setSize(800,600);
+                Jframe.setResizable(false);
             }           
         });
     }
