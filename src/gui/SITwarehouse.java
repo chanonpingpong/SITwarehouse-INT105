@@ -53,6 +53,7 @@ public class SITwarehouse extends javax.swing.JFrame {
         phoneNumber = new javax.swing.JTextField();
         submit = new javax.swing.JButton();
         backLogin = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -88,6 +89,9 @@ public class SITwarehouse extends javax.swing.JFrame {
             .addGroup(LoginLayout.createSequentialGroup()
                 .addGroup(LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(LoginLayout.createSequentialGroup()
+                        .addGap(298, 298, 298)
+                        .addComponent(jLabel1))
+                    .addGroup(LoginLayout.createSequentialGroup()
                         .addGap(282, 282, 282)
                         .addGroup(LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel2)
@@ -98,10 +102,7 @@ public class SITwarehouse extends javax.swing.JFrame {
                         .addGap(346, 346, 346)
                         .addGroup(LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(register, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(login, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(LoginLayout.createSequentialGroup()
-                        .addGap(298, 298, 298)
-                        .addComponent(jLabel1)))
+                            .addComponent(login, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(318, Short.MAX_VALUE))
         );
         LoginLayout.setVerticalGroup(
@@ -257,6 +258,19 @@ public class SITwarehouse extends javax.swing.JFrame {
 
         Container.add(Register, "card3");
 
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 800, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 521, Short.MAX_VALUE)
+        );
+
+        Container.add(jPanel1, "card4");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -299,10 +313,17 @@ public class SITwarehouse extends javax.swing.JFrame {
         Container.removeAll();
         Container.repaint();
         Container.revalidate();
-        
+        accId.setText("");
+        accPass.setText("");
+        cfAccPass.setText("");
+        name.setText("");
+        address.setText("");
+        phoneNumber.setText("");
         Container.add(Login);
         Container.repaint();
         Container.revalidate();
+        
+        
     }//GEN-LAST:event_backLoginActionPerformed
 
     private void userNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userNameActionPerformed
@@ -377,6 +398,7 @@ public class SITwarehouse extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JButton login;
     private javax.swing.JTextField name;
     private javax.swing.JTextField password;
