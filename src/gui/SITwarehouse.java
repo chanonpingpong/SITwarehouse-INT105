@@ -5,6 +5,8 @@
  */
 package gui;
 
+import sitwarehouse.SITOperation;
+
 /**
  *
  * @author Superz
@@ -34,9 +36,9 @@ public class SITwarehouse extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         userName = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        password = new javax.swing.JTextField();
         login = new javax.swing.JButton();
         register = new javax.swing.JButton();
+        password = new javax.swing.JPasswordField();
         Register = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         accId = new javax.swing.JTextField();
@@ -104,22 +106,6 @@ public class SITwarehouse extends javax.swing.JFrame {
         jLabel40 = new javax.swing.JLabel();
         jTextField7 = new javax.swing.JTextField();
         jLabel41 = new javax.swing.JLabel();
-        EditWarehouse = new javax.swing.JPanel();
-        jLabel30 = new javax.swing.JLabel();
-        backLogin4 = new javax.swing.JButton();
-        submit2 = new javax.swing.JButton();
-        phoneNumber2 = new javax.swing.JTextField();
-        jLabel31 = new javax.swing.JLabel();
-        address2 = new javax.swing.JTextField();
-        jLabel32 = new javax.swing.JLabel();
-        name2 = new javax.swing.JTextField();
-        jLabel33 = new javax.swing.JLabel();
-        cfAccPass2 = new javax.swing.JTextField();
-        jLabel34 = new javax.swing.JLabel();
-        accPass2 = new javax.swing.JTextField();
-        jLabel35 = new javax.swing.JLabel();
-        jLabel36 = new javax.swing.JLabel();
-        accId2 = new javax.swing.JTextField();
         ListOfWarehouseEmployee = new javax.swing.JPanel();
         backLogin3 = new javax.swing.JButton();
         jLabel28 = new javax.swing.JLabel();
@@ -144,6 +130,22 @@ public class SITwarehouse extends javax.swing.JFrame {
         jTextField9 = new javax.swing.JTextField();
         jLabel45 = new javax.swing.JLabel();
         jTextField10 = new javax.swing.JTextField();
+        EditWarehouse = new javax.swing.JPanel();
+        jLabel30 = new javax.swing.JLabel();
+        backLogin4 = new javax.swing.JButton();
+        submit2 = new javax.swing.JButton();
+        phoneNumber2 = new javax.swing.JTextField();
+        jLabel31 = new javax.swing.JLabel();
+        address2 = new javax.swing.JTextField();
+        jLabel32 = new javax.swing.JLabel();
+        name2 = new javax.swing.JTextField();
+        jLabel33 = new javax.swing.JLabel();
+        cfAccPass2 = new javax.swing.JTextField();
+        jLabel34 = new javax.swing.JLabel();
+        accPass2 = new javax.swing.JTextField();
+        jLabel35 = new javax.swing.JLabel();
+        jLabel36 = new javax.swing.JLabel();
+        accId2 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -164,11 +166,22 @@ public class SITwarehouse extends javax.swing.JFrame {
         jLabel3.setText("Password");
 
         login.setText("Login");
+        login.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                loginActionPerformed(evt);
+            }
+        });
 
         register.setText("Register");
         register.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 registerActionPerformed(evt);
+            }
+        });
+
+        password.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                passwordActionPerformed(evt);
             }
         });
 
@@ -185,9 +198,9 @@ public class SITwarehouse extends javax.swing.JFrame {
                         .addGap(282, 282, 282)
                         .addGroup(LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel2)
-                            .addComponent(userName)
+                            .addComponent(userName, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
                             .addComponent(jLabel3)
-                            .addComponent(password, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)))
+                            .addComponent(password)))
                     .addGroup(LoginLayout.createSequentialGroup()
                         .addGap(346, 346, 346)
                         .addGroup(LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -387,6 +400,11 @@ public class SITwarehouse extends javax.swing.JFrame {
         });
 
         jButton6.setText("Logout");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout MemberHomeLayout = new javax.swing.GroupLayout(MemberHome);
         MemberHome.setLayout(MemberHomeLayout);
@@ -591,7 +609,7 @@ public class SITwarehouse extends javax.swing.JFrame {
         EditProfileLayout.setHorizontalGroup(
             EditProfileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, EditProfileLayout.createSequentialGroup()
-                .addContainerGap(303, Short.MAX_VALUE)
+                .addContainerGap(358, Short.MAX_VALUE)
                 .addGroup(EditProfileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(phoneNumber1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel20)
@@ -782,137 +800,6 @@ public class SITwarehouse extends javax.swing.JFrame {
         );
 
         Container.add(ListOfWarehouseMember, "card7");
-
-        jLabel30.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
-        jLabel30.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel30.setText("Edit");
-
-        backLogin4.setText("< Back");
-        backLogin4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                backLogin4ActionPerformed(evt);
-            }
-        });
-
-        submit2.setText("Submit");
-
-        phoneNumber2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                phoneNumber2NumberActionPerformed(evt);
-            }
-        });
-
-        jLabel31.setText("Phone Number");
-
-        address2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                address2ActionPerformed(evt);
-            }
-        });
-
-        jLabel32.setText("Address");
-
-        name2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                name2ActionPerformed(evt);
-            }
-        });
-
-        jLabel33.setText("Name and Surname");
-
-        cfAccPass2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cfAccPass2ActionPerformed(evt);
-            }
-        });
-
-        jLabel34.setText("Status");
-
-        accPass2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                accPass2ActionPerformed(evt);
-            }
-        });
-
-        jLabel35.setText("Price");
-
-        jLabel36.setText("Size");
-
-        accId2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                accId2ActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout EditWarehouseLayout = new javax.swing.GroupLayout(EditWarehouse);
-        EditWarehouse.setLayout(EditWarehouseLayout);
-        EditWarehouseLayout.setHorizontalGroup(
-            EditWarehouseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, EditWarehouseLayout.createSequentialGroup()
-                .addContainerGap(303, Short.MAX_VALUE)
-                .addGroup(EditWarehouseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(phoneNumber2, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel31)
-                    .addComponent(address2, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel32)
-                    .addComponent(name2, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel33)
-                    .addComponent(cfAccPass2, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel34)
-                    .addComponent(accPass2, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel35)
-                    .addComponent(jLabel36)
-                    .addComponent(accId2, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(297, 297, 297))
-            .addGroup(EditWarehouseLayout.createSequentialGroup()
-                .addGroup(EditWarehouseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(EditWarehouseLayout.createSequentialGroup()
-                        .addGap(28, 28, 28)
-                        .addComponent(backLogin4)
-                        .addGap(274, 274, 274)
-                        .addComponent(jLabel30))
-                    .addGroup(EditWarehouseLayout.createSequentialGroup()
-                        .addGap(362, 362, 362)
-                        .addComponent(submit2)))
-                .addContainerGap(362, Short.MAX_VALUE))
-        );
-        EditWarehouseLayout.setVerticalGroup(
-            EditWarehouseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(EditWarehouseLayout.createSequentialGroup()
-                .addGap(48, 48, 48)
-                .addGroup(EditWarehouseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel30)
-                    .addComponent(backLogin4))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel36)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(accId2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel35)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(accPass2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel34)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(cfAccPass2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel33)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(name2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel32)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(address2, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel31)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(phoneNumber2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(submit2)
-                .addContainerGap(93, Short.MAX_VALUE))
-        );
-
-        Container.add(EditWarehouse, "card8");
 
         backLogin3.setText("< Back");
         backLogin3.addActionListener(new java.awt.event.ActionListener() {
@@ -1120,6 +1007,137 @@ public class SITwarehouse extends javax.swing.JFrame {
 
         Container.add(ListOfPermission, "card10");
 
+        jLabel30.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jLabel30.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel30.setText("Edit");
+
+        backLogin4.setText("< Back");
+        backLogin4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backLogin4ActionPerformed(evt);
+            }
+        });
+
+        submit2.setText("Submit");
+
+        phoneNumber2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                phoneNumber2NumberActionPerformed(evt);
+            }
+        });
+
+        jLabel31.setText("Phone Number");
+
+        address2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                address2ActionPerformed(evt);
+            }
+        });
+
+        jLabel32.setText("Address");
+
+        name2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                name2ActionPerformed(evt);
+            }
+        });
+
+        jLabel33.setText("Name and Surname");
+
+        cfAccPass2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cfAccPass2ActionPerformed(evt);
+            }
+        });
+
+        jLabel34.setText("Status");
+
+        accPass2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                accPass2ActionPerformed(evt);
+            }
+        });
+
+        jLabel35.setText("Price");
+
+        jLabel36.setText("Size");
+
+        accId2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                accId2ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout EditWarehouseLayout = new javax.swing.GroupLayout(EditWarehouse);
+        EditWarehouse.setLayout(EditWarehouseLayout);
+        EditWarehouseLayout.setHorizontalGroup(
+            EditWarehouseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, EditWarehouseLayout.createSequentialGroup()
+                .addContainerGap(358, Short.MAX_VALUE)
+                .addGroup(EditWarehouseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(phoneNumber2, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel31)
+                    .addComponent(address2, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel32)
+                    .addComponent(name2, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel33)
+                    .addComponent(cfAccPass2, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel34)
+                    .addComponent(accPass2, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel35)
+                    .addComponent(jLabel36)
+                    .addComponent(accId2, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(297, 297, 297))
+            .addGroup(EditWarehouseLayout.createSequentialGroup()
+                .addGroup(EditWarehouseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(EditWarehouseLayout.createSequentialGroup()
+                        .addGap(28, 28, 28)
+                        .addComponent(backLogin4)
+                        .addGap(274, 274, 274)
+                        .addComponent(jLabel30))
+                    .addGroup(EditWarehouseLayout.createSequentialGroup()
+                        .addGap(362, 362, 362)
+                        .addComponent(submit2)))
+                .addContainerGap(362, Short.MAX_VALUE))
+        );
+        EditWarehouseLayout.setVerticalGroup(
+            EditWarehouseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(EditWarehouseLayout.createSequentialGroup()
+                .addGap(48, 48, 48)
+                .addGroup(EditWarehouseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel30)
+                    .addComponent(backLogin4))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel36)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(accId2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel35)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(accPass2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel34)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(cfAccPass2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel33)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(name2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel32)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(address2, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel31)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(phoneNumber2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(submit2)
+                .addContainerGap(93, Short.MAX_VALUE))
+        );
+
+        Container.add(EditWarehouse, "card8");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -1191,19 +1209,48 @@ public class SITwarehouse extends javax.swing.JFrame {
     }//GEN-LAST:event_registerActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        Container.removeAll();
+        Container.repaint();
+        Container.revalidate();
+        
+        Container.add(ListOfWarehouseMember);
+        Container.repaint();
+        Container.revalidate();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
+        Container.removeAll();
+        Container.repaint();
+        Container.revalidate();
+        
+        Container.add(EditWarehouse);
+        Container.repaint();
+        Container.revalidate();
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
+        Container.removeAll();
+        Container.repaint();
+        Container.revalidate();
+        
+        Container.add(EditProfile);
+        Container.repaint();
+        Container.revalidate();
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void backLogin1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backLogin1ActionPerformed
-        // TODO add your handling code here:
+        Container.removeAll();
+        Container.repaint();
+        Container.revalidate();
+        accId1.setText("");
+        accPass1.setText("");
+        cfAccPass1.setText("");
+        name1.setText("");
+        address1.setText("");
+        phoneNumber1.setText("");
+        Container.add(MemberHome);
+        Container.repaint();
+        Container.revalidate();
     }//GEN-LAST:event_backLogin1ActionPerformed
 
     private void phoneNumber1NumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_phoneNumber1NumberActionPerformed
@@ -1231,7 +1278,13 @@ public class SITwarehouse extends javax.swing.JFrame {
     }//GEN-LAST:event_accId1ActionPerformed
 
     private void backLogin2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backLogin2ActionPerformed
-        // TODO add your handling code here:
+        Container.removeAll();
+        Container.repaint();
+        Container.revalidate();
+        
+        Container.add(MemberHome);
+        Container.repaint();
+        Container.revalidate();
     }//GEN-LAST:event_backLogin2ActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
@@ -1247,7 +1300,13 @@ public class SITwarehouse extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField2ActionPerformed
 
     private void backLogin4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backLogin4ActionPerformed
-        // TODO add your handling code here:
+        Container.removeAll();
+        Container.repaint();
+        Container.revalidate();
+        
+        Container.add(EmployeeHome);
+        Container.repaint();
+        Container.revalidate();
     }//GEN-LAST:event_backLogin4ActionPerformed
 
     private void phoneNumber2NumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_phoneNumber2NumberActionPerformed
@@ -1313,6 +1372,35 @@ public class SITwarehouse extends javax.swing.JFrame {
     private void jTextField10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField10ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField10ActionPerformed
+
+    private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
+
+        Container.removeAll();
+        Container.repaint();
+        Container.revalidate();
+        
+        Container.add(MemberHome);
+        Container.repaint();
+        Container.revalidate();
+        
+    }//GEN-LAST:event_loginActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        SITOperation.logout();
+        Container.removeAll();
+        Container.repaint();
+        Container.revalidate();
+        
+        Container.add(Login);
+        userName.setText("");
+        password.setText("");
+        Container.repaint();
+        Container.revalidate();
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_passwordActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1460,7 +1548,7 @@ public class SITwarehouse extends javax.swing.JFrame {
     private javax.swing.JTextField name;
     private javax.swing.JTextField name1;
     private javax.swing.JTextField name2;
-    private javax.swing.JTextField password;
+    private javax.swing.JPasswordField password;
     private javax.swing.JTextField phoneNumber;
     private javax.swing.JTextField phoneNumber1;
     private javax.swing.JTextField phoneNumber2;
