@@ -95,7 +95,7 @@ public class Agreement {
         nextPaid += arrears;
     }
 
-    private static void createAgreement(long warehouseId,double total, long memId, double nextPaid, double arrears, int AmountOfMonth){
+    public static void createAgreement(long warehouseId,double total, long memId, double nextPaid, double arrears, int AmountOfMonth){
         try{    
                 GregorianCalendar startDate,endDate,nextWeek;
                 startDate = new GregorianCalendar();

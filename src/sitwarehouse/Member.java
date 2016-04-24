@@ -12,6 +12,7 @@ public class Member extends People {
     private String accPass;
     private String bankName;
     private String bankId;
+    private String Confirm;
 
     public Member() {
     }
@@ -23,6 +24,14 @@ public class Member extends People {
         this.accPass = accPass;
         this.bankName = bankName;
         this.bankId = bankId;
+    }
+
+    public String getConfirm() {
+        return Confirm;
+    }
+
+    public void setConfirm(String Confirm) {
+        this.Confirm = Confirm;
     }
 
     public long getMemId() {
