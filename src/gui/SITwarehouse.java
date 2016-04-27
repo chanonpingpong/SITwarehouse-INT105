@@ -48,6 +48,7 @@ public class SITwarehouse extends javax.swing.JFrame {
         password = new javax.swing.JTextField();
         login = new javax.swing.JButton();
         register = new javax.swing.JButton();
+        jComboBox1 = new javax.swing.JComboBox();
         Register = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         accId = new javax.swing.JTextField();
@@ -64,6 +65,7 @@ public class SITwarehouse extends javax.swing.JFrame {
         phoneNumber = new javax.swing.JTextField();
         submit = new javax.swing.JButton();
         backLogin = new javax.swing.JButton();
+        Chackpass = new javax.swing.JLabel();
         MemberHome = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
@@ -183,6 +185,8 @@ public class SITwarehouse extends javax.swing.JFrame {
             }
         });
 
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Member", "Employee" }));
+
         javax.swing.GroupLayout LoginLayout = new javax.swing.GroupLayout(Login);
         Login.setLayout(LoginLayout);
         LoginLayout.setHorizontalGroup(
@@ -194,11 +198,12 @@ public class SITwarehouse extends javax.swing.JFrame {
                         .addComponent(jLabel1))
                     .addGroup(LoginLayout.createSequentialGroup()
                         .addGap(282, 282, 282)
-                        .addGroup(LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2)
-                            .addComponent(userName)
+                            .addComponent(userName, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel3)
-                            .addComponent(password, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)))
+                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(LoginLayout.createSequentialGroup()
                         .addGap(346, 346, 346)
                         .addGroup(LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -211,19 +216,21 @@ public class SITwarehouse extends javax.swing.JFrame {
             .addGroup(LoginLayout.createSequentialGroup()
                 .addGap(128, 128, 128)
                 .addComponent(jLabel1)
+                .addGap(14, 14, 14)
+                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(userName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(login, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(login, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(register)
-                .addContainerGap(180, Short.MAX_VALUE))
+                .addContainerGap(141, Short.MAX_VALUE))
         );
 
         Container.add(Login, "card2");
@@ -322,8 +329,11 @@ public class SITwarehouse extends javax.swing.JFrame {
                         .addGap(223, 223, 223)
                         .addComponent(jLabel4))
                     .addGroup(RegisterLayout.createSequentialGroup()
-                        .addGap(362, 362, 362)
-                        .addComponent(submit)))
+                        .addGap(354, 354, 354)
+                        .addComponent(submit))
+                    .addGroup(RegisterLayout.createSequentialGroup()
+                        .addGap(259, 259, 259)
+                        .addComponent(Chackpass, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         RegisterLayout.setVerticalGroup(
@@ -357,9 +367,11 @@ public class SITwarehouse extends javax.swing.JFrame {
                 .addComponent(jLabel10)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(phoneNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Chackpass, javax.swing.GroupLayout.DEFAULT_SIZE, 46, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(submit)
-                .addContainerGap(93, Short.MAX_VALUE))
+                .addGap(53, 53, 53))
         );
 
         Container.add(Register, "card3");
@@ -1337,13 +1349,14 @@ public class SITwarehouse extends javax.swing.JFrame {
         String phoneNumberString = phoneNumber.getText();
         String accIdString = accId.getText();
         String accPassString = accPass.getText();
-      String cfPasswordString =String.valueOf(accPass.equals(evt));
-      if(accPassString.equals(cfPasswordString)){
+      String cfPasswordString =cfAccPass.getText();
+      if(cfPasswordString.equals(accPassString)){
           System.out.println("pass word coorrect");
+          create(nameString, addressString, phoneNumberString, accIdString, accPassString);
       }else{
-          System.out.println("password isn't be straight");
+          Chackpass.setText("PassWord and ComfirmPassword isn't correct");
       }
-        create(nameString, addressString, phoneNumberString, accIdString, accPassString);
+       
          
     }//GEN-LAST:event_submitActionPerformed
 
@@ -1386,6 +1399,7 @@ public class SITwarehouse extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Chackpass;
     private javax.swing.JPanel Container;
     private javax.swing.JPanel EditProfile;
     private javax.swing.JPanel EditWarehouse;
@@ -1424,6 +1438,7 @@ public class SITwarehouse extends javax.swing.JFrame {
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
+    private javax.swing.JComboBox jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
