@@ -61,7 +61,6 @@ public class SITwarehouse extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         name = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
-        address = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         phoneNumber = new javax.swing.JTextField();
         submit = new javax.swing.JButton();
@@ -69,6 +68,8 @@ public class SITwarehouse extends javax.swing.JFrame {
         Chackpass = new javax.swing.JLabel();
         accPass = new javax.swing.JPasswordField();
         cfAccPass = new javax.swing.JPasswordField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        address = new javax.swing.JTextPane();
         MemberHome = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
@@ -222,7 +223,7 @@ public class SITwarehouse extends javax.swing.JFrame {
                         .addGroup(LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(register, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(login, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap(318, Short.MAX_VALUE))
+                .addContainerGap(373, Short.MAX_VALUE))
         );
         LoginLayout.setVerticalGroup(
             LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -238,55 +239,71 @@ public class SITwarehouse extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(passWord, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(login, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(passWord, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
+                .addComponent(login, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(register)
-                .addContainerGap(141, Short.MAX_VALUE))
+                .addContainerGap(156, Short.MAX_VALUE))
         );
 
         Container.add(Login, "card2");
 
+        Register.setLayout(null);
+
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Register");
+        Register.add(jLabel4);
+        jLabel4.setBounds(322, 48, 152, 44);
 
         accId.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 accIdActionPerformed(evt);
             }
         });
+        Register.add(accId);
+        accId.setBounds(358, 128, 200, 22);
 
         jLabel5.setText("Username");
+        Register.add(jLabel5);
+        jLabel5.setBounds(358, 105, 58, 16);
 
         jLabel6.setText("Password");
+        Register.add(jLabel6);
+        jLabel6.setBounds(358, 157, 55, 16);
 
         jLabel7.setText("Confirm Password");
+        Register.add(jLabel7);
+        jLabel7.setBounds(358, 209, 104, 16);
 
         jLabel8.setText("Name and Surname");
+        Register.add(jLabel8);
+        jLabel8.setBounds(358, 261, 114, 16);
 
         name.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nameActionPerformed(evt);
             }
         });
+        Register.add(name);
+        name.setBounds(358, 284, 200, 22);
 
         jLabel9.setText("Address");
-
-        address.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addressActionPerformed(evt);
-            }
-        });
+        Register.add(jLabel9);
+        jLabel9.setBounds(358, 313, 46, 16);
 
         jLabel10.setText("Phone Number");
+        Register.add(jLabel10);
+        jLabel10.setBounds(360, 420, 84, 16);
 
         phoneNumber.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 phoneNumberNumberActionPerformed(evt);
             }
         });
+        Register.add(phoneNumber);
+        phoneNumber.setBounds(360, 440, 200, 22);
 
         submit.setText("Submit");
         submit.addActionListener(new java.awt.event.ActionListener() {
@@ -294,6 +311,8 @@ public class SITwarehouse extends javax.swing.JFrame {
                 submitActionPerformed(evt);
             }
         });
+        Register.add(submit);
+        submit.setBounds(354, 504, 73, 25);
 
         backLogin.setText("< Back");
         backLogin.addActionListener(new java.awt.event.ActionListener() {
@@ -301,79 +320,19 @@ public class SITwarehouse extends javax.swing.JFrame {
                 backLoginActionPerformed(evt);
             }
         });
+        Register.add(backLogin);
+        backLogin.setBounds(28, 67, 71, 25);
+        Register.add(Chackpass);
+        Chackpass.setBounds(259, 451, 293, 46);
+        Register.add(accPass);
+        accPass.setBounds(358, 174, 200, 22);
+        Register.add(cfAccPass);
+        cfAccPass.setBounds(358, 232, 200, 22);
 
-        javax.swing.GroupLayout RegisterLayout = new javax.swing.GroupLayout(Register);
-        Register.setLayout(RegisterLayout);
-        RegisterLayout.setHorizontalGroup(
-            RegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(RegisterLayout.createSequentialGroup()
-                .addGroup(RegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(RegisterLayout.createSequentialGroup()
-                        .addGap(28, 28, 28)
-                        .addComponent(backLogin)
-                        .addGap(223, 223, 223)
-                        .addComponent(jLabel4))
-                    .addGroup(RegisterLayout.createSequentialGroup()
-                        .addGap(354, 354, 354)
-                        .addComponent(submit))
-                    .addGroup(RegisterLayout.createSequentialGroup()
-                        .addGap(259, 259, 259)
-                        .addComponent(Chackpass, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RegisterLayout.createSequentialGroup()
-                .addContainerGap(303, Short.MAX_VALUE)
-                .addGroup(RegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(phoneNumber, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                    .addComponent(jLabel10)
-                    .addComponent(address, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                    .addComponent(jLabel9)
-                    .addComponent(name, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                    .addComponent(jLabel8)
-                    .addComponent(jLabel7)
-                    .addComponent(jLabel6)
-                    .addComponent(jLabel5)
-                    .addComponent(accId, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                    .addComponent(accPass)
-                    .addComponent(cfAccPass))
-                .addGap(297, 297, 297))
-        );
-        RegisterLayout.setVerticalGroup(
-            RegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(RegisterLayout.createSequentialGroup()
-                .addGap(48, 48, 48)
-                .addGroup(RegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(backLogin))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(accId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel6)
-                .addGap(1, 1, 1)
-                .addComponent(accPass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(cfAccPass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel8)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel9)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(address, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel10)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(phoneNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Chackpass, javax.swing.GroupLayout.DEFAULT_SIZE, 46, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(submit)
-                .addGap(53, 53, 53))
-        );
+        jScrollPane1.setViewportView(address);
+
+        Register.add(jScrollPane1);
+        jScrollPane1.setBounds(360, 340, 200, 70);
 
         Container.add(Register, "card3");
 
@@ -432,7 +391,7 @@ public class SITwarehouse extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MemberHomeLayout.createSequentialGroup()
                         .addGroup(MemberHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 627, Short.MAX_VALUE)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 682, Short.MAX_VALUE)
                             .addGroup(MemberHomeLayout.createSequentialGroup()
                                 .addGroup(MemberHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.LEADING)
@@ -523,7 +482,7 @@ public class SITwarehouse extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, EmployeeHomeLayout.createSequentialGroup()
                         .addGroup(EmployeeHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 617, Short.MAX_VALUE)
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 672, Short.MAX_VALUE)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, EmployeeHomeLayout.createSequentialGroup()
                                 .addComponent(jLabel15)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -620,7 +579,7 @@ public class SITwarehouse extends javax.swing.JFrame {
         EditProfileLayout.setHorizontalGroup(
             EditProfileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, EditProfileLayout.createSequentialGroup()
-                .addContainerGap(303, Short.MAX_VALUE)
+                .addContainerGap(358, Short.MAX_VALUE)
                 .addGroup(EditProfileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(phoneNumber1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel20)
@@ -645,7 +604,7 @@ public class SITwarehouse extends javax.swing.JFrame {
                     .addGroup(EditProfileLayout.createSequentialGroup()
                         .addGap(362, 362, 362)
                         .addComponent(submit1)))
-                .addContainerGap(362, Short.MAX_VALUE))
+                .addContainerGap(411, Short.MAX_VALUE))
         );
         EditProfileLayout.setVerticalGroup(
             EditProfileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -759,7 +718,7 @@ public class SITwarehouse extends javax.swing.JFrame {
                 .addComponent(jLabel26)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ListOfWarehouseMemberLayout.createSequentialGroup()
-                .addContainerGap(120, Short.MAX_VALUE)
+                .addContainerGap(159, Short.MAX_VALUE)
                 .addGroup(ListOfWarehouseMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(ListOfWarehouseMemberLayout.createSequentialGroup()
                         .addComponent(jLabel41)
@@ -878,7 +837,7 @@ public class SITwarehouse extends javax.swing.JFrame {
         EditWarehouseLayout.setHorizontalGroup(
             EditWarehouseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, EditWarehouseLayout.createSequentialGroup()
-                .addContainerGap(303, Short.MAX_VALUE)
+                .addContainerGap(358, Short.MAX_VALUE)
                 .addGroup(EditWarehouseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(phoneNumber2, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel31)
@@ -903,7 +862,7 @@ public class SITwarehouse extends javax.swing.JFrame {
                     .addGroup(EditWarehouseLayout.createSequentialGroup()
                         .addGap(362, 362, 362)
                         .addComponent(submit2)))
-                .addContainerGap(362, Short.MAX_VALUE))
+                .addContainerGap(411, Short.MAX_VALUE))
         );
         EditWarehouseLayout.setVerticalGroup(
             EditWarehouseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1002,7 +961,7 @@ public class SITwarehouse extends javax.swing.JFrame {
                 .addComponent(jLabel28)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ListOfWarehouseEmployeeLayout.createSequentialGroup()
-                .addContainerGap(120, Short.MAX_VALUE)
+                .addContainerGap(157, Short.MAX_VALUE)
                 .addGroup(ListOfWarehouseEmployeeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(ListOfWarehouseEmployeeLayout.createSequentialGroup()
                         .addComponent(jLabel29)
@@ -1170,10 +1129,6 @@ public class SITwarehouse extends javax.swing.JFrame {
     private void nameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_nameActionPerformed
-
-    private void addressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addressActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_addressActionPerformed
 
     private void phoneNumberNumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_phoneNumberNumberActionPerformed
         // TODO add your handling code here:
@@ -1497,7 +1452,7 @@ public class SITwarehouse extends javax.swing.JFrame {
     private javax.swing.JPasswordField accPass;
     private javax.swing.JTextField accPass1;
     private javax.swing.JTextField accPass2;
-    private javax.swing.JTextField address;
+    private javax.swing.JTextPane address;
     private javax.swing.JTextField address1;
     private javax.swing.JTextField address2;
     private javax.swing.JButton backLogin;
@@ -1564,6 +1519,7 @@ public class SITwarehouse extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
