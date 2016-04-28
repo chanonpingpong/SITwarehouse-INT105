@@ -1,14 +1,15 @@
 package sitwarehouse;
 
+import java.sql.SQLException;
 import java.text.DateFormat;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
 public class SITwarehouse {
     
-    public static void main(String[] args) {
+    public static void main(String[] args)  {
         
-       GregorianCalendar startDate,endDate;
+     /*  GregorianCalendar startDate,endDate;
                 startDate = new GregorianCalendar();
                 endDate = new GregorianCalendar();
                 DateFormat df = DateFormat.getDateInstance(DateFormat.LONG);
@@ -19,7 +20,9 @@ public class SITwarehouse {
                 String ld = df.format(lastDate);
                 
                 System.out.println(fd);
-                System.out.println(ld);
+                System.out.println(ld);*/
+      //  Employee.createEmployee("jame", "jame", "jame", "jame", "jame", "jame", "jame");
+        SITOperation.loginMember("jamemez", "kittisak");
     }
     
 }

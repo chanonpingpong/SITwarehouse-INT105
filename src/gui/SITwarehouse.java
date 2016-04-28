@@ -7,7 +7,10 @@ package gui;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import javax.swing.JOptionPane;
 import sitwarehouse.ConnectionBuilder;
 import static sitwarehouse.Employee.genEmpId;
 import static sitwarehouse.Employee.haveThisAccId;
@@ -45,18 +48,16 @@ public class SITwarehouse extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         userName = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        password = new javax.swing.JTextField();
         login = new javax.swing.JButton();
         register = new javax.swing.JButton();
-        jComboBox1 = new javax.swing.JComboBox();
+        userType = new javax.swing.JComboBox();
+        passWord = new javax.swing.JPasswordField();
         Register = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         accId = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        accPass = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        cfAccPass = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         name = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
@@ -66,6 +67,8 @@ public class SITwarehouse extends javax.swing.JFrame {
         submit = new javax.swing.JButton();
         backLogin = new javax.swing.JButton();
         Chackpass = new javax.swing.JLabel();
+        accPass = new javax.swing.JPasswordField();
+        cfAccPass = new javax.swing.JPasswordField();
         MemberHome = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
@@ -177,6 +180,11 @@ public class SITwarehouse extends javax.swing.JFrame {
         jLabel3.setText("Password");
 
         login.setText("Login");
+        login.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                loginActionPerformed(evt);
+            }
+        });
 
         register.setText("Register");
         register.addActionListener(new java.awt.event.ActionListener() {
@@ -185,7 +193,12 @@ public class SITwarehouse extends javax.swing.JFrame {
             }
         });
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Member", "Employee" }));
+        userType.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Member", "Employee" }));
+        userType.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                userTypeActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout LoginLayout = new javax.swing.GroupLayout(Login);
         Login.setLayout(LoginLayout);
@@ -198,12 +211,12 @@ public class SITwarehouse extends javax.swing.JFrame {
                         .addComponent(jLabel1))
                     .addGroup(LoginLayout.createSequentialGroup()
                         .addGap(282, 282, 282)
-                        .addGroup(LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel2)
-                            .addComponent(userName, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(userName, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
                             .addComponent(jLabel3)
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(userType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(passWord)))
                     .addGroup(LoginLayout.createSequentialGroup()
                         .addGap(346, 346, 346)
                         .addGroup(LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -217,7 +230,7 @@ public class SITwarehouse extends javax.swing.JFrame {
                 .addGap(128, 128, 128)
                 .addComponent(jLabel1)
                 .addGap(14, 14, 14)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(userType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -225,7 +238,7 @@ public class SITwarehouse extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(passWord, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(login, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -249,19 +262,7 @@ public class SITwarehouse extends javax.swing.JFrame {
 
         jLabel6.setText("Password");
 
-        accPass.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                accPassActionPerformed(evt);
-            }
-        });
-
         jLabel7.setText("Confirm Password");
-
-        cfAccPass.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cfAccPassActionPerformed(evt);
-            }
-        });
 
         jLabel8.setText("Name and Surname");
 
@@ -305,22 +306,6 @@ public class SITwarehouse extends javax.swing.JFrame {
         Register.setLayout(RegisterLayout);
         RegisterLayout.setHorizontalGroup(
             RegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RegisterLayout.createSequentialGroup()
-                .addContainerGap(303, Short.MAX_VALUE)
-                .addGroup(RegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(phoneNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel10)
-                    .addComponent(address, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel9)
-                    .addComponent(name, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel8)
-                    .addComponent(cfAccPass, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7)
-                    .addComponent(accPass, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6)
-                    .addComponent(jLabel5)
-                    .addComponent(accId, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(297, 297, 297))
             .addGroup(RegisterLayout.createSequentialGroup()
                 .addGroup(RegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(RegisterLayout.createSequentialGroup()
@@ -335,6 +320,22 @@ public class SITwarehouse extends javax.swing.JFrame {
                         .addGap(259, 259, 259)
                         .addComponent(Chackpass, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RegisterLayout.createSequentialGroup()
+                .addContainerGap(303, Short.MAX_VALUE)
+                .addGroup(RegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(phoneNumber, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                    .addComponent(jLabel10)
+                    .addComponent(address, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                    .addComponent(jLabel9)
+                    .addComponent(name, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                    .addComponent(jLabel8)
+                    .addComponent(jLabel7)
+                    .addComponent(jLabel6)
+                    .addComponent(jLabel5)
+                    .addComponent(accId, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                    .addComponent(accPass)
+                    .addComponent(cfAccPass))
+                .addGap(297, 297, 297))
         );
         RegisterLayout.setVerticalGroup(
             RegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -349,9 +350,9 @@ public class SITwarehouse extends javax.swing.JFrame {
                 .addComponent(accId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(1, 1, 1)
                 .addComponent(accPass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel7)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(cfAccPass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1166,14 +1167,6 @@ public class SITwarehouse extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_accIdActionPerformed
 
-    private void accPassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_accPassActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_accPassActionPerformed
-
-    private void cfAccPassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cfAccPassActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cfAccPassActionPerformed
-
     private void nameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_nameActionPerformed
@@ -1344,21 +1337,109 @@ public class SITwarehouse extends javax.swing.JFrame {
 
     private void submitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitActionPerformed
         // TODO add your handling code here:
+       boolean  checkRegieter = true;
         String nameString = name.getText();
         String addressString = address.getText();
         String phoneNumberString = phoneNumber.getText();
         String accIdString = accId.getText();
         String accPassString = accPass.getText();
-      String cfPasswordString =cfAccPass.getText();
-      if(cfPasswordString.equals(accPassString)){
-          System.out.println("pass word coorrect");
-          create(nameString, addressString, phoneNumberString, accIdString, accPassString);
-      }else{
-          Chackpass.setText("PassWord and ComfirmPassword isn't correct");
-      }
-       
-         
+        String cfPasswordString = cfAccPass.getText();
+        
+        if (cfPasswordString.equals(accPassString)) {
+            System.out.println("pass word coorrect");
+            create(nameString, addressString, phoneNumberString, accIdString, accPassString);
+            JOptionPane.showMessageDialog(null, "Regieter Success");
+         //   checkRegieter = false;
+            
+           this.Register.setVisible(false);
+           this.Login.setVisible(true);
+           //this.Login.setSize(300, 300);
+        } else {
+            Chackpass.setText("PassWord and ComfirmPassword isn't correct");
+        }
+
+
     }//GEN-LAST:event_submitActionPerformed
+
+    private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
+        String userTypeStr = (String) userType.getSelectedItem();
+        String userNameString = userName.getText();
+        System.out.println(userNameString);
+        String passString = passWord.getText();
+        System.out.println(passString);
+        if (userTypeStr.equalsIgnoreCase("Member")) {
+            try {
+                boolean checkLogin = true;
+                Connection conn = ConnectionBuilder.connect();
+                Statement st = conn.createStatement();
+                String sql = "select * from mydb.member";
+                st.executeQuery(sql);
+                ResultSet rs = st.getResultSet();
+                if (this.userName.getText().equalsIgnoreCase("") || this.passWord.getText().equalsIgnoreCase("")) {
+                    JOptionPane.showMessageDialog(null, "Please , Enter all fields.");
+                } else {
+                    while (rs.next()) {
+                        if(this.userName.getText().equalsIgnoreCase(rs.getString("accid")) 
+                                && this.passWord.getText().equalsIgnoreCase(rs.getString("accpass"))){
+                            JOptionPane.showMessageDialog(null, "Login Success");
+                            checkLogin = false;
+                            this.Login.setVisible(false);
+                            this.MemberHome.setVisible(true);
+                         //   this.MemberHome.setSize(300, 300);
+                        }
+          
+                    }
+                    if(checkLogin){
+                        JOptionPane.showMessageDialog(null, "You are not member");
+                    }
+
+                }
+
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+        } else {
+         try {
+                boolean checkLogin = true;
+                Connection conn = ConnectionBuilder.connect();
+                Statement st = conn.createStatement();
+                String sql = "select * from mydb.Employee";
+                st.executeQuery(sql);
+                ResultSet rs = st.getResultSet();
+                if (this.userName.getText().equalsIgnoreCase("") || this.passWord.getText().equalsIgnoreCase("")) {
+                    JOptionPane.showMessageDialog(null, "Please , Enter all fields.");
+                } else {
+                    while (rs.next()) {
+                        if(this.userName.getText().equalsIgnoreCase(rs.getString("empid")) 
+                                && this.passWord.getText().equalsIgnoreCase(rs.getString("emppass"))){
+                            JOptionPane.showMessageDialog(null, "Login Success");
+                            checkLogin = false;
+                            this.Login.setVisible(false);
+                            this.EmployeeHome.setVisible(true);
+                          //  this.EditProfile.setSize(300, 300);
+                        }
+          
+                    }
+                    if(checkLogin){
+                        JOptionPane.showMessageDialog(null, "You are not member");
+                    }
+
+                }
+
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+        }
+///else {
+           
+      //  }
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_loginActionPerformed
+
+    private void userTypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userTypeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_userTypeActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1413,7 +1494,7 @@ public class SITwarehouse extends javax.swing.JFrame {
     private javax.swing.JTextField accId;
     private javax.swing.JTextField accId1;
     private javax.swing.JTextField accId2;
-    private javax.swing.JTextField accPass;
+    private javax.swing.JPasswordField accPass;
     private javax.swing.JTextField accPass1;
     private javax.swing.JTextField accPass2;
     private javax.swing.JTextField address;
@@ -1425,7 +1506,7 @@ public class SITwarehouse extends javax.swing.JFrame {
     private javax.swing.JButton backLogin3;
     private javax.swing.JButton backLogin4;
     private javax.swing.JButton backLogin5;
-    private javax.swing.JTextField cfAccPass;
+    private javax.swing.JPasswordField cfAccPass;
     private javax.swing.JTextField cfAccPass1;
     private javax.swing.JTextField cfAccPass2;
     private javax.swing.JButton jButton1;
@@ -1438,7 +1519,6 @@ public class SITwarehouse extends javax.swing.JFrame {
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
-    private javax.swing.JComboBox jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1508,7 +1588,7 @@ public class SITwarehouse extends javax.swing.JFrame {
     private javax.swing.JTextField name;
     private javax.swing.JTextField name1;
     private javax.swing.JTextField name2;
-    private javax.swing.JTextField password;
+    private javax.swing.JPasswordField passWord;
     private javax.swing.JTextField phoneNumber;
     private javax.swing.JTextField phoneNumber1;
     private javax.swing.JTextField phoneNumber2;
@@ -1517,5 +1597,6 @@ public class SITwarehouse extends javax.swing.JFrame {
     private javax.swing.JButton submit1;
     private javax.swing.JButton submit2;
     private javax.swing.JTextField userName;
+    private javax.swing.JComboBox userType;
     // End of variables declaration//GEN-END:variables
 }

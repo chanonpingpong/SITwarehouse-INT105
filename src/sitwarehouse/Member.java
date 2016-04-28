@@ -10,21 +10,21 @@ public class Member extends People {
     private long memId;
     private String accId;
     private String accPass;
-    private String bankName;
-    private String bankId;
+   // private String bankName;
+ //   private String bankId;
     private String Confirm;
 
     public Member() {
     }
 
-    public Member(long memId, String accId, String accPass, String bankName, String bankId, String name, String address, String phoneNumber) {
-        super(name, address, phoneNumber);
+    public Member(long memId, String accId, String accPass, String Confirm) {
         this.memId = memId;
         this.accId = accId;
         this.accPass = accPass;
-        this.bankName = bankName;
-        this.bankId = bankId;
+        this.Confirm = Confirm;
     }
+
+  
 
     public String getConfirm() {
         return Confirm;
@@ -58,21 +58,7 @@ public class Member extends People {
         this.accPass = accPass;
     }
 
-    public String getBankName() {
-        return bankName;
-    }
-
-    public void setBankName(String bankName) {
-        this.bankName = bankName;
-    }
-
-    public String getBankId() {
-        return bankId;
-    }
-
-    public void setBankId(String bankId) {
-        this.bankId = bankId;
-    }
+    
      
     public static void create(String name, String address, String phoneNumber , String accId, String accPass){
         try{
@@ -192,7 +178,7 @@ public class Member extends People {
     
     @Override
     public String toString() {
-        return "Member{" + "memId=" + memId + ", accId=" + accId + ", accPass=" + accPass + ", bankName=" + bankName + ", bankId=" + bankId + '}';
+        return "Member{" + "memId=" + memId + ", accId=" + accId + ", accPass=" + accPass + '}';
     }    
     
     
