@@ -22,7 +22,7 @@ public class SITwarehouse {
                 System.out.println(fd);
                 System.out.println(ld);*/
       //  Employee.createEmployee("jame", "jame", "jame", "jame", "jame", "jame", "jame");
-        SITOperation.loginMember("jamemez", "kittisak");
+      //  SITOperation.loginMember("jamemez", "kittisak");
     }
     
 }

@@ -10,6 +10,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Arrays;
+import java.util.Date;
 import javax.swing.JOptionPane;
 import sitwarehouse.ConnectionBuilder;
 import static sitwarehouse.Employee.genEmpId;
@@ -31,6 +33,21 @@ public class SITwarehouse extends javax.swing.JFrame {
     public SITwarehouse() {
         initComponents();
 
+    }
+    
+    public void closeToLogin(){
+       Container.removeAll();
+        Container.repaint();
+        Container.revalidate();
+        accId.setText("");
+        accPass.setText("");
+        cfAccPass.setText("");
+        name.setText("");
+        address.setText("");
+        phoneNumber.setText("");
+        Container.add(Login);
+        Container.repaint();
+        Container.revalidate();
     }
 
     /**
@@ -69,7 +86,7 @@ public class SITwarehouse extends javax.swing.JFrame {
         accPass = new javax.swing.JPasswordField();
         cfAccPass = new javax.swing.JPasswordField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        address = new javax.swing.JTextPane();
+        address = new javax.swing.JTextArea();
         MemberHome = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
@@ -79,8 +96,9 @@ public class SITwarehouse extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jLabel14 = new javax.swing.JLabel();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
+        Edit = new javax.swing.JButton();
+        logOut = new javax.swing.JButton();
+        date = new javax.swing.JLabel();
         EmployeeHome = new javax.swing.JPanel();
         jButton3 = new javax.swing.JButton();
         jLabel15 = new javax.swing.JLabel();
@@ -90,6 +108,7 @@ public class SITwarehouse extends javax.swing.JFrame {
         jScrollPane3 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
         jLabel18 = new javax.swing.JLabel();
+        logout = new javax.swing.JButton();
         EditProfile = new javax.swing.JPanel();
         jLabel19 = new javax.swing.JLabel();
         backLogin1 = new javax.swing.JButton();
@@ -223,7 +242,7 @@ public class SITwarehouse extends javax.swing.JFrame {
                         .addGroup(LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(register, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(login, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap(373, Short.MAX_VALUE))
+                .addContainerGap(318, Short.MAX_VALUE))
         );
         LoginLayout.setVerticalGroup(
             LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -239,71 +258,49 @@ public class SITwarehouse extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(passWord, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addComponent(passWord, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(login, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(register)
-                .addContainerGap(156, Short.MAX_VALUE))
+                .addContainerGap(141, Short.MAX_VALUE))
         );
 
         Container.add(Login, "card2");
 
-        Register.setLayout(null);
-
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Register");
-        Register.add(jLabel4);
-        jLabel4.setBounds(322, 48, 152, 44);
 
         accId.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 accIdActionPerformed(evt);
             }
         });
-        Register.add(accId);
-        accId.setBounds(358, 128, 200, 22);
 
         jLabel5.setText("Username");
-        Register.add(jLabel5);
-        jLabel5.setBounds(358, 105, 58, 16);
 
         jLabel6.setText("Password");
-        Register.add(jLabel6);
-        jLabel6.setBounds(358, 157, 55, 16);
 
         jLabel7.setText("Confirm Password");
-        Register.add(jLabel7);
-        jLabel7.setBounds(358, 209, 104, 16);
 
         jLabel8.setText("Name and Surname");
-        Register.add(jLabel8);
-        jLabel8.setBounds(358, 261, 114, 16);
 
         name.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nameActionPerformed(evt);
             }
         });
-        Register.add(name);
-        name.setBounds(358, 284, 200, 22);
 
         jLabel9.setText("Address");
-        Register.add(jLabel9);
-        jLabel9.setBounds(358, 313, 46, 16);
 
         jLabel10.setText("Phone Number");
-        Register.add(jLabel10);
-        jLabel10.setBounds(360, 420, 84, 16);
 
         phoneNumber.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 phoneNumberNumberActionPerformed(evt);
             }
         });
-        Register.add(phoneNumber);
-        phoneNumber.setBounds(360, 440, 200, 22);
 
         submit.setText("Submit");
         submit.addActionListener(new java.awt.event.ActionListener() {
@@ -311,8 +308,6 @@ public class SITwarehouse extends javax.swing.JFrame {
                 submitActionPerformed(evt);
             }
         });
-        Register.add(submit);
-        submit.setBounds(354, 504, 73, 25);
 
         backLogin.setText("< Back");
         backLogin.addActionListener(new java.awt.event.ActionListener() {
@@ -320,30 +315,107 @@ public class SITwarehouse extends javax.swing.JFrame {
                 backLoginActionPerformed(evt);
             }
         });
-        Register.add(backLogin);
-        backLogin.setBounds(28, 67, 71, 25);
-        Register.add(Chackpass);
-        Chackpass.setBounds(259, 451, 293, 46);
-        Register.add(accPass);
-        accPass.setBounds(358, 174, 200, 22);
-        Register.add(cfAccPass);
-        cfAccPass.setBounds(358, 232, 200, 22);
 
+        cfAccPass.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cfAccPassActionPerformed(evt);
+            }
+        });
+
+        address.setColumns(20);
+        address.setRows(5);
         jScrollPane1.setViewportView(address);
 
-        Register.add(jScrollPane1);
-        jScrollPane1.setBounds(360, 340, 200, 70);
+        javax.swing.GroupLayout RegisterLayout = new javax.swing.GroupLayout(Register);
+        Register.setLayout(RegisterLayout);
+        RegisterLayout.setHorizontalGroup(
+            RegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(RegisterLayout.createSequentialGroup()
+                .addGroup(RegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(RegisterLayout.createSequentialGroup()
+                        .addGap(28, 28, 28)
+                        .addComponent(backLogin)
+                        .addGap(223, 223, 223)
+                        .addComponent(jLabel4))
+                    .addGroup(RegisterLayout.createSequentialGroup()
+                        .addGap(297, 297, 297)
+                        .addComponent(submit)
+                        .addGap(42, 42, 42)
+                        .addComponent(Chackpass, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(RegisterLayout.createSequentialGroup()
+                        .addGap(256, 256, 256)
+                        .addGroup(RegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel10)
+                            .addGroup(RegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(accId, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                                .addComponent(jLabel5)
+                                .addComponent(jLabel6)
+                                .addComponent(accPass, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                                .addComponent(jLabel7)
+                                .addComponent(cfAccPass, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                                .addComponent(jLabel8)
+                                .addComponent(name, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                                .addComponent(jLabel9)
+                                .addComponent(jScrollPane1))
+                            .addComponent(phoneNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        RegisterLayout.setVerticalGroup(
+            RegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(RegisterLayout.createSequentialGroup()
+                .addGap(48, 48, 48)
+                .addGroup(RegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(backLogin))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 9, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(accId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(1, 1, 1)
+                .addComponent(jLabel6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(accPass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(cfAccPass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel8)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel9)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel10)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(phoneNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(16, 16, 16)
+                .addGroup(RegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(RegisterLayout.createSequentialGroup()
+                        .addComponent(Chackpass, javax.swing.GroupLayout.DEFAULT_SIZE, 20, Short.MAX_VALUE)
+                        .addGap(82, 82, 82))
+                    .addGroup(RegisterLayout.createSequentialGroup()
+                        .addComponent(submit)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+        );
 
         Container.add(Register, "card3");
 
         jLabel13.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel13.setText("Hi, Member's Name");
+        jLabel13.setText("hello");
 
         jLabel12.setText("Date: ");
 
         jLabel11.setText("id: ");
 
         jButton1.setText("เช่าใหม่");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -367,14 +439,24 @@ public class SITwarehouse extends javax.swing.JFrame {
 
         jLabel14.setText("Your warehouse");
 
-        jButton5.setText("Edit Profile");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        Edit.setText("Edit Profile");
+        Edit.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                EditMouseClicked(evt);
+            }
+        });
+        Edit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                EditActionPerformed(evt);
             }
         });
 
-        jButton6.setText("Logout");
+        logOut.setText("Logout");
+        logOut.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                logOutMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout MemberHomeLayout = new javax.swing.GroupLayout(MemberHome);
         MemberHome.setLayout(MemberHomeLayout);
@@ -385,17 +467,19 @@ public class SITwarehouse extends javax.swing.JFrame {
                 .addGroup(MemberHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(MemberHomeLayout.createSequentialGroup()
                         .addComponent(jLabel12)
+                        .addGap(18, 18, 18)
+                        .addComponent(date, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(MemberHomeLayout.createSequentialGroup()
                         .addComponent(jLabel14)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MemberHomeLayout.createSequentialGroup()
                         .addGroup(MemberHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 682, Short.MAX_VALUE)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 627, Short.MAX_VALUE)
                             .addGroup(MemberHomeLayout.createSequentialGroup()
-                                .addGroup(MemberHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.LEADING))
+                                .addGroup(MemberHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel11)
+                                    .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(MemberHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(MemberHomeLayout.createSequentialGroup()
@@ -403,9 +487,9 @@ public class SITwarehouse extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jButton2))
                                     .addGroup(MemberHomeLayout.createSequentialGroup()
-                                        .addComponent(jButton5)
+                                        .addComponent(Edit)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jButton6)))))
+                                        .addComponent(logOut)))))
                         .addGap(77, 77, 77))))
         );
         MemberHomeLayout.setVerticalGroup(
@@ -415,8 +499,8 @@ public class SITwarehouse extends javax.swing.JFrame {
                 .addGroup(MemberHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel13)
                     .addGroup(MemberHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jButton5)
-                        .addComponent(jButton6)))
+                        .addComponent(Edit)
+                        .addComponent(logOut)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(MemberHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(MemberHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -424,8 +508,10 @@ public class SITwarehouse extends javax.swing.JFrame {
                         .addComponent(jButton2))
                     .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel12)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(MemberHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel12)
+                    .addComponent(date, javax.swing.GroupLayout.DEFAULT_SIZE, 19, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel14)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -435,6 +521,11 @@ public class SITwarehouse extends javax.swing.JFrame {
         Container.add(MemberHome, "card4");
 
         jButton3.setText("ตรวจสอบการโอน");
+        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton3MouseClicked(evt);
+            }
+        });
 
         jLabel15.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel15.setText("Adminstrator");
@@ -442,6 +533,11 @@ public class SITwarehouse extends javax.swing.JFrame {
         jLabel16.setText("id: ");
 
         jButton4.setText("แก้ไขรายละเอียดสินค้า");
+        jButton4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton4MouseClicked(evt);
+            }
+        });
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
@@ -465,6 +561,13 @@ public class SITwarehouse extends javax.swing.JFrame {
 
         jLabel18.setText("List of Warehouse");
 
+        logout.setText("Logout");
+        logout.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                logoutMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout EmployeeHomeLayout = new javax.swing.GroupLayout(EmployeeHome);
         EmployeeHome.setLayout(EmployeeHomeLayout);
         EmployeeHomeLayout.setHorizontalGroup(
@@ -473,42 +576,50 @@ public class SITwarehouse extends javax.swing.JFrame {
                 .addGap(96, 96, 96)
                 .addGroup(EmployeeHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(EmployeeHomeLayout.createSequentialGroup()
-                        .addGroup(EmployeeHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel17)
-                            .addComponent(jLabel16))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(EmployeeHomeLayout.createSequentialGroup()
                         .addComponent(jLabel18)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, EmployeeHomeLayout.createSequentialGroup()
                         .addGroup(EmployeeHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 672, Short.MAX_VALUE)
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 617, Short.MAX_VALUE)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, EmployeeHomeLayout.createSequentialGroup()
                                 .addComponent(jLabel15)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jButton4)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jButton3)))
-                        .addGap(87, 87, 87))))
+                        .addGap(87, 87, 87))
+                    .addGroup(EmployeeHomeLayout.createSequentialGroup()
+                        .addComponent(jLabel17)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(EmployeeHomeLayout.createSequentialGroup()
+                        .addComponent(jLabel16)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(logout, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(156, 156, 156))))
         );
         EmployeeHomeLayout.setVerticalGroup(
             EmployeeHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(EmployeeHomeLayout.createSequentialGroup()
-                .addGap(56, 56, 56)
                 .addGroup(EmployeeHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel15)
-                    .addGroup(EmployeeHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jButton4)
-                        .addComponent(jButton3)))
-                .addGap(18, 18, 18)
-                .addComponent(jLabel16)
+                    .addGroup(EmployeeHomeLayout.createSequentialGroup()
+                        .addGap(56, 56, 56)
+                        .addGroup(EmployeeHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel15)
+                            .addGroup(EmployeeHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jButton4)
+                                .addComponent(jButton3)))
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel16))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, EmployeeHomeLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(logout)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel17)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel18)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(65, Short.MAX_VALUE))
+                .addContainerGap(58, Short.MAX_VALUE))
         );
 
         Container.add(EmployeeHome, "card5");
@@ -525,6 +636,11 @@ public class SITwarehouse extends javax.swing.JFrame {
         });
 
         submit1.setText("Submit");
+        submit1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                submit1ActionPerformed(evt);
+            }
+        });
 
         phoneNumber1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -579,7 +695,7 @@ public class SITwarehouse extends javax.swing.JFrame {
         EditProfileLayout.setHorizontalGroup(
             EditProfileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, EditProfileLayout.createSequentialGroup()
-                .addContainerGap(358, Short.MAX_VALUE)
+                .addContainerGap(303, Short.MAX_VALUE)
                 .addGroup(EditProfileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(phoneNumber1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel20)
@@ -604,7 +720,7 @@ public class SITwarehouse extends javax.swing.JFrame {
                     .addGroup(EditProfileLayout.createSequentialGroup()
                         .addGap(362, 362, 362)
                         .addComponent(submit1)))
-                .addContainerGap(411, Short.MAX_VALUE))
+                .addContainerGap(362, Short.MAX_VALUE))
         );
         EditProfileLayout.setVerticalGroup(
             EditProfileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -645,6 +761,11 @@ public class SITwarehouse extends javax.swing.JFrame {
         Container.add(EditProfile, "card6");
 
         backLogin2.setText("< Back");
+        backLogin2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                backLogin2MouseClicked(evt);
+            }
+        });
         backLogin2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backLogin2ActionPerformed(evt);
@@ -718,7 +839,7 @@ public class SITwarehouse extends javax.swing.JFrame {
                 .addComponent(jLabel26)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ListOfWarehouseMemberLayout.createSequentialGroup()
-                .addContainerGap(159, Short.MAX_VALUE)
+                .addContainerGap(120, Short.MAX_VALUE)
                 .addGroup(ListOfWarehouseMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(ListOfWarehouseMemberLayout.createSequentialGroup()
                         .addComponent(jLabel41)
@@ -837,7 +958,7 @@ public class SITwarehouse extends javax.swing.JFrame {
         EditWarehouseLayout.setHorizontalGroup(
             EditWarehouseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, EditWarehouseLayout.createSequentialGroup()
-                .addContainerGap(358, Short.MAX_VALUE)
+                .addContainerGap(303, Short.MAX_VALUE)
                 .addGroup(EditWarehouseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(phoneNumber2, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel31)
@@ -862,7 +983,7 @@ public class SITwarehouse extends javax.swing.JFrame {
                     .addGroup(EditWarehouseLayout.createSequentialGroup()
                         .addGap(362, 362, 362)
                         .addComponent(submit2)))
-                .addContainerGap(411, Short.MAX_VALUE))
+                .addContainerGap(362, Short.MAX_VALUE))
         );
         EditWarehouseLayout.setVerticalGroup(
             EditWarehouseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -903,6 +1024,11 @@ public class SITwarehouse extends javax.swing.JFrame {
         Container.add(EditWarehouse, "card8");
 
         backLogin3.setText("< Back");
+        backLogin3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                backLogin3MouseClicked(evt);
+            }
+        });
         backLogin3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backLogin3ActionPerformed(evt);
@@ -961,7 +1087,7 @@ public class SITwarehouse extends javax.swing.JFrame {
                 .addComponent(jLabel28)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ListOfWarehouseEmployeeLayout.createSequentialGroup()
-                .addContainerGap(157, Short.MAX_VALUE)
+                .addContainerGap(120, Short.MAX_VALUE)
                 .addGroup(ListOfWarehouseEmployeeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(ListOfWarehouseEmployeeLayout.createSequentialGroup()
                         .addComponent(jLabel29)
@@ -1174,12 +1300,19 @@ public class SITwarehouse extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void EditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
+        boolean checkEdit = true;
+        if(checkEdit==false){
+         this.EditProfile.setVisible(false);
+     //   this.MemberHome.setVisible(true);
+        }
+    }//GEN-LAST:event_EditActionPerformed
 
     private void backLogin1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backLogin1ActionPerformed
         // TODO add your handling code here:
+         this.EditProfile.setVisible(false);
+         this.MemberHome.setVisible(true);
     }//GEN-LAST:event_backLogin1ActionPerformed
 
     private void phoneNumber1NumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_phoneNumber1NumberActionPerformed
@@ -1293,26 +1426,34 @@ public class SITwarehouse extends javax.swing.JFrame {
     private void submitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitActionPerformed
         // TODO add your handling code here:
        boolean  checkRegieter = true;
-        String nameString = name.getText();
+     try{  
+       String nameString = name.getText();
         String addressString = address.getText();
         String phoneNumberString = phoneNumber.getText();
         String accIdString = accId.getText();
-        String accPassString = accPass.getText();
-        String cfPasswordString = cfAccPass.getText();
-        
-        if (cfPasswordString.equals(accPassString)) {
-            System.out.println("pass word coorrect");
-            create(nameString, addressString, phoneNumberString, accIdString, accPassString);
+        String accPassString = new String(accPass.getPassword());
+        String cfPasswordString =new String(cfAccPass.getPassword());
+         if(name.getText().equalsIgnoreCase("") || this.address.getText().equalsIgnoreCase("")||this.phoneNumber.getText().equalsIgnoreCase("")
+                 || accId.getText().equalsIgnoreCase(" ")||accPassString.equalsIgnoreCase("")||cfPasswordString.equalsIgnoreCase("")){
+        JOptionPane.showMessageDialog(null,"Please , Enter all fields." );
+         }
+         else if (cfPasswordString.equals(accPassString)) {
+          
+             create(nameString, addressString, phoneNumberString, accIdString, accPassString);
             JOptionPane.showMessageDialog(null, "Regieter Success");
-         //   checkRegieter = false;
+            closeToLogin();
             
-           this.Register.setVisible(false);
-           this.Login.setVisible(true);
+//            Container.add(Login);
+        }else {
+         JOptionPane.showMessageDialog(null, "Password and comfirmpass isn't corract");
+         }
+     }catch(Exception e){
+         Container.add(Login);
+     }
            //this.Login.setSize(300, 300);
-        } else {
-            Chackpass.setText("PassWord and ComfirmPassword isn't correct");
-        }
-
+      
+           Container.add(Login);
+           
 
     }//GEN-LAST:event_submitActionPerformed
 
@@ -1320,7 +1461,9 @@ public class SITwarehouse extends javax.swing.JFrame {
         String userTypeStr = (String) userType.getSelectedItem();
         String userNameString = userName.getText();
         System.out.println(userNameString);
-        String passString = passWord.getText();
+        String passString= new String( passWord.getPassword());
+   //     String passString = passWord.getPassword();
+        
         System.out.println(passString);
         if (userTypeStr.equalsIgnoreCase("Member")) {
             try {
@@ -1335,7 +1478,7 @@ public class SITwarehouse extends javax.swing.JFrame {
                 } else {
                     while (rs.next()) {
                         if(this.userName.getText().equalsIgnoreCase(rs.getString("accid")) 
-                                && this.passWord.getText().equalsIgnoreCase(rs.getString("accpass"))){
+                                &&passString.equalsIgnoreCase(rs.getString("accpass"))){
                             JOptionPane.showMessageDialog(null, "Login Success");
                             checkLogin = false;
                             this.Login.setVisible(false);
@@ -1371,6 +1514,7 @@ public class SITwarehouse extends javax.swing.JFrame {
                             checkLogin = false;
                             this.Login.setVisible(false);
                             this.EmployeeHome.setVisible(true);
+                            
                           //  this.EditProfile.setSize(300, 300);
                         }
           
@@ -1395,6 +1539,83 @@ public class SITwarehouse extends javax.swing.JFrame {
     private void userTypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userTypeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_userTypeActionPerformed
+
+    private void cfAccPassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cfAccPassActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cfAccPassActionPerformed
+
+    private void EditMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EditMouseClicked
+        // TODO add your handling code here:
+          this.MemberHome.setVisible(false);
+          this.EditProfile.setVisible(true);
+         
+                            
+    }//GEN-LAST:event_EditMouseClicked
+
+    private void submit1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submit1ActionPerformed
+        // TODO add your handling code here:
+        try{
+        String nameString = name.getText();
+        String addressString = address.getText();
+        String phoneNumberString = phoneNumber.getText();
+        String accIdString = accId.getText();
+        String accPassString = new String(accPass.getPassword());
+        String cfPasswordString =new String(cfAccPass.getPassword());
+       
+        }catch(Exception e){
+          
+        }
+    }//GEN-LAST:event_submit1ActionPerformed
+
+    private void logOutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logOutMouseClicked
+        // TODO add your handling code here:
+        
+        this.MemberHome.setVisible(false);
+
+        this.Login.setVisible(true);
+        this.userName.setText("");
+        this.passWord.setText("");
+        
+    }//GEN-LAST:event_logOutMouseClicked
+
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        // TODO add your handling code here:
+        this.MemberHome.setVisible(false);
+          this.ListOfWarehouseMember.setVisible(true);
+    }//GEN-LAST:event_jButton1MouseClicked
+
+    private void backLogin2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backLogin2MouseClicked
+        // TODO add your handling code here:
+        this.ListOfWarehouseMember.setVisible(false);
+          this.MemberHome.setVisible(true);
+    }//GEN-LAST:event_backLogin2MouseClicked
+
+    private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
+        // TODO add your handling code here:
+        this.MemberHome.setVisible(false);
+        this.ListOfWarehouseEmployee.setVisible(true);
+    }//GEN-LAST:event_jButton4MouseClicked
+
+    private void backLogin3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backLogin3MouseClicked
+        // TODO add your handling code here:
+        this.ListOfWarehouseEmployee.setVisible(false);
+        this.MemberHome.setVisible(true);
+    }//GEN-LAST:event_backLogin3MouseClicked
+
+    private void logoutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutMouseClicked
+        // TODO add your handling code here:
+        this.EmployeeHome.setVisible(false);
+        this.Login.setVisible(true);
+        this.userName.setText("");
+        this.passWord.setText("");
+
+    }//GEN-LAST:event_logoutMouseClicked
+
+    private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
+        // TODO add your handling code here:
+         this.MemberHome.setVisible(false);
+        this.ListOfPermission.setVisible(true);   
+    }//GEN-LAST:event_jButton3MouseClicked
 
     /**
      * @param args the command line arguments
@@ -1437,6 +1658,7 @@ public class SITwarehouse extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Chackpass;
     private javax.swing.JPanel Container;
+    private javax.swing.JButton Edit;
     private javax.swing.JPanel EditProfile;
     private javax.swing.JPanel EditWarehouse;
     private javax.swing.JPanel EmployeeHome;
@@ -1452,7 +1674,7 @@ public class SITwarehouse extends javax.swing.JFrame {
     private javax.swing.JPasswordField accPass;
     private javax.swing.JTextField accPass1;
     private javax.swing.JTextField accPass2;
-    private javax.swing.JTextPane address;
+    private javax.swing.JTextArea address;
     private javax.swing.JTextField address1;
     private javax.swing.JTextField address2;
     private javax.swing.JButton backLogin;
@@ -1464,13 +1686,12 @@ public class SITwarehouse extends javax.swing.JFrame {
     private javax.swing.JPasswordField cfAccPass;
     private javax.swing.JTextField cfAccPass1;
     private javax.swing.JTextField cfAccPass2;
+    private javax.swing.JLabel date;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
@@ -1540,7 +1761,9 @@ public class SITwarehouse extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
+    private javax.swing.JButton logOut;
     private javax.swing.JButton login;
+    private javax.swing.JButton logout;
     private javax.swing.JTextField name;
     private javax.swing.JTextField name1;
     private javax.swing.JTextField name2;
