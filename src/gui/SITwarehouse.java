@@ -32,7 +32,7 @@ public class SITwarehouse extends javax.swing.JFrame {
      */
     public SITwarehouse() {
         initComponents();
-
+        
     }
     
     public void closeToLogin(){
@@ -59,6 +59,8 @@ public class SITwarehouse extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane7 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
         Container = new javax.swing.JPanel();
         Login = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -85,8 +87,8 @@ public class SITwarehouse extends javax.swing.JFrame {
         Chackpass = new javax.swing.JLabel();
         accPass = new javax.swing.JPasswordField();
         cfAccPass = new javax.swing.JPasswordField();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        address = new javax.swing.JTextArea();
+        jScrollPane9 = new javax.swing.JScrollPane();
+        address = new javax.swing.JTextPane();
         MemberHome = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
@@ -180,6 +182,27 @@ public class SITwarehouse extends javax.swing.JFrame {
         jTextField9 = new javax.swing.JTextField();
         jLabel45 = new javax.swing.JLabel();
         jTextField10 = new javax.swing.JTextField();
+        CreatePermission = new javax.swing.JPanel();
+        jLabel46 = new javax.swing.JLabel();
+        jLabel47 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jComboBox2 = new javax.swing.JComboBox<>();
+        jComboBox3 = new javax.swing.JComboBox<>();
+        jTextField11 = new javax.swing.JTextField();
+        jLabel48 = new javax.swing.JLabel();
+        jTextField12 = new javax.swing.JTextField();
+        jLabel49 = new javax.swing.JLabel();
+        jTextField14 = new javax.swing.JTextField();
+        jLabel50 = new javax.swing.JLabel();
+        jComboBox4 = new javax.swing.JComboBox<>();
+        jLabel51 = new javax.swing.JLabel();
+        jButton5 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
+        backLogin6 = new javax.swing.JButton();
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane7.setViewportView(jTextArea1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -235,23 +258,25 @@ public class SITwarehouse extends javax.swing.JFrame {
                             .addComponent(jLabel2)
                             .addComponent(userName, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
                             .addComponent(jLabel3)
-                            .addComponent(userType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(passWord)))
+                            .addComponent(passWord)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, LoginLayout.createSequentialGroup()
+                                .addComponent(userType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(63, 63, 63))))
                     .addGroup(LoginLayout.createSequentialGroup()
                         .addGap(346, 346, 346)
                         .addGroup(LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(register, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(login, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap(318, Short.MAX_VALUE))
+                .addContainerGap(248, Short.MAX_VALUE))
         );
         LoginLayout.setVerticalGroup(
             LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(LoginLayout.createSequentialGroup()
                 .addGap(128, 128, 128)
                 .addComponent(jLabel1)
-                .addGap(14, 14, 14)
-                .addComponent(userType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
+                .addComponent(userType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(14, 14, 14)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(userName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -259,11 +284,11 @@ public class SITwarehouse extends javax.swing.JFrame {
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(passWord, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(login, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
+                .addComponent(login, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(register)
-                .addContainerGap(141, Short.MAX_VALUE))
+                .addContainerGap(121, Short.MAX_VALUE))
         );
 
         Container.add(Login, "card2");
@@ -296,6 +321,11 @@ public class SITwarehouse extends javax.swing.JFrame {
 
         jLabel10.setText("Phone Number");
 
+        if(phoneNumber.getText().length() == 3){
+            phoneNumber.setEnabled(false);
+        }else{
+            phoneNumber.setEnabled(true);
+        }
         phoneNumber.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 phoneNumberNumberActionPerformed(evt);
@@ -322,16 +352,14 @@ public class SITwarehouse extends javax.swing.JFrame {
             }
         });
 
-        address.setColumns(20);
-        address.setRows(5);
-        jScrollPane1.setViewportView(address);
+        jScrollPane9.setViewportView(address);
 
         javax.swing.GroupLayout RegisterLayout = new javax.swing.GroupLayout(Register);
         Register.setLayout(RegisterLayout);
         RegisterLayout.setHorizontalGroup(
             RegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(RegisterLayout.createSequentialGroup()
-                .addGroup(RegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(RegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(RegisterLayout.createSequentialGroup()
                         .addGap(28, 28, 28)
                         .addComponent(backLogin)
@@ -345,19 +373,24 @@ public class SITwarehouse extends javax.swing.JFrame {
                     .addGroup(RegisterLayout.createSequentialGroup()
                         .addGap(256, 256, 256)
                         .addGroup(RegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel10)
-                            .addGroup(RegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(accId, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                                .addComponent(jLabel5)
-                                .addComponent(jLabel6)
-                                .addComponent(accPass, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                                .addComponent(jLabel7)
-                                .addComponent(cfAccPass, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                                .addComponent(jLabel8)
-                                .addComponent(name, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                                .addComponent(jLabel9)
-                                .addComponent(jScrollPane1))
-                            .addComponent(phoneNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(RegisterLayout.createSequentialGroup()
+                                .addGroup(RegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(accId, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                                    .addComponent(jLabel5)
+                                    .addComponent(jLabel6)
+                                    .addComponent(accPass, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                                    .addComponent(jLabel7)
+                                    .addComponent(cfAccPass, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                                    .addComponent(jLabel8)
+                                    .addComponent(name, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                                    .addComponent(jLabel9))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(RegisterLayout.createSequentialGroup()
+                                .addGroup(RegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jLabel10)
+                                    .addComponent(phoneNumber, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                                    .addComponent(jScrollPane9))
+                                .addGap(0, 0, Short.MAX_VALUE)))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         RegisterLayout.setVerticalGroup(
@@ -385,16 +418,16 @@ public class SITwarehouse extends javax.swing.JFrame {
                 .addComponent(name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel9)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel10)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(phoneNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(16, 16, 16)
                 .addGroup(RegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(RegisterLayout.createSequentialGroup()
-                        .addComponent(Chackpass, javax.swing.GroupLayout.DEFAULT_SIZE, 20, Short.MAX_VALUE)
+                        .addComponent(Chackpass, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(82, 82, 82))
                     .addGroup(RegisterLayout.createSequentialGroup()
                         .addComponent(submit)
@@ -515,7 +548,7 @@ public class SITwarehouse extends javax.swing.JFrame {
                 .addComponent(jLabel14)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(63, Short.MAX_VALUE))
+                .addContainerGap(43, Short.MAX_VALUE))
         );
 
         Container.add(MemberHome, "card4");
@@ -619,7 +652,7 @@ public class SITwarehouse extends javax.swing.JFrame {
                 .addComponent(jLabel18)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(58, Short.MAX_VALUE))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
 
         Container.add(EmployeeHome, "card5");
@@ -755,7 +788,7 @@ public class SITwarehouse extends javax.swing.JFrame {
                 .addComponent(phoneNumber1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(submit1)
-                .addContainerGap(93, Short.MAX_VALUE))
+                .addContainerGap(73, Short.MAX_VALUE))
         );
 
         Container.add(EditProfile, "card6");
@@ -887,7 +920,7 @@ public class SITwarehouse extends javax.swing.JFrame {
                     .addComponent(jLabel27)
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton7))
-                .addContainerGap(37, Short.MAX_VALUE))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
 
         Container.add(ListOfWarehouseMember, "card7");
@@ -1018,7 +1051,7 @@ public class SITwarehouse extends javax.swing.JFrame {
                 .addComponent(phoneNumber2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(submit2)
-                .addContainerGap(93, Short.MAX_VALUE))
+                .addContainerGap(73, Short.MAX_VALUE))
         );
 
         Container.add(EditWarehouse, "card8");
@@ -1126,7 +1159,7 @@ public class SITwarehouse extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(64, 64, 64)))
-                .addContainerGap(87, Short.MAX_VALUE))
+                .addContainerGap(67, Short.MAX_VALUE))
         );
 
         Container.add(ListOfWarehouseEmployee, "card7");
@@ -1190,7 +1223,7 @@ public class SITwarehouse extends javax.swing.JFrame {
                 .addComponent(jLabel42)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ListOfPermissionLayout.createSequentialGroup()
-                .addContainerGap(91, Short.MAX_VALUE)
+                .addContainerGap(73, Short.MAX_VALUE)
                 .addGroup(ListOfPermissionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(ListOfPermissionLayout.createSequentialGroup()
                         .addComponent(jLabel43)
@@ -1207,32 +1240,146 @@ public class SITwarehouse extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButton10))
                     .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 570, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(110, 110, 110))
+                .addGap(128, 128, 128))
         );
         ListOfPermissionLayout.setVerticalGroup(
             ListOfPermissionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ListOfPermissionLayout.createSequentialGroup()
-                .addGap(64, 64, 64)
                 .addGroup(ListOfPermissionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(ListOfPermissionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jButton10)
-                        .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel43)
-                        .addComponent(jLabel44)
-                        .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel45)
-                        .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(ListOfPermissionLayout.createSequentialGroup()
+                        .addGap(64, 64, 64)
                         .addGroup(ListOfPermissionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(backLogin5)
                             .addComponent(jLabel42))
                         .addGap(18, 18, 18)
                         .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(64, 64, 64)))
-                .addContainerGap(87, Short.MAX_VALUE))
+                        .addGap(64, 64, 64))
+                    .addGroup(ListOfPermissionLayout.createSequentialGroup()
+                        .addGap(137, 137, 137)
+                        .addGroup(ListOfPermissionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButton10)
+                            .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel43)
+                            .addComponent(jLabel44)
+                            .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel45)
+                            .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(67, Short.MAX_VALUE))
         );
 
         Container.add(ListOfPermission, "card10");
+
+        jLabel46.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jLabel46.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel46.setText("Report the money transfer");
+
+        jLabel47.setText("Transfer Date:");
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
+
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" }));
+
+        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2559", "2560", "2561", "2562", "2563", "2564", "2565" }));
+
+        jLabel48.setText("Agreement ID:");
+
+        jLabel49.setText("Amount of Money:");
+
+        jLabel50.setText("Bank:");
+
+        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Kasikorn", "Krungthep", "Thaipanit", "Krungthai", "Issaram" }));
+
+        jLabel51.setText("Bank account No:");
+
+        jButton5.setText("Submit");
+
+        jButton6.setText("Clear");
+
+        backLogin6.setText("< Back");
+        backLogin6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backLogin6ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout CreatePermissionLayout = new javax.swing.GroupLayout(CreatePermission);
+        CreatePermission.setLayout(CreatePermissionLayout);
+        CreatePermissionLayout.setHorizontalGroup(
+            CreatePermissionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(CreatePermissionLayout.createSequentialGroup()
+                .addGroup(CreatePermissionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(CreatePermissionLayout.createSequentialGroup()
+                        .addGap(238, 238, 238)
+                        .addGroup(CreatePermissionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel47)
+                            .addComponent(jLabel48)
+                            .addComponent(jLabel49)
+                            .addComponent(jLabel50)
+                            .addComponent(jLabel51))
+                        .addGap(18, 18, 18)
+                        .addGroup(CreatePermissionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jTextField12)
+                            .addComponent(jTextField11)
+                            .addComponent(jTextField14, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jComboBox4, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(CreatePermissionLayout.createSequentialGroup()
+                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(CreatePermissionLayout.createSequentialGroup()
+                        .addGap(331, 331, 331)
+                        .addGroup(CreatePermissionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)
+                            .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(CreatePermissionLayout.createSequentialGroup()
+                        .addGap(35, 35, 35)
+                        .addComponent(backLogin6)
+                        .addGap(58, 58, 58)
+                        .addComponent(jLabel46)))
+                .addContainerGap(160, Short.MAX_VALUE))
+        );
+        CreatePermissionLayout.setVerticalGroup(
+            CreatePermissionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(CreatePermissionLayout.createSequentialGroup()
+                .addGroup(CreatePermissionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(CreatePermissionLayout.createSequentialGroup()
+                        .addGap(64, 64, 64)
+                        .addComponent(jLabel46))
+                    .addGroup(CreatePermissionLayout.createSequentialGroup()
+                        .addGap(75, 75, 75)
+                        .addComponent(backLogin6)))
+                .addGap(18, 18, 18)
+                .addGroup(CreatePermissionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel48))
+                .addGap(18, 18, 18)
+                .addGroup(CreatePermissionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel47))
+                .addGap(18, 18, 18)
+                .addGroup(CreatePermissionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel49))
+                .addGap(18, 18, 18)
+                .addGroup(CreatePermissionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel50))
+                .addGap(18, 18, 18)
+                .addGroup(CreatePermissionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTextField14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel51))
+                .addGap(28, 28, 28)
+                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton6)
+                .addContainerGap(125, Short.MAX_VALUE))
+        );
+
+        Container.add(CreatePermission, "card11");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -1427,7 +1574,7 @@ public class SITwarehouse extends javax.swing.JFrame {
         // TODO add your handling code here:
        boolean  checkRegieter = true;
      try{  
-       String nameString = name.getText();
+        String nameString = name.getText();
         String addressString = address.getText();
         String phoneNumberString = phoneNumber.getText();
         String accIdString = accId.getText();
@@ -1435,17 +1582,17 @@ public class SITwarehouse extends javax.swing.JFrame {
         String cfPasswordString =new String(cfAccPass.getPassword());
          if(name.getText().equalsIgnoreCase("") || this.address.getText().equalsIgnoreCase("")||this.phoneNumber.getText().equalsIgnoreCase("")
                  || accId.getText().equalsIgnoreCase(" ")||accPassString.equalsIgnoreCase("")||cfPasswordString.equalsIgnoreCase("")){
-        JOptionPane.showMessageDialog(null,"Please , Enter all fields." );
+        JOptionPane.showMessageDialog(null,"Please , Enter all the fields." );
          }
          else if (cfPasswordString.equals(accPassString)) {
           
              create(nameString, addressString, phoneNumberString, accIdString, accPassString);
-            JOptionPane.showMessageDialog(null, "Regieter Success");
+            JOptionPane.showMessageDialog(null, "Register Success");
             closeToLogin();
             
 //            Container.add(Login);
         }else {
-         JOptionPane.showMessageDialog(null, "Password and comfirmpass isn't corract");
+         JOptionPane.showMessageDialog(null, "Password and Comfirm Password is not the same.");
          }
      }catch(Exception e){
          Container.add(Login);
@@ -1460,79 +1607,82 @@ public class SITwarehouse extends javax.swing.JFrame {
     private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
         String userTypeStr = (String) userType.getSelectedItem();
         String userNameString = userName.getText();
-        System.out.println(userNameString);
         String passString= new String( passWord.getPassword());
-   //     String passString = passWord.getPassword();
         
-        System.out.println(passString);
-        if (userTypeStr.equalsIgnoreCase("Member")) {
-            try {
-                boolean checkLogin = true;
-                Connection conn = ConnectionBuilder.connect();
-                Statement st = conn.createStatement();
-                String sql = "select * from mydb.member";
-                st.executeQuery(sql);
-                ResultSet rs = st.getResultSet();
-                if (this.userName.getText().equalsIgnoreCase("") || this.passWord.getText().equalsIgnoreCase("")) {
-                    JOptionPane.showMessageDialog(null, "Please , Enter all fields.");
-                } else {
-                    while (rs.next()) {
-                        if(this.userName.getText().equalsIgnoreCase(rs.getString("accid")) 
-                                &&passString.equalsIgnoreCase(rs.getString("accpass"))){
-                            JOptionPane.showMessageDialog(null, "Login Success");
-                            checkLogin = false;
-                            this.Login.setVisible(false);
-                            this.MemberHome.setVisible(true);
-                         //   this.MemberHome.setSize(300, 300);
-                        }
-          
-                    }
-                    if(checkLogin){
-                        JOptionPane.showMessageDialog(null, "You are not member");
-                    }
-
-                }
-
-            } catch (Exception ex) {
-                ex.printStackTrace();
-            }
-        } else {
-         try {
-                boolean checkLogin = true;
-                Connection conn = ConnectionBuilder.connect();
-                Statement st = conn.createStatement();
-                String sql = "select * from mydb.Employee";
-                st.executeQuery(sql);
-                ResultSet rs = st.getResultSet();
-                if (this.userName.getText().equalsIgnoreCase("") || this.passWord.getText().equalsIgnoreCase("")) {
-                    JOptionPane.showMessageDialog(null, "Please , Enter all fields.");
-                } else {
-                    while (rs.next()) {
-                        if(this.userName.getText().equalsIgnoreCase(rs.getString("empid")) 
-                                && this.passWord.getText().equalsIgnoreCase(rs.getString("emppass"))){
-                            JOptionPane.showMessageDialog(null, "Login Success");
-                            checkLogin = false;
-                            this.Login.setVisible(false);
-                            this.EmployeeHome.setVisible(true);
-                            
-                          //  this.EditProfile.setSize(300, 300);
-                        }
-          
-                    }
-                    if(checkLogin){
-                        JOptionPane.showMessageDialog(null, "You are not member");
-                    }
-
-                }
-
-            } catch (Exception ex) {
-                ex.printStackTrace();
-            }
+        if(SITOperation.login(userNameString, passString, userTypeStr)){
+            JOptionPane.showMessageDialog(null, "Logged in");
+        }else{
+            JOptionPane.showMessageDialog(null, "Username or Password is wrong, Please try again or contect adminstator."+userTypeStr);
         }
-///else {
-           
-      //  }
-        // TODO add your handling code here:
+                
+        
+//     String passString = passWord.getPassword();
+//        System.out.println(passString);
+//        if (userTypeStr.equalsIgnoreCase("Member")) {
+//            try {
+//                boolean checkLogin = true;
+//                Connection conn = ConnectionBuilder.connect();
+//                Statement st = conn.createStatement();
+//                String sql = "select * from mydb.member";
+//                st.executeQuery(sql);
+//                ResultSet rs = st.getResultSet();
+//                if (this.userName.getText().equalsIgnoreCase("") || this.passWord.getText().equalsIgnoreCase("")) {
+//                    JOptionPane.showMessageDialog(null, "Please , Enter all fields.");
+//                } else {
+//                    while (rs.next()) {
+//                        if(this.userName.getText().equalsIgnoreCase(rs.getString("accid")) 
+//                                &&passString.equalsIgnoreCase(rs.getString("accpass"))){
+//                            JOptionPane.showMessageDialog(null, "Login Success");
+//                            checkLogin = false;
+//                            this.Login.setVisible(false);
+//                            this.MemberHome.setVisible(true);
+//                         //   this.MemberHome.setSize(300, 300);
+//                        }
+//          
+//                    }
+//                    if(checkLogin){
+//                        JOptionPane.showMessageDialog(null, "You are not member");
+//                    }
+//
+//                }
+//
+//            } catch (Exception ex) {
+//                ex.printStackTrace();
+//            }
+//        } else {
+//         try {
+//                boolean checkLogin = true;
+//                Connection conn = ConnectionBuilder.connect();
+//                Statement st = conn.createStatement();
+//                String sql = "select * from mydb.Employee";
+//                st.executeQuery(sql);
+//                ResultSet rs = st.getResultSet();
+//                if (this.userName.getText().equalsIgnoreCase("") || this.passWord.getText().equalsIgnoreCase("")) {
+//                    JOptionPane.showMessageDialog(null, "Please , Enter all fields.");
+//                } else {
+//                    while (rs.next()) {
+//                        if(this.userName.getText().equalsIgnoreCase(rs.getString("empid")) 
+//                                && this.passWord.getText().equalsIgnoreCase(rs.getString("emppass"))){
+//                            JOptionPane.showMessageDialog(null, "Login Success");
+//                            checkLogin = false;
+//                            this.Login.setVisible(false);
+//                            this.EmployeeHome.setVisible(true);
+//                            
+//                          //  this.EditProfile.setSize(300, 300);
+//                        }
+//          
+//                    }
+//                    if(checkLogin){
+//                        JOptionPane.showMessageDialog(null, "You are not member");
+//                    }
+//
+//                }
+//
+//            } catch (Exception ex) {
+//                ex.printStackTrace();
+//            }
+//        }
+
 
     }//GEN-LAST:event_loginActionPerformed
 
@@ -1617,6 +1767,10 @@ public class SITwarehouse extends javax.swing.JFrame {
         this.ListOfPermission.setVisible(true);   
     }//GEN-LAST:event_jButton3MouseClicked
 
+    private void backLogin6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backLogin6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_backLogin6ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1658,6 +1812,7 @@ public class SITwarehouse extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Chackpass;
     private javax.swing.JPanel Container;
+    private javax.swing.JPanel CreatePermission;
     private javax.swing.JButton Edit;
     private javax.swing.JPanel EditProfile;
     private javax.swing.JPanel EditWarehouse;
@@ -1674,7 +1829,7 @@ public class SITwarehouse extends javax.swing.JFrame {
     private javax.swing.JPasswordField accPass;
     private javax.swing.JTextField accPass1;
     private javax.swing.JTextField accPass2;
-    private javax.swing.JTextArea address;
+    private javax.swing.JTextPane address;
     private javax.swing.JTextField address1;
     private javax.swing.JTextField address2;
     private javax.swing.JButton backLogin;
@@ -1683,6 +1838,7 @@ public class SITwarehouse extends javax.swing.JFrame {
     private javax.swing.JButton backLogin3;
     private javax.swing.JButton backLogin4;
     private javax.swing.JButton backLogin5;
+    private javax.swing.JButton backLogin6;
     private javax.swing.JPasswordField cfAccPass;
     private javax.swing.JTextField cfAccPass1;
     private javax.swing.JTextField cfAccPass2;
@@ -1692,9 +1848,15 @@ public class SITwarehouse extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
+    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> jComboBox2;
+    private javax.swing.JComboBox<String> jComboBox3;
+    private javax.swing.JComboBox<String> jComboBox4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1735,24 +1897,35 @@ public class SITwarehouse extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel44;
     private javax.swing.JLabel jLabel45;
+    private javax.swing.JLabel jLabel46;
+    private javax.swing.JLabel jLabel47;
+    private javax.swing.JLabel jLabel48;
+    private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel50;
+    private javax.swing.JLabel jLabel51;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;
     private javax.swing.JTable jTable4;
     private javax.swing.JTable jTable5;
+    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField10;
+    private javax.swing.JTextField jTextField11;
+    private javax.swing.JTextField jTextField12;
+    private javax.swing.JTextField jTextField14;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
