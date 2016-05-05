@@ -10,28 +10,16 @@ public class Member extends People {
     private long memId;
     private String accId;
     private String accPass;
-   // private String bankName;
- //   private String bankId;
-    private String Confirm;
-
-    public Member() {
+    
+    public Member(){
+        
     }
 
-    public Member(long memId, String accId, String accPass, String Confirm) {
+    public Member(long memId, String accId, String accPass, String name, String address, String phoneNumber) {
+        super(name, address, phoneNumber);
         this.memId = memId;
         this.accId = accId;
         this.accPass = accPass;
-        this.Confirm = Confirm;
-    }
-
-  
-
-    public String getConfirm() {
-        return Confirm;
-    }
-
-    public void setConfirm(String Confirm) {
-        this.Confirm = Confirm;
     }
 
     public long getMemId() {
@@ -57,9 +45,7 @@ public class Member extends People {
     public void setAccPass(String accPass) {
         this.accPass = accPass;
     }
-
     
-     
     public static void create(String name, String address, String phoneNumber , String accId, String accPass){
         try{
             if(haveThisAccId(accId)){
@@ -122,6 +108,40 @@ public class Member extends People {
             System.err.println(err);
         }
         return 0;
+    }
+    
+    public static boolean edit(String name, String address, String phoneNumber , String accPass, long memId, String newPass){
+        try{
+                Connection cnb = ConnectionBuilder.connect();
+                Statement stmt = cnb.createStatement();
+                String SQL = "SELECT * FROM MEMBER WHERE MEMID="+memId+" and ACCPASS='"+accPass+"'"; 
+                ResultSet rs = stmt.executeQuery(SQL);
+                if(rs.next()){
+                    SQL = "UPDATE MEMBER SET ACCPASS=?, MEMNAME=?, MEMADDRESS=?, MEMPHONENUMBER=? WHERE MEMID=?";
+                    PreparedStatement pstmt = cnb.prepareStatement(SQL);
+                    if(newPass.equalsIgnoreCase("")){
+                        pstmt.setString(1, accPass);
+                    }else{
+                        pstmt.setString(1, newPass);
+                    }
+                    pstmt.setString(2, name);
+                    pstmt.setString(3, address);
+                    pstmt.setString(4, phoneNumber);
+                    pstmt.setLong(5, memId);
+                    pstmt.executeUpdate();
+                    pstmt.close();          
+                    return true;
+                }else{
+                    return false;
+                }
+        }
+        catch(SQLException err){
+            System.err.println(err);
+        }
+        catch(ClassNotFoundException err){
+            System.err.println(err);
+        }
+        return false;
     }
 
     public static void getDetailsById(long memId){
