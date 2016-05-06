@@ -7,7 +7,7 @@ import java.util.GregorianCalendar;
 
 public class SITwarehouse {
     
-    public static void main(String[] args)  {
+    public static void main(String[] args) throws SQLException, ClassNotFoundException  {
         
      /*  GregorianCalendar startDate,endDate;
                 startDate = new GregorianCalendar();
@@ -23,6 +23,6 @@ public class SITwarehouse {
                 System.out.println(ld);*/
       //  Employee.createEmployee("jame", "jame", "jame", "jame", "jame", "jame", "jame");
       //  SITOperation.loginMember("jamemez", "kittisak");
+        SITOperation.SeachWarehouseSize("SMALL");
     }
-    
 }

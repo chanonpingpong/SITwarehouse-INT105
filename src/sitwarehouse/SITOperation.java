@@ -1,83 +1,133 @@
 package sitwarehouse;
+
 import java.util.Scanner;
 import java.sql.*;
 
 public class SITOperation {
-   public static Member mem = new Member();
-   public static Employee em = new Employee();
-  
+
+    public static Member mem = new Member();
+    public static Employee em = new Employee();
+
     public static boolean login(String username, String password, String type) {
-        try{
+        try {
             Connection cnb = ConnectionBuilder.connect();
             Statement stmt = cnb.createStatement();
             String SQL;
-            if(type.equalsIgnoreCase("employee")){
-                SQL = "SELECT * FROM MYDB.EMPLOYEE WHERE EMPID='"+username+"' and EMPPASS='"+password+"'";
+            if (type.equalsIgnoreCase("employee")) {
+                SQL = "SELECT * FROM MYDB.EMPLOYEE WHERE EMPID='" + username + "' and EMPPASS='" + password + "'";
                 ResultSet rs = stmt.executeQuery(SQL);
-                if(rs.next()){
-                long memId = rs.getLong(1);
-                String bankname = rs.getString(2);
-                String bankid = rs.getString(3);
-                String name = rs.getString(4);
-                String address = rs.getString(5);
-                String phoneNumber = rs.getString(6);
-                String accId = rs.getString(7);
-                String accPass = rs.getString(8);
-                System.out.println("-----------EMPLOYEE LOGIN SUCCESS----------");
-                objMappingEmployee(memId, memId, name, accId, name, address, phoneNumber);  
-                cnb.close();
-                return true;
-                }else{
-                System.out.println("Username or Password is wrong, Please try again or contect adminstator.");
-                return false;
+                if (rs.next()) {
+                    long memId = rs.getLong(1);
+                    String bankname = rs.getString(2);
+                    String bankid = rs.getString(3);
+                    String name = rs.getString(4);
+                    String address = rs.getString(5);
+                    String phoneNumber = rs.getString(6);
+                    String accId = rs.getString(7);
+                    String accPass = rs.getString(8);
+                    System.out.println("-----------EMPLOYEE LOGIN SUCCESS----------");
+                    objMappingEmployee(memId, memId, name, accId, name, address, phoneNumber);
+                    cnb.close();
+                    return true;
+                } else {
+                    System.out.println("Username or Password is wrong, Please try again or contect adminstator.");
+                    return false;
                 }
-            }else{
-                SQL = "SELECT * FROM MYDB.MEMBER WHERE ACCID='"+username+"' and ACCPASS='"+password+"'";
+            } else {
+                SQL = "SELECT * FROM MYDB.MEMBER WHERE ACCID='" + username + "' and ACCPASS='" + password + "'";
                 ResultSet rs = stmt.executeQuery(SQL);
-                if(rs.next()){
+                if (rs.next()) {
                     long memId = rs.getLong(1);
                     String accId = rs.getString(2);
                     String accPass = rs.getString(3);
                     String name = rs.getString(4);
                     String address = rs.getString(5);
                     String phoneNumber = rs.getString(6);
-                    objMappingMember(memId, accId, accPass, name, address, phoneNumber);  
+                    objMappingMember(memId, accId, accPass, name, address, phoneNumber);
                     cnb.close();
                     return true;
-                }else{
+                } else {
                     System.out.println("Username or Password is wrong, Please try again or contect adminstator.");
                     return false;
                 }
             }
-        
-        }
-        catch(SQLException err){
+
+        } catch (SQLException err) {
             System.out.println(err);
-        }
-        catch(ClassNotFoundException err){
+        } catch (ClassNotFoundException err) {
             System.out.println(err);
         }
         return false;
     }
-    
-    
-    
-    public static void objMappingMember(long memId, String accId, String accPass, String name, String address, String phoneNumber){    
+
+    public static void objMappingMember(long memId, String accId, String accPass, String name, String address, String phoneNumber) {
         mem = new Member(memId, accId, accPass, name, address, phoneNumber);
-        System.out.println("Member ID: "+mem.getMemId()+" is logged in");
-    } 
-     public static void objMappingEmployee(long emId, double emSalary, String emBankName, String emBankId, String name, String address, String phoneNumber){    
+        System.out.println("Member ID: " + mem.getMemId() + " is logged in");
+    }
+
+    public static void objMappingEmployee(long emId, double emSalary, String emBankName, String emBankId, String name, String address, String phoneNumber) {
         em = new Employee(emId, emSalary, emBankName, emBankId, name, address, phoneNumber);
-        System.out.println("Employee ID: "+em.getEmId()+" is logged in");
-    } 
-    public static void logout(String who){
-        if(who.equalsIgnoreCase("member")){
-            System.out.print("Member ID: "+mem.getMemId()+" is logged out");
+        System.out.println("Employee ID: " + em.getEmId() + " is logged in");
+    }
+
+    public static void logout(String who) {
+        if (who.equalsIgnoreCase("member")) {
+            System.out.print("Member ID: " + mem.getMemId() + " is logged out");
             mem = null;
-        }else if(who.equalsIgnoreCase("employee")){
-            System.out.println("Employee ID: "+em.getEmId()+" is logged out");
+        } else if (who.equalsIgnoreCase("employee")) {
+            System.out.println("Employee ID: " + em.getEmId() + " is logged out");
             em = null;
         }
     }
-    
+
+    public static void SeachWarehouseID(String warehouseid) throws SQLException, ClassNotFoundException {
+
+        Connection cnb = ConnectionBuilder.connect();
+        Statement stmt = cnb.createStatement();
+        String SQL = "SELECT * FROM WAREHOUSE WHERE WAREHOUSEID=" + warehouseid;
+        ResultSet rs = stmt.executeQuery(SQL);
+        while (rs.next()) {
+            long warehouse = rs.getLong(1);
+            String Size = rs.getString(2);
+            String price = rs.getString(3);
+            String status = rs.getString(4);
+            System.out.println(warehouse + " " + Size + " " + price + " " + status);
+        }
+        stmt.close();
+    }
+
+    public static void SeachWarehousePrice(String Price) throws SQLException, ClassNotFoundException {
+
+        Connection cnb = ConnectionBuilder.connect();
+        Statement stmt = cnb.createStatement();
+        String SQL = "SELECT * FROM WAREHOUSE WHERE PRICE=" + Price;
+        ResultSet rs = stmt.executeQuery(SQL);
+        while (rs.next()) {
+            long warehouse = rs.getLong(1);
+            String Size = rs.getString(2);
+            String price = rs.getString(3);
+            String status = rs.getString(4);
+            System.out.println(warehouse + " " + Size + " " + price + " " + status);
+        }
+        stmt.close();
+    }
+
+    public static void SeachWarehouseSize(String size) throws SQLException, ClassNotFoundException {
+
+        Connection cnb = ConnectionBuilder.connect();
+        Statement stmt = cnb.createStatement();
+        String SQL = "SELECT * FROM WAREHOUSE WHERE SIZE='"+size+"'";
+        ResultSet rs = stmt.executeQuery(SQL);
+            while (rs.next()) {
+                long warehouse = rs.getLong(1);
+                String Size = rs.getString(2);
+                String price = rs.getString(3);
+                String status = rs.getString(4);
+                System.out.println(warehouse + " " + Size + " " + price + " " + status);
+               
+            }
+            stmt.close();
+       }
+        
+     
 }
