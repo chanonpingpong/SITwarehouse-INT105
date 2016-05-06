@@ -179,11 +179,11 @@ public class SITwarehouse extends javax.swing.JFrame {
         backLogin5 = new javax.swing.JButton();
         jLabel42 = new javax.swing.JLabel();
         jScrollPane6 = new javax.swing.JScrollPane();
-        jTable5 = new javax.swing.JTable();
-        jButton10 = new javax.swing.JButton();
+        TablePMS = new javax.swing.JTable();
+        tagSearch = new javax.swing.JButton();
         jLabel45 = new javax.swing.JLabel();
-        jTextField10 = new javax.swing.JTextField();
-        jComboBox7 = new javax.swing.JComboBox<String>();
+        SearchPms = new javax.swing.JTextField();
+        SelectPms = new javax.swing.JComboBox<String>();
         CreatePermission = new javax.swing.JPanel();
         jLabel46 = new javax.swing.JLabel();
         jLabel47 = new javax.swing.JLabel();
@@ -668,55 +668,50 @@ public class SITwarehouse extends javax.swing.JFrame {
         EmployeeHomeLayout.setHorizontalGroup(
             EmployeeHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(EmployeeHomeLayout.createSequentialGroup()
-                .addGap(96, 96, 96)
                 .addGroup(EmployeeHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(EmployeeHomeLayout.createSequentialGroup()
-                        .addComponent(dateEmpHome)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, EmployeeHomeLayout.createSequentialGroup()
-                        .addGroup(EmployeeHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGap(96, 96, 96)
+                        .addGroup(EmployeeHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(EmployeeHomeLayout.createSequentialGroup()
                                 .addComponent(empIdGui)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(logout, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, EmployeeHomeLayout.createSequentialGroup()
-                                .addComponent(jLabel15)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 751, Short.MAX_VALUE)
+                                .addGap(198, 198, 198)
                                 .addComponent(jButton4)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton3)))
-                        .addGap(87, 87, 87))
+                                .addComponent(jButton3))
+                            .addComponent(jLabel15)
+                            .addComponent(jLabel18)
+                            .addGroup(EmployeeHomeLayout.createSequentialGroup()
+                                .addComponent(dateEmpHome)
+                                .addGap(303, 303, 303)
+                                .addComponent(logout, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(EmployeeHomeLayout.createSequentialGroup()
-                        .addComponent(jLabel18)
-                        .addGap(0, 0, Short.MAX_VALUE))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, EmployeeHomeLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 571, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(138, 138, 138))
+                        .addGap(133, 133, 133)
+                        .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 571, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(634, Short.MAX_VALUE))
         );
         EmployeeHomeLayout.setVerticalGroup(
             EmployeeHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(EmployeeHomeLayout.createSequentialGroup()
+                .addGap(56, 56, 56)
+                .addComponent(jLabel15)
                 .addGroup(EmployeeHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(EmployeeHomeLayout.createSequentialGroup()
-                        .addGap(56, 56, 56)
-                        .addGroup(EmployeeHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel15)
-                            .addGroup(EmployeeHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jButton4)
-                                .addComponent(jButton3)))
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(empIdGui))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, EmployeeHomeLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(logout)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(dateEmpHome)
-                .addGap(18, 18, 18)
+                    .addGroup(EmployeeHomeLayout.createSequentialGroup()
+                        .addGap(17, 17, 17)
+                        .addGroup(EmployeeHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButton3)
+                            .addComponent(jButton4))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(EmployeeHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(dateEmpHome)
+                    .addComponent(logout))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel18)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(330, Short.MAX_VALUE))
+                .addContainerGap(323, Short.MAX_VALUE))
         );
 
         Container.add(EmployeeHome, "card5");
@@ -1266,73 +1261,91 @@ public class SITwarehouse extends javax.swing.JFrame {
         jLabel42.setForeground(new java.awt.Color(255, 255, 255));
         jLabel42.setText("List of Permission");
 
-        jTable5.setModel(new javax.swing.table.DefaultTableModel(
+        TablePMS.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "PermissionID", "AgreementID", "PaidDate", "PaidMount", "Ischeck", "BamkName", "BankID"
             }
-        ));
-        jScrollPane6.setViewportView(jTable5);
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Long.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class
+            };
 
-        jButton10.setText("Search");
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        TablePMS.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+                TablePMSAncestorAdded(evt);
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+        });
+        jScrollPane6.setViewportView(TablePMS);
 
-        jLabel45.setText("Search by:");
-
-        jTextField10.addActionListener(new java.awt.event.ActionListener() {
+        tagSearch.setText("Search");
+        tagSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField10ActionPerformed(evt);
+                tagSearchActionPerformed(evt);
             }
         });
 
-        jComboBox7.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Permission ID", "Member ID", "Start Date", " " }));
+        jLabel45.setText("Search by:");
+
+        SearchPms.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SearchPmsActionPerformed(evt);
+            }
+        });
+
+        SelectPms.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Permission ID", "Agreement ID", " " }));
 
         javax.swing.GroupLayout ListOfPermissionLayout = new javax.swing.GroupLayout(ListOfPermission);
         ListOfPermission.setLayout(ListOfPermissionLayout);
         ListOfPermissionLayout.setHorizontalGroup(
             ListOfPermissionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ListOfPermissionLayout.createSequentialGroup()
+                .addContainerGap(843, Short.MAX_VALUE)
+                .addComponent(jLabel45)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(SelectPms, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(SearchPms, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(tagSearch)
+                .addGap(128, 128, 128))
             .addGroup(ListOfPermissionLayout.createSequentialGroup()
                 .addGap(55, 55, 55)
-                .addComponent(backLogin5)
-                .addGap(265, 265, 265)
-                .addComponent(jLabel42)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ListOfPermissionLayout.createSequentialGroup()
-                .addContainerGap(603, Short.MAX_VALUE)
-                .addGroup(ListOfPermissionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                .addGroup(ListOfPermissionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(ListOfPermissionLayout.createSequentialGroup()
-                        .addGap(240, 240, 240)
-                        .addComponent(jLabel45)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jComboBox7, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton10))
-                    .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 570, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(128, 128, 128))
+                        .addGap(10, 10, 10)
+                        .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 694, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(ListOfPermissionLayout.createSequentialGroup()
+                        .addComponent(backLogin5)
+                        .addGap(265, 265, 265)
+                        .addComponent(jLabel42)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         ListOfPermissionLayout.setVerticalGroup(
             ListOfPermissionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ListOfPermissionLayout.createSequentialGroup()
                 .addGap(64, 64, 64)
-                .addGroup(ListOfPermissionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(ListOfPermissionLayout.createSequentialGroup()
-                        .addGroup(ListOfPermissionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(backLogin5)
-                            .addComponent(jLabel42))
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(64, 64, 64))
-                    .addGroup(ListOfPermissionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jButton10)
-                        .addComponent(jLabel45)
-                        .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jComboBox7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(ListOfPermissionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(backLogin5)
+                    .addComponent(jLabel42))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                .addGroup(ListOfPermissionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tagSearch)
+                    .addComponent(jLabel45)
+                    .addComponent(SearchPms, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(SelectPms, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(361, Short.MAX_VALUE))
         );
 
@@ -1644,9 +1657,9 @@ public class SITwarehouse extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_backLogin5ActionPerformed
 
-    private void jTextField10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField10ActionPerformed
+    private void SearchPmsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchPmsActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField10ActionPerformed
+    }//GEN-LAST:event_SearchPmsActionPerformed
 
     private void submitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitActionPerformed
 
@@ -1873,6 +1886,7 @@ public class SITwarehouse extends javax.swing.JFrame {
     private void backLogin5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backLogin5MouseClicked
         ListOfPermission.setVisible(false);
         EmployeeHome.setVisible(true);
+       // TablePMS.setToolTipText("");
     }//GEN-LAST:event_backLogin5MouseClicked
 
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
@@ -1922,7 +1936,6 @@ public class SITwarehouse extends javax.swing.JFrame {
             while (rs.next()) {
                 model.addRow(new Object[]{rs.getLong(1), rs.getString(2), rs.getString(3), rs.getString(4)});
             }
-            cnb.close();
         } catch (SQLException err) {
             System.out.print(err);
         } catch (ClassNotFoundException err) {
@@ -1971,6 +1984,62 @@ public class SITwarehouse extends javax.swing.JFrame {
             System.out.print(err);
         }
     }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void TablePMSAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_TablePMSAncestorAdded
+        // TODO add your handling code here:
+             DefaultTableModel model = (DefaultTableModel) TablePMS.getModel();
+        try {
+            Connection cnb = ConnectionBuilder.connect();
+            Statement stmt = cnb.createStatement();
+            ResultSet rs = stmt.executeQuery("SELECT * FROM MYDB.PERMISSION");
+            while (rs.next()) {
+               model.addRow(new Object[]{rs.getLong(1), rs.getString(2), rs.getString(3), rs.getString(4),rs.getString(5),rs.getString(6)
+               ,rs.getString(7)});
+            }
+            cnb.close();
+  
+        } catch (SQLException err) {
+            System.out.print(err);
+        } catch (ClassNotFoundException err) {
+            System.out.print(err);
+        }
+            
+    }//GEN-LAST:event_TablePMSAncestorAdded
+
+    private void tagSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tagSearchActionPerformed
+        // TODO add your handling code here:
+           try{   
+        DefaultTableModel model = (DefaultTableModel) TablePMS.getModel();
+         String list = (String) SelectPms.getSelectedItem();
+            String text = SearchPms.getText();
+            if (list.equalsIgnoreCase("Permission ID")) {
+            Connection cnb = ConnectionBuilder.connect();
+            Statement stmt = cnb.createStatement();
+            String SQL = "SELECT * FROM PERMISSION WHERE PERMISSIONID="+text;
+            ResultSet rs = stmt.executeQuery(SQL);
+           model.setNumRows(0);
+            while (rs.next()) {  
+               model.addRow(new Object[]{rs.getLong(1), rs.getString(2), rs.getString(3), rs.getString(4),rs.getString(5),rs.getString(6)
+               ,rs.getString(7)});
+            }
+            } else if (list.equalsIgnoreCase("Agreement ID")) {
+                Connection cnb = ConnectionBuilder.connect();
+            Statement stmt = cnb.createStatement();
+            String SQL = "SELECT * FROM PERMISSION WHERE AGREEMENTID="+text;
+            ResultSet rs = stmt.executeQuery(SQL);
+             model.setNumRows(0);
+            while (rs.next()) {  
+               model.addRow(new Object[]{rs.getLong(1), rs.getString(2), rs.getString(3), rs.getString(4),rs.getString(5),rs.getString(6)
+               ,rs.getString(7)});
+            }
+            } 
+     }
+     catch (SQLException err) {
+            System.out.print(err);
+        } catch (ClassNotFoundException err) {
+            System.out.print(err);
+        }
+    }//GEN-LAST:event_tagSearchActionPerformed
 
     /**
      * @param args the command line arguments
@@ -2026,7 +2095,10 @@ public class SITwarehouse extends javax.swing.JFrame {
     private javax.swing.JPanel Login;
     private javax.swing.JPanel MemberHome;
     private javax.swing.JPanel Register;
+    private javax.swing.JTextField SearchPms;
+    private javax.swing.JComboBox<String> SelectPms;
     private javax.swing.JButton SubmitBank;
+    private javax.swing.JTable TablePMS;
     private javax.swing.JTextField accId;
     private javax.swing.JTextField accId1;
     private javax.swing.JTextField accId2;
@@ -2054,14 +2126,12 @@ public class SITwarehouse extends javax.swing.JFrame {
     private javax.swing.JTable emTable;
     private javax.swing.JLabel empIdGui;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
-    private javax.swing.JComboBox<String> jComboBox7;
     private javax.swing.JFrame jFrame1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -2112,10 +2182,8 @@ public class SITwarehouse extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JScrollPane jScrollPane9;
-    private javax.swing.JTable jTable5;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField10;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JComboBox<String> listBank;
     private javax.swing.JTable listEmTable;
@@ -2142,6 +2210,7 @@ public class SITwarehouse extends javax.swing.JFrame {
     private javax.swing.JButton submit;
     private javax.swing.JButton submit1;
     private javax.swing.JButton submit2;
+    private javax.swing.JButton tagSearch;
     private javax.swing.JTextField textSeach;
     private javax.swing.JTextField textSeachEM;
     private javax.swing.JTextField userName;

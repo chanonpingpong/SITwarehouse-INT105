@@ -23,6 +23,7 @@ public class SITwarehouse {
                 System.out.println(ld);*/
       //  Employee.createEmployee("jame", "jame", "jame", "jame", "jame", "jame", "jame");
       //  SITOperation.loginMember("jamemez", "kittisak");
-        SITOperation.SeachWarehouseSize("SMALL");
+        //SITOperation.SeachWarehouseSize("SMALL");
+        Agreement.createPermission(3302, "13/06/2016", 200000);
     }
 }

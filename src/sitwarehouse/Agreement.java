@@ -266,6 +266,8 @@ public class Agreement {
         }         
     }
     
+    
+    
     public static long genPmsId(){
         try{
             String SQL = "SELECT * FROM MYDB.SYSTEMDB";
