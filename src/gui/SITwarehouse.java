@@ -144,34 +144,28 @@ public class SITwarehouse extends javax.swing.JFrame {
         search = new javax.swing.JButton();
         textSeach = new javax.swing.JTextField();
         jLabel41 = new javax.swing.JLabel();
-        listSearch = new javax.swing.JComboBox<String>();
+        listSearch = new javax.swing.JComboBox<>();
         jScrollPane10 = new javax.swing.JScrollPane();
         listMbTable = new javax.swing.JTable();
         EditWarehouse = new javax.swing.JPanel();
         jLabel30 = new javax.swing.JLabel();
         backLogin4 = new javax.swing.JButton();
         submit2 = new javax.swing.JButton();
-        phoneNumber2 = new javax.swing.JTextField();
-        jLabel31 = new javax.swing.JLabel();
-        address2 = new javax.swing.JTextField();
-        jLabel32 = new javax.swing.JLabel();
-        name2 = new javax.swing.JTextField();
-        jLabel33 = new javax.swing.JLabel();
-        cfAccPass2 = new javax.swing.JTextField();
         jLabel34 = new javax.swing.JLabel();
-        accPass2 = new javax.swing.JTextField();
+        editWhPrice = new javax.swing.JTextField();
         jLabel35 = new javax.swing.JLabel();
         jLabel36 = new javax.swing.JLabel();
-        accId2 = new javax.swing.JTextField();
+        editWhId = new javax.swing.JTextField();
+        editWhStatus = new javax.swing.JComboBox<>();
         ListOfWarehouseEmployee = new javax.swing.JPanel();
         backLogin3 = new javax.swing.JButton();
         jLabel28 = new javax.swing.JLabel();
         jButton8 = new javax.swing.JButton();
         jLabel37 = new javax.swing.JLabel();
         textSeachEM = new javax.swing.JTextField();
-        listSearchEM = new javax.swing.JComboBox<String>();
+        listSearchEM = new javax.swing.JComboBox<>();
         jLabel38 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
+        whIdEdit = new javax.swing.JTextField();
         jButton11 = new javax.swing.JButton();
         jScrollPane11 = new javax.swing.JScrollPane();
         listEmTable = new javax.swing.JTable();
@@ -183,23 +177,22 @@ public class SITwarehouse extends javax.swing.JFrame {
         tagSearch = new javax.swing.JButton();
         jLabel45 = new javax.swing.JLabel();
         SearchPms = new javax.swing.JTextField();
-        SelectPms = new javax.swing.JComboBox<String>();
+        SelectPms = new javax.swing.JComboBox<>();
         CreatePermission = new javax.swing.JPanel();
         jLabel46 = new javax.swing.JLabel();
         jLabel47 = new javax.swing.JLabel();
-        day = new javax.swing.JComboBox<String>();
-        month = new javax.swing.JComboBox<String>();
-        year = new javax.swing.JComboBox<String>();
+        day = new javax.swing.JComboBox<>();
+        month = new javax.swing.JComboBox<>();
+        year = new javax.swing.JComboBox<>();
         agreementId = new javax.swing.JTextField();
         jLabel48 = new javax.swing.JLabel();
         money = new javax.swing.JTextField();
         jLabel49 = new javax.swing.JLabel();
         bankNo = new javax.swing.JTextField();
         jLabel50 = new javax.swing.JLabel();
-        listBank = new javax.swing.JComboBox<String>();
+        listBank = new javax.swing.JComboBox<>();
         jLabel51 = new javax.swing.JLabel();
         SubmitBank = new javax.swing.JButton();
-        Clear = new javax.swing.JButton();
         backLogin6 = new javax.swing.JButton();
 
         jTextArea1.setColumns(20);
@@ -883,7 +876,7 @@ public class SITwarehouse extends javax.swing.JFrame {
 
         jLabel41.setText("Search by:");
 
-        listSearch.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Warehouse ID", "Price", "Size" }));
+        listSearch.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Warehouse ID", "Price", "Size" }));
         listSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 listSearchActionPerformed(evt);
@@ -991,53 +984,25 @@ public class SITwarehouse extends javax.swing.JFrame {
 
         submit2.setText("Submit");
 
-        phoneNumber2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                phoneNumber2NumberActionPerformed(evt);
-            }
-        });
-
-        jLabel31.setText("Phone Number");
-
-        address2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                address2ActionPerformed(evt);
-            }
-        });
-
-        jLabel32.setText("Address");
-
-        name2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                name2ActionPerformed(evt);
-            }
-        });
-
-        jLabel33.setText("Name and Surname");
-
-        cfAccPass2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cfAccPass2ActionPerformed(evt);
-            }
-        });
-
         jLabel34.setText("Status");
 
-        accPass2.addActionListener(new java.awt.event.ActionListener() {
+        editWhPrice.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                accPass2ActionPerformed(evt);
+                editWhPriceActionPerformed(evt);
             }
         });
 
         jLabel35.setText("Price");
 
-        jLabel36.setText("Size");
+        jLabel36.setText("Warehouse ID");
 
-        accId2.addActionListener(new java.awt.event.ActionListener() {
+        editWhId.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                accId2ActionPerformed(evt);
+                editWhIdActionPerformed(evt);
             }
         });
+
+        editWhStatus.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "STANDBY", "IN USE", "MAINTENANCE" }));
 
         javax.swing.GroupLayout EditWarehouseLayout = new javax.swing.GroupLayout(EditWarehouse);
         EditWarehouse.setLayout(EditWarehouseLayout);
@@ -1045,31 +1010,22 @@ public class SITwarehouse extends javax.swing.JFrame {
             EditWarehouseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, EditWarehouseLayout.createSequentialGroup()
                 .addContainerGap(841, Short.MAX_VALUE)
-                .addGroup(EditWarehouseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(phoneNumber2, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel31)
-                    .addComponent(address2, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel32)
-                    .addComponent(name2, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel33)
-                    .addComponent(cfAccPass2, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(EditWarehouseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel34)
-                    .addComponent(accPass2, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(editWhPrice, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
                     .addComponent(jLabel35)
                     .addComponent(jLabel36)
-                    .addComponent(accId2, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(editWhId, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                    .addComponent(editWhStatus, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(297, 297, 297))
             .addGroup(EditWarehouseLayout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addComponent(backLogin4)
+                .addGap(274, 274, 274)
                 .addGroup(EditWarehouseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(EditWarehouseLayout.createSequentialGroup()
-                        .addGap(28, 28, 28)
-                        .addComponent(backLogin4)
-                        .addGap(274, 274, 274)
-                        .addComponent(jLabel30))
-                    .addGroup(EditWarehouseLayout.createSequentialGroup()
-                        .addGap(362, 362, 362)
-                        .addComponent(submit2)))
-                .addContainerGap(900, Short.MAX_VALUE))
+                    .addComponent(submit2)
+                    .addComponent(jLabel30))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         EditWarehouseLayout.setVerticalGroup(
             EditWarehouseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1081,30 +1037,18 @@ public class SITwarehouse extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel36)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(accId2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(editWhId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel35)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(accPass2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(editWhPrice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel34)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(cfAccPass2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel33)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(name2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel32)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(address2, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel31)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(phoneNumber2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(editWhStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(54, 54, 54)
                 .addComponent(submit2)
-                .addContainerGap(370, Short.MAX_VALUE))
+                .addContainerGap(503, Short.MAX_VALUE))
         );
 
         Container.add(EditWarehouse, "card8");
@@ -1140,13 +1084,13 @@ public class SITwarehouse extends javax.swing.JFrame {
             }
         });
 
-        listSearchEM.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Warehouse ID", "Price", "Size" }));
+        listSearchEM.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Warehouse ID", "Price", "Size" }));
 
         jLabel38.setText("Warehouse ID:");
 
-        jTextField5.addActionListener(new java.awt.event.ActionListener() {
+        whIdEdit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField5ActionPerformed(evt);
+                whIdEditActionPerformed(evt);
             }
         });
 
@@ -1204,7 +1148,7 @@ public class SITwarehouse extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButton8))
                     .addGroup(ListOfWarehouseEmployeeLayout.createSequentialGroup()
-                        .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(whIdEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE)))
@@ -1238,7 +1182,7 @@ public class SITwarehouse extends javax.swing.JFrame {
                     .addComponent(listSearchEM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(ListOfWarehouseEmployeeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel38)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(whIdEdit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton11))
                 .addGap(110, 110, 110))
         );
@@ -1303,7 +1247,7 @@ public class SITwarehouse extends javax.swing.JFrame {
             }
         });
 
-        SelectPms.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Permission ID", "Agreement ID", " " }));
+        SelectPms.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Permission ID", "Agreement ID", " " }));
 
         javax.swing.GroupLayout ListOfPermissionLayout = new javax.swing.GroupLayout(ListOfPermission);
         ListOfPermission.setLayout(ListOfPermissionLayout);
@@ -1357,11 +1301,11 @@ public class SITwarehouse extends javax.swing.JFrame {
 
         jLabel47.setText("Transfer Date:");
 
-        day.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
+        day.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
 
-        month.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" }));
+        month.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" }));
 
-        year.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "2559", "2560", "2561", "2562", "2563", "2564", "2565" }));
+        year.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2559", "2560", "2561", "2562", "2563", "2564", "2565" }));
 
         jLabel48.setText("Agreement ID:");
 
@@ -1369,18 +1313,11 @@ public class SITwarehouse extends javax.swing.JFrame {
 
         jLabel50.setText("Bank:");
 
-        listBank.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Kasikorn", "Krungthep", "Thaipanit", "Krungthai", "Issaram" }));
+        listBank.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Kasikorn", "Krungthep", "Thaipanit", "Krungthai", "Issaram" }));
 
         jLabel51.setText("Bank account No:");
 
         SubmitBank.setText("Submit");
-
-        Clear.setText("Clear");
-        Clear.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                ClearMouseClicked(evt);
-            }
-        });
 
         backLogin6.setText("< Back");
         backLogin6.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -1422,9 +1359,7 @@ public class SITwarehouse extends javax.swing.JFrame {
                             .addComponent(bankNo)))
                     .addGroup(CreatePermissionLayout.createSequentialGroup()
                         .addGap(331, 331, 331)
-                        .addGroup(CreatePermissionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(SubmitBank, javax.swing.GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)
-                            .addComponent(Clear, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(SubmitBank, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(CreatePermissionLayout.createSequentialGroup()
                         .addGap(35, 35, 35)
                         .addComponent(backLogin6)
@@ -1467,9 +1402,7 @@ public class SITwarehouse extends javax.swing.JFrame {
                     .addComponent(bankNo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(28, 28, 28)
                 .addComponent(SubmitBank, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(Clear)
-                .addContainerGap(414, Short.MAX_VALUE))
+                .addContainerGap(448, Short.MAX_VALUE))
         );
 
         Container.add(CreatePermission, "card11");
@@ -1576,32 +1509,17 @@ public class SITwarehouse extends javax.swing.JFrame {
     }//GEN-LAST:event_backLogin3ActionPerformed
 
     private void backLogin4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backLogin4ActionPerformed
-        // TODO add your handling code here:
+        EditWarehouse.setVisible(false);
+        ListOfWarehouseEmployee.setVisible(true);
     }//GEN-LAST:event_backLogin4ActionPerformed
 
-    private void phoneNumber2NumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_phoneNumber2NumberActionPerformed
+    private void editWhPriceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editWhPriceActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_phoneNumber2NumberActionPerformed
+    }//GEN-LAST:event_editWhPriceActionPerformed
 
-    private void address2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_address2ActionPerformed
+    private void editWhIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editWhIdActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_address2ActionPerformed
-
-    private void name2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_name2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_name2ActionPerformed
-
-    private void cfAccPass2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cfAccPass2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cfAccPass2ActionPerformed
-
-    private void accPass2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_accPass2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_accPass2ActionPerformed
-
-    private void accId2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_accId2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_accId2ActionPerformed
+    }//GEN-LAST:event_editWhIdActionPerformed
 
     private void textSeachEMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textSeachEMActionPerformed
         // TODO add your handling code here:
@@ -1612,7 +1530,7 @@ public class SITwarehouse extends javax.swing.JFrame {
      try{   
         DefaultTableModel model = (DefaultTableModel) listMbTable.getModel();
          String list = (String) listSearch.getSelectedItem();
-            String text = textSeach.getText();
+            String text = textSeach.getText().toUpperCase();
             if (list.equalsIgnoreCase("Warehouse ID")) {
             Connection cnb = ConnectionBuilder.connect();
             Statement stmt = cnb.createStatement();
@@ -1654,7 +1572,8 @@ public class SITwarehouse extends javax.swing.JFrame {
     }//GEN-LAST:event_textSeachActionPerformed
 
     private void backLogin5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backLogin5ActionPerformed
-        // TODO add your handling code here:
+        DefaultTableModel model = (DefaultTableModel) TablePMS.getModel();
+        model.setNumRows(0);
     }//GEN-LAST:event_backLogin5ActionPerformed
 
     private void SearchPmsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchPmsActionPerformed
@@ -1808,6 +1727,8 @@ public class SITwarehouse extends javax.swing.JFrame {
 
     private void backLogin3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backLogin3MouseClicked
         // TODO add your handling code here:
+        DefaultTableModel model = (DefaultTableModel) listEmTable.getModel();
+        model.setNumRows(0);
         this.ListOfWarehouseEmployee.setVisible(false);
         this.EmployeeHome.setVisible(true);
         textSeachEM.setText(" ");
@@ -1847,12 +1768,13 @@ public class SITwarehouse extends javax.swing.JFrame {
         ListOfPermission.setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
 
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+    private void whIdEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_whIdEditActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField5ActionPerformed
+    }//GEN-LAST:event_whIdEditActionPerformed
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
-        // TODO add your handling code here:
+        ListOfWarehouseEmployee.setVisible(false);
+        EditWarehouse.setVisible(true);
     }//GEN-LAST:event_jButton11ActionPerformed
 
     private void mbTableAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_mbTableAncestorAdded
@@ -1893,17 +1815,6 @@ public class SITwarehouse extends javax.swing.JFrame {
         MemberHome.setVisible(false);
         CreatePermission.setVisible(true);
     }//GEN-LAST:event_jButton2MouseClicked
-
-    private void ClearMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ClearMouseClicked
-        agreementId.setText("");
-        day.setSelectedItem("01");
-        month.setSelectedItem("01");
-        year.setSelectedItem("2559");
-        money.setText("");
-        listBank.setSelectedItem("Kasikorn");
-        bankNo.setText("");
-
-    }//GEN-LAST:event_ClearMouseClicked
 
     private void backLogin6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backLogin6MouseClicked
         CreatePermission.setVisible(false);
@@ -1948,7 +1859,7 @@ public class SITwarehouse extends javax.swing.JFrame {
         try{   
         DefaultTableModel model = (DefaultTableModel) listEmTable.getModel();
          String list = (String) listSearchEM.getSelectedItem();
-            String text = textSeachEM.getText();
+            String text = textSeachEM.getText().toUpperCase();
             if (list.equalsIgnoreCase("Warehouse ID")) {
             Connection cnb = ConnectionBuilder.connect();
             Statement stmt = cnb.createStatement();
@@ -2008,33 +1919,35 @@ public class SITwarehouse extends javax.swing.JFrame {
 
     private void tagSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tagSearchActionPerformed
         // TODO add your handling code here:
-           try{   
-        DefaultTableModel model = (DefaultTableModel) TablePMS.getModel();
-         String list = (String) SelectPms.getSelectedItem();
-            String text = SearchPms.getText();
-            if (list.equalsIgnoreCase("Permission ID")) {
-            Connection cnb = ConnectionBuilder.connect();
-            Statement stmt = cnb.createStatement();
-            String SQL = "SELECT * FROM PERMISSION WHERE PERMISSIONID="+text;
-            ResultSet rs = stmt.executeQuery(SQL);
-           model.setNumRows(0);
-            while (rs.next()) {  
-               model.addRow(new Object[]{rs.getLong(1), rs.getString(2), rs.getString(3), rs.getString(4),rs.getString(5),rs.getString(6)
-               ,rs.getString(7)});
-            }
-            } else if (list.equalsIgnoreCase("Agreement ID")) {
-                Connection cnb = ConnectionBuilder.connect();
-            Statement stmt = cnb.createStatement();
-            String SQL = "SELECT * FROM PERMISSION WHERE AGREEMENTID="+text;
-            ResultSet rs = stmt.executeQuery(SQL);
-             model.setNumRows(0);
-            while (rs.next()) {  
-               model.addRow(new Object[]{rs.getLong(1), rs.getString(2), rs.getString(3), rs.getString(4),rs.getString(5),rs.getString(6)
-               ,rs.getString(7)});
-            }
-            } 
-     }
-     catch (SQLException err) {
+        try{   
+            DefaultTableModel model = (DefaultTableModel) TablePMS.getModel();
+            String list = (String) SelectPms.getSelectedItem();
+            String text = SearchPms.getText().toUpperCase();
+                if (list.equalsIgnoreCase("Permission ID")) {
+                    Connection cnb = ConnectionBuilder.connect();
+                    Statement stmt = cnb.createStatement();
+                    String SQL = "SELECT * FROM PERMISSION WHERE PERMISSIONID="+text;
+                    ResultSet rs = stmt.executeQuery(SQL);
+                    model.setNumRows(0);
+                    while (rs.next()) {  
+                        
+                        model.addRow(new Object[]{rs.getLong(1), rs.getString(2), rs.getString(3), rs.getString(4),rs.getString(5),rs.getString(6)
+                        ,rs.getString(7)});
+                    
+                    }
+                } else if (list.equalsIgnoreCase("Agreement ID")) {
+                    Connection cnb = ConnectionBuilder.connect();
+                    Statement stmt = cnb.createStatement();
+                    String SQL = "SELECT * FROM PERMISSION WHERE AGREEMENTID="+text;
+                    ResultSet rs = stmt.executeQuery(SQL);
+                    model.setNumRows(0);
+                    while (rs.next()) {  
+                        model.addRow(new Object[]{rs.getLong(1), rs.getString(2), rs.getString(3), rs.getString(4),rs.getString(5),rs.getString(6)
+                        ,rs.getString(7)});
+                    }
+                } 
+        }
+         catch (SQLException err) {
             System.out.print(err);
         } catch (ClassNotFoundException err) {
             System.out.print(err);
@@ -2081,7 +1994,6 @@ public class SITwarehouse extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Chackpass;
-    private javax.swing.JButton Clear;
     private javax.swing.JPanel Container;
     private javax.swing.JPanel CreatePermission;
     private javax.swing.JButton Edit;
@@ -2101,13 +2013,10 @@ public class SITwarehouse extends javax.swing.JFrame {
     private javax.swing.JTable TablePMS;
     private javax.swing.JTextField accId;
     private javax.swing.JTextField accId1;
-    private javax.swing.JTextField accId2;
     private javax.swing.JPasswordField accPass;
     private javax.swing.JPasswordField accPass1;
-    private javax.swing.JTextField accPass2;
     private javax.swing.JTextPane address;
     private javax.swing.JTextPane address1;
-    private javax.swing.JTextField address2;
     private javax.swing.JTextField agreementId;
     private javax.swing.JButton backLogin;
     private javax.swing.JButton backLogin1;
@@ -2118,11 +2027,13 @@ public class SITwarehouse extends javax.swing.JFrame {
     private javax.swing.JButton backLogin6;
     private javax.swing.JTextField bankNo;
     private javax.swing.JPasswordField cfAccPass;
-    private javax.swing.JTextField cfAccPass2;
     private javax.swing.JLabel date;
     private javax.swing.JLabel dateEmpHome;
     private javax.swing.JLabel dateMemHome;
     private javax.swing.JComboBox<String> day;
+    private javax.swing.JTextField editWhId;
+    private javax.swing.JTextField editWhPrice;
+    private javax.swing.JComboBox<String> editWhStatus;
     private javax.swing.JTable emTable;
     private javax.swing.JLabel empIdGui;
     private javax.swing.JButton jButton1;
@@ -2150,9 +2061,6 @@ public class SITwarehouse extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
-    private javax.swing.JLabel jLabel31;
-    private javax.swing.JLabel jLabel32;
-    private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
@@ -2184,7 +2092,6 @@ public class SITwarehouse extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField5;
     private javax.swing.JComboBox<String> listBank;
     private javax.swing.JTable listEmTable;
     private javax.swing.JTable listMbTable;
@@ -2199,12 +2106,10 @@ public class SITwarehouse extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> month;
     private javax.swing.JTextField name;
     private javax.swing.JTextField name1;
-    private javax.swing.JTextField name2;
     private javax.swing.JPasswordField oldPassword;
     private javax.swing.JPasswordField passWord;
     private javax.swing.JTextField phoneNumber;
     private javax.swing.JTextField phoneNumber1;
-    private javax.swing.JTextField phoneNumber2;
     private javax.swing.JButton register;
     private javax.swing.JButton search;
     private javax.swing.JButton submit;
@@ -2215,6 +2120,7 @@ public class SITwarehouse extends javax.swing.JFrame {
     private javax.swing.JTextField textSeachEM;
     private javax.swing.JTextField userName;
     private javax.swing.JComboBox userType;
+    private javax.swing.JTextField whIdEdit;
     private javax.swing.JComboBox<String> year;
     // End of variables declaration//GEN-END:variables
 }
