@@ -78,6 +78,7 @@ public class SITwarehouse extends javax.swing.JFrame {
         register = new javax.swing.JButton();
         userType = new javax.swing.JComboBox();
         passWord = new javax.swing.JPasswordField();
+        bgRegister1 = new javax.swing.JLabel();
         Register = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         accId = new javax.swing.JTextField();
@@ -96,6 +97,7 @@ public class SITwarehouse extends javax.swing.JFrame {
         cfAccPass = new javax.swing.JPasswordField();
         jScrollPane9 = new javax.swing.JScrollPane();
         address = new javax.swing.JTextPane();
+        bgRegister = new javax.swing.JLabel();
         MemberHome = new javax.swing.JPanel();
         HelloMember = new javax.swing.JLabel();
         dateMemHome = new javax.swing.JLabel();
@@ -109,6 +111,7 @@ public class SITwarehouse extends javax.swing.JFrame {
         logOut = new javax.swing.JButton();
         date = new javax.swing.JLabel();
         AgrMem = new javax.swing.JButton();
+        bgMem = new javax.swing.JLabel();
         EmployeeHome = new javax.swing.JPanel();
         jButton3 = new javax.swing.JButton();
         jLabel15 = new javax.swing.JLabel();
@@ -119,7 +122,7 @@ public class SITwarehouse extends javax.swing.JFrame {
         logout = new javax.swing.JButton();
         jScrollPane8 = new javax.swing.JScrollPane();
         emTable = new javax.swing.JTable();
-        Editwarehouse = new javax.swing.JButton();
+        bgEm4 = new javax.swing.JLabel();
         EditProfile = new javax.swing.JPanel();
         jLabel19 = new javax.swing.JLabel();
         backLogin1 = new javax.swing.JButton();
@@ -137,15 +140,18 @@ public class SITwarehouse extends javax.swing.JFrame {
         address1 = new javax.swing.JTextPane();
         oldPassword = new javax.swing.JPasswordField();
         accPass1 = new javax.swing.JPasswordField();
+        bgMem1 = new javax.swing.JLabel();
         ListOfWarehouseMember = new javax.swing.JPanel();
         backLogin2 = new javax.swing.JButton();
         jLabel26 = new javax.swing.JLabel();
         search = new javax.swing.JButton();
         textSeach = new javax.swing.JTextField();
         jLabel41 = new javax.swing.JLabel();
-        listSearch = new javax.swing.JComboBox<String>();
+        listSearch = new javax.swing.JComboBox<>();
         jScrollPane10 = new javax.swing.JScrollPane();
         listMbTable = new javax.swing.JTable();
+        jButton5 = new javax.swing.JButton();
+        bgMem2 = new javax.swing.JLabel();
         EditWarehouse = new javax.swing.JPanel();
         jLabel30 = new javax.swing.JLabel();
         backLogin4 = new javax.swing.JButton();
@@ -155,19 +161,8 @@ public class SITwarehouse extends javax.swing.JFrame {
         jLabel35 = new javax.swing.JLabel();
         jLabel36 = new javax.swing.JLabel();
         editWhId = new javax.swing.JTextField();
-        editWhStatus = new javax.swing.JComboBox<String>();
-        ListOfWarehouseEmployee = new javax.swing.JPanel();
-        backLogin3 = new javax.swing.JButton();
-        jLabel28 = new javax.swing.JLabel();
-        jButton8 = new javax.swing.JButton();
-        jLabel37 = new javax.swing.JLabel();
-        textSeachEM = new javax.swing.JTextField();
-        listSearchEM = new javax.swing.JComboBox<String>();
-        jLabel38 = new javax.swing.JLabel();
-        whIdEdit = new javax.swing.JTextField();
-        jButton11 = new javax.swing.JButton();
-        jScrollPane11 = new javax.swing.JScrollPane();
-        listEmTable = new javax.swing.JTable();
+        editWhStatus = new javax.swing.JComboBox<>();
+        bgEm3 = new javax.swing.JLabel();
         ListOfPermission = new javax.swing.JPanel();
         backLogin5 = new javax.swing.JButton();
         jLabel42 = new javax.swing.JLabel();
@@ -176,28 +171,45 @@ public class SITwarehouse extends javax.swing.JFrame {
         tagSearch = new javax.swing.JButton();
         jLabel45 = new javax.swing.JLabel();
         SearchPms = new javax.swing.JTextField();
-        SelectPms = new javax.swing.JComboBox<String>();
+        SelectPms = new javax.swing.JComboBox<>();
+        bgEm2 = new javax.swing.JLabel();
         CreatePermission = new javax.swing.JPanel();
         jLabel46 = new javax.swing.JLabel();
         jLabel47 = new javax.swing.JLabel();
-        day = new javax.swing.JComboBox<String>();
-        month = new javax.swing.JComboBox<String>();
-        year = new javax.swing.JComboBox<String>();
+        day = new javax.swing.JComboBox<>();
+        month = new javax.swing.JComboBox<>();
+        year = new javax.swing.JComboBox<>();
         agreementId = new javax.swing.JTextField();
         jLabel48 = new javax.swing.JLabel();
         money = new javax.swing.JTextField();
         jLabel49 = new javax.swing.JLabel();
         bankNo = new javax.swing.JTextField();
         jLabel50 = new javax.swing.JLabel();
-        listBank = new javax.swing.JComboBox<String>();
+        listBank = new javax.swing.JComboBox<>();
         jLabel51 = new javax.swing.JLabel();
         SubmitBank = new javax.swing.JButton();
         backLogin6 = new javax.swing.JButton();
+        bgMem4 = new javax.swing.JLabel();
         ListAgreement = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         TableAgrMem = new javax.swing.JTable();
         backLogin7 = new javax.swing.JButton();
+        bgMem3 = new javax.swing.JLabel();
+        ListOfWarehouseEmployee = new javax.swing.JPanel();
+        backLogin3 = new javax.swing.JButton();
+        jLabel28 = new javax.swing.JLabel();
+        jButton8 = new javax.swing.JButton();
+        jLabel37 = new javax.swing.JLabel();
+        textSeachEM = new javax.swing.JTextField();
+        listSearchEM = new javax.swing.JComboBox<>();
+        jLabel38 = new javax.swing.JLabel();
+        whIdEdit = new javax.swing.JTextField();
+        jButton11 = new javax.swing.JButton();
+        jScrollPane11 = new javax.swing.JScrollPane();
+        listEmTable = new javax.swing.JTable();
+        jButton6 = new javax.swing.JButton();
+        bgEm5 = new javax.swing.JLabel();
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
@@ -218,20 +230,24 @@ public class SITwarehouse extends javax.swing.JFrame {
 
         Container.setLayout(new java.awt.CardLayout());
 
-        Login.setBackground(new java.awt.Color(255, 204, 255));
+        Login.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         jLabel1.setText("Welcome");
+        Login.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(298, 128, -1, -1));
 
         jLabel2.setText("Username");
+        Login.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(282, 226, 90, -1));
 
         userName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 userNameActionPerformed(evt);
             }
         });
+        Login.add(userName, new org.netbeans.lib.awtextra.AbsoluteConstraints(282, 255, 200, -1));
 
         jLabel3.setText("Password");
+        Login.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(282, 290, 90, -1));
 
         login.setText("Login");
         login.addActionListener(new java.awt.event.ActionListener() {
@@ -239,6 +255,7 @@ public class SITwarehouse extends javax.swing.JFrame {
                 loginActionPerformed(evt);
             }
         });
+        Login.add(login, new org.netbeans.lib.awtextra.AbsoluteConstraints(346, 353, 79, 35));
 
         register.setText("Register");
         register.addActionListener(new java.awt.event.ActionListener() {
@@ -246,6 +263,7 @@ public class SITwarehouse extends javax.swing.JFrame {
                 registerActionPerformed(evt);
             }
         });
+        Login.add(register, new org.netbeans.lib.awtextra.AbsoluteConstraints(346, 395, -1, -1));
 
         userType.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Member", "Employee" }));
         userType.addActionListener(new java.awt.event.ActionListener() {
@@ -253,85 +271,52 @@ public class SITwarehouse extends javax.swing.JFrame {
                 userTypeActionPerformed(evt);
             }
         });
+        Login.add(userType, new org.netbeans.lib.awtextra.AbsoluteConstraints(337, 190, -1, -1));
+        Login.add(passWord, new org.netbeans.lib.awtextra.AbsoluteConstraints(282, 313, 200, -1));
 
-        javax.swing.GroupLayout LoginLayout = new javax.swing.GroupLayout(Login);
-        Login.setLayout(LoginLayout);
-        LoginLayout.setHorizontalGroup(
-            LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(LoginLayout.createSequentialGroup()
-                .addGroup(LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(LoginLayout.createSequentialGroup()
-                        .addGap(298, 298, 298)
-                        .addComponent(jLabel1))
-                    .addGroup(LoginLayout.createSequentialGroup()
-                        .addGap(282, 282, 282)
-                        .addGroup(LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel2)
-                            .addComponent(userName, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                            .addComponent(jLabel3)
-                            .addComponent(passWord)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, LoginLayout.createSequentialGroup()
-                                .addComponent(userType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(63, 63, 63))))
-                    .addGroup(LoginLayout.createSequentialGroup()
-                        .addGap(346, 346, 346)
-                        .addGroup(LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(register, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(login, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap(2112, Short.MAX_VALUE))
-        );
-        LoginLayout.setVerticalGroup(
-            LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(LoginLayout.createSequentialGroup()
-                .addGap(128, 128, 128)
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addComponent(userType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(14, 14, 14)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(userName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(passWord, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(login, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(register)
-                .addContainerGap(440, Short.MAX_VALUE))
-        );
+        bgRegister1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/image/google_abstract_hd.jpg"))); // NOI18N
+        Login.add(bgRegister1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-710, -310, 1910, 1030));
 
         Container.add(Login, "card2");
 
         Register.setBackground(new java.awt.Color(255, 204, 255));
+        Register.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         jLabel4.setText("Register");
+        Register.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(284, 50, -1, -1));
 
         accId.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 accIdActionPerformed(evt);
             }
         });
+        Register.add(accId, new org.netbeans.lib.awtextra.AbsoluteConstraints(256, 134, 200, -1));
 
         jLabel5.setText("Username");
+        Register.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(256, 112, -1, 9));
 
         jLabel6.setText("Password");
+        Register.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(256, 157, -1, -1));
 
         jLabel7.setText("Confirm Password");
+        Register.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(256, 209, -1, -1));
 
         jLabel8.setText("Name and Surname");
+        Register.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(256, 261, -1, -1));
 
         name.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nameActionPerformed(evt);
             }
         });
+        Register.add(name, new org.netbeans.lib.awtextra.AbsoluteConstraints(256, 284, 200, -1));
 
         jLabel9.setText("Address");
+        Register.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(256, 313, -1, -1));
 
         jLabel10.setText("Phone Number");
+        Register.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(256, 415, -1, -1));
 
         if(phoneNumber.getText().length() == 3){
             phoneNumber.setEnabled(false);
@@ -343,6 +328,7 @@ public class SITwarehouse extends javax.swing.JFrame {
                 phoneNumberNumberActionPerformed(evt);
             }
         });
+        Register.add(phoneNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(256, 444, 200, -1));
 
         submit.setText("Submit");
         submit.addActionListener(new java.awt.event.ActionListener() {
@@ -350,6 +336,7 @@ public class SITwarehouse extends javax.swing.JFrame {
                 submitActionPerformed(evt);
             }
         });
+        Register.add(submit, new org.netbeans.lib.awtextra.AbsoluteConstraints(321, 482, -1, 35));
 
         backLogin.setText("< Back");
         backLogin.addActionListener(new java.awt.event.ActionListener() {
@@ -357,101 +344,38 @@ public class SITwarehouse extends javax.swing.JFrame {
                 backLoginActionPerformed(evt);
             }
         });
+        Register.add(backLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 69, -1, -1));
+        Register.add(Chackpass, new org.netbeans.lib.awtextra.AbsoluteConstraints(406, 524, 293, -1));
+        Register.add(accPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(256, 180, 200, -1));
 
         cfAccPass.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cfAccPassActionPerformed(evt);
             }
         });
+        Register.add(cfAccPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(256, 232, 200, -1));
 
         jScrollPane9.setViewportView(address);
 
-        javax.swing.GroupLayout RegisterLayout = new javax.swing.GroupLayout(Register);
-        Register.setLayout(RegisterLayout);
-        RegisterLayout.setHorizontalGroup(
-            RegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(RegisterLayout.createSequentialGroup()
-                .addGroup(RegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(RegisterLayout.createSequentialGroup()
-                        .addGap(28, 28, 28)
-                        .addComponent(backLogin)
-                        .addGap(185, 185, 185)
-                        .addComponent(jLabel4))
-                    .addGroup(RegisterLayout.createSequentialGroup()
-                        .addGap(321, 321, 321)
-                        .addComponent(submit, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(Chackpass, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(RegisterLayout.createSequentialGroup()
-                        .addGap(256, 256, 256)
-                        .addGroup(RegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(RegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(accId, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                                .addComponent(jLabel5)
-                                .addComponent(jLabel6)
-                                .addComponent(accPass, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                                .addComponent(jLabel7)
-                                .addComponent(cfAccPass, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                                .addComponent(jLabel8)
-                                .addComponent(name, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                                .addComponent(jLabel9))
-                            .addGroup(RegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jLabel10)
-                                .addComponent(phoneNumber, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                                .addComponent(jScrollPane9)))))
-                .addContainerGap(1897, Short.MAX_VALUE))
-        );
-        RegisterLayout.setVerticalGroup(
-            RegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(RegisterLayout.createSequentialGroup()
-                .addGroup(RegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(RegisterLayout.createSequentialGroup()
-                        .addGap(69, 69, 69)
-                        .addComponent(backLogin))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RegisterLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel4)))
-                .addGap(18, 18, 18)
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 9, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(accId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(1, 1, 1)
-                .addComponent(jLabel6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(accPass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(cfAccPass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel8)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel9)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel10)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(phoneNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(16, 16, 16)
-                .addComponent(submit, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Chackpass, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(82, 82, 82))
-        );
+        Register.add(jScrollPane9, new org.netbeans.lib.awtextra.AbsoluteConstraints(256, 336, 200, 72));
+
+        bgRegister.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/image/google_abstract_hd.jpg"))); // NOI18N
+        Register.add(bgRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(-1110, -310, 1910, 1030));
 
         Container.add(Register, "card3");
 
         MemberHome.setBackground(new java.awt.Color(255, 204, 255));
+        MemberHome.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         HelloMember.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         HelloMember.setText("Hello");
+        MemberHome.add(HelloMember, new org.netbeans.lib.awtextra.AbsoluteConstraints(93, 56, 236, -1));
 
         dateMemHome.setText("Date: ");
+        MemberHome.add(dateMemHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(108, 131, -1, -1));
 
         memIdGui.setText("Member ID: ");
+        MemberHome.add(memIdGui, new org.netbeans.lib.awtextra.AbsoluteConstraints(108, 99, -1, -1));
 
         jButton1.setText("Buy");
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -464,6 +388,7 @@ public class SITwarehouse extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
+        MemberHome.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(626, 63, -1, -1));
 
         jButton2.setText("Confirm Money Transfer");
         jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -471,15 +396,11 @@ public class SITwarehouse extends javax.swing.JFrame {
                 jButton2MouseClicked(evt);
             }
         });
+        MemberHome.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(508, 127, -1, -1));
 
         mbTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
                 "ID", "SIZE", "PRICE", "STATUS"
@@ -505,7 +426,10 @@ public class SITwarehouse extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(mbTable);
 
+        MemberHome.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(108, 244, 571, 305));
+
         jLabel14.setText("Your warehouse");
+        MemberHome.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(108, 210, -1, -1));
 
         Edit.setText("Edit Profile");
         Edit.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -518,6 +442,7 @@ public class SITwarehouse extends javax.swing.JFrame {
                 EditActionPerformed(evt);
             }
         });
+        MemberHome.add(Edit, new org.netbeans.lib.awtextra.AbsoluteConstraints(586, 95, -1, -1));
 
         logOut.setText("Logout");
         logOut.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -530,6 +455,8 @@ public class SITwarehouse extends javax.swing.JFrame {
                 logOutActionPerformed(evt);
             }
         });
+        MemberHome.add(logOut, new org.netbeans.lib.awtextra.AbsoluteConstraints(608, 159, -1, -1));
+        MemberHome.add(date, new org.netbeans.lib.awtextra.AbsoluteConstraints(336, 56, 120, 19));
 
         AgrMem.setText("Agreement");
         AgrMem.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -537,68 +464,15 @@ public class SITwarehouse extends javax.swing.JFrame {
                 AgrMemMouseClicked(evt);
             }
         });
+        MemberHome.add(AgrMem, new org.netbeans.lib.awtextra.AbsoluteConstraints(506, 159, -1, -1));
 
-        javax.swing.GroupLayout MemberHomeLayout = new javax.swing.GroupLayout(MemberHome);
-        MemberHome.setLayout(MemberHomeLayout);
-        MemberHomeLayout.setHorizontalGroup(
-            MemberHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(MemberHomeLayout.createSequentialGroup()
-                .addGap(93, 93, 93)
-                .addGroup(MemberHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(MemberHomeLayout.createSequentialGroup()
-                        .addComponent(AgrMem)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(logOut))
-                    .addGroup(MemberHomeLayout.createSequentialGroup()
-                        .addComponent(HelloMember, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(date, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(170, 170, 170)
-                        .addComponent(jButton1))
-                    .addGroup(MemberHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(jLabel14, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 571, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(MemberHomeLayout.createSequentialGroup()
-                            .addGroup(MemberHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(memIdGui)
-                                .addComponent(dateMemHome))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(MemberHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(Edit, javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jButton2, javax.swing.GroupLayout.Alignment.TRAILING)))))
-                .addContainerGap(1918, Short.MAX_VALUE))
-        );
-        MemberHomeLayout.setVerticalGroup(
-            MemberHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(MemberHomeLayout.createSequentialGroup()
-                .addGap(56, 56, 56)
-                .addGroup(MemberHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(MemberHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(HelloMember)
-                        .addComponent(jButton1))
-                    .addComponent(date, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(MemberHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Edit)
-                    .addComponent(memIdGui))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(MemberHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
-                    .addComponent(dateMemHome))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(MemberHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(logOut)
-                    .addComponent(AgrMem))
-                .addGap(26, 26, 26)
-                .addComponent(jLabel14)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(304, Short.MAX_VALUE))
-        );
+        bgMem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/image/abstract_wallpaper_best_background_3009_high_quality.jpg"))); // NOI18N
+        MemberHome.add(bgMem, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -120, 1020, 750));
 
         Container.add(MemberHome, "card4");
 
         EmployeeHome.setBackground(new java.awt.Color(255, 204, 255));
+        EmployeeHome.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton3.setText("Check Transaction");
         jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -611,11 +485,14 @@ public class SITwarehouse extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
+        EmployeeHome.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 140, -1, -1));
 
         jLabel15.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel15.setText("Adminstrator");
+        EmployeeHome.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(96, 56, -1, -1));
 
         empIdGui.setText("Employee ID:");
+        EmployeeHome.add(empIdGui, new org.netbeans.lib.awtextra.AbsoluteConstraints(96, 92, -1, -1));
 
         jButton4.setText("Edit Warehouse Profile");
         jButton4.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -628,10 +505,13 @@ public class SITwarehouse extends javax.swing.JFrame {
                 jButton4ActionPerformed(evt);
             }
         });
+        EmployeeHome.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 100, -1, -1));
 
         dateEmpHome.setText("Date: ");
+        EmployeeHome.add(dateEmpHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(96, 134, -1, -1));
 
         jLabel18.setText("List of Member");
+        EmployeeHome.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(96, 166, -1, -1));
 
         logout.setText("Logout");
         logout.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -644,17 +524,18 @@ public class SITwarehouse extends javax.swing.JFrame {
                 logoutActionPerformed(evt);
             }
         });
+        EmployeeHome.add(logout, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 140, 85, -1));
 
         emTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "MemberId", "AccountId", "MemberName", "MemberAddress", "MemberPhoneNumber"
+                "Member ID", "Account ID", "Name", "Address", "Phonenumber"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Long.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class
+                java.lang.Long.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -673,77 +554,20 @@ public class SITwarehouse extends javax.swing.JFrame {
         });
         jScrollPane8.setViewportView(emTable);
 
-        Editwarehouse.setText("Edit warehouse");
-        Editwarehouse.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                EditwarehouseActionPerformed(evt);
-            }
-        });
+        EmployeeHome.add(jScrollPane8, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 200, 570, 270));
 
-        javax.swing.GroupLayout EmployeeHomeLayout = new javax.swing.GroupLayout(EmployeeHome);
-        EmployeeHome.setLayout(EmployeeHomeLayout);
-        EmployeeHomeLayout.setHorizontalGroup(
-            EmployeeHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(EmployeeHomeLayout.createSequentialGroup()
-                .addGroup(EmployeeHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(EmployeeHomeLayout.createSequentialGroup()
-                        .addGap(96, 96, 96)
-                        .addGroup(EmployeeHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel18)
-                            .addGroup(EmployeeHomeLayout.createSequentialGroup()
-                                .addComponent(dateEmpHome)
-                                .addGap(303, 303, 303)
-                                .addComponent(logout, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(EmployeeHomeLayout.createSequentialGroup()
-                                .addGroup(EmployeeHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(EmployeeHomeLayout.createSequentialGroup()
-                                        .addComponent(empIdGui)
-                                        .addGap(198, 198, 198)
-                                        .addComponent(jButton4))
-                                    .addComponent(jLabel15))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(EmployeeHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(Editwarehouse, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
-                    .addGroup(EmployeeHomeLayout.createSequentialGroup()
-                        .addGap(105, 105, 105)
-                        .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 596, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(1905, Short.MAX_VALUE))
-        );
-        EmployeeHomeLayout.setVerticalGroup(
-            EmployeeHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(EmployeeHomeLayout.createSequentialGroup()
-                .addGroup(EmployeeHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(EmployeeHomeLayout.createSequentialGroup()
-                        .addGap(56, 56, 56)
-                        .addComponent(jLabel15)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(empIdGui))
-                    .addGroup(EmployeeHomeLayout.createSequentialGroup()
-                        .addGap(68, 68, 68)
-                        .addComponent(Editwarehouse)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(EmployeeHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton3)
-                            .addComponent(jButton4))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(EmployeeHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(dateEmpHome)
-                    .addComponent(logout))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel18)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(345, Short.MAX_VALUE))
-        );
+        bgEm4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/image/figura.png"))); // NOI18N
+        EmployeeHome.add(bgEm4, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, 0, 840, 630));
 
         Container.add(EmployeeHome, "card5");
 
         EditProfile.setBackground(new java.awt.Color(255, 204, 255));
+        EditProfile.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel19.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         jLabel19.setForeground(new java.awt.Color(255, 255, 255));
         jLabel19.setText("Edit Profile");
+        EditProfile.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(295, 48, -1, -1));
 
         backLogin1.setText("< Back");
         backLogin1.addActionListener(new java.awt.event.ActionListener() {
@@ -751,6 +575,7 @@ public class SITwarehouse extends javax.swing.JFrame {
                 backLogin1ActionPerformed(evt);
             }
         });
+        EditProfile.add(backLogin1, new org.netbeans.lib.awtextra.AbsoluteConstraints(101, 48, -1, -1));
 
         submit1.setText("Submit");
         submit1.addActionListener(new java.awt.event.ActionListener() {
@@ -758,28 +583,36 @@ public class SITwarehouse extends javax.swing.JFrame {
                 submit1ActionPerformed(evt);
             }
         });
+        EditProfile.add(submit1, new org.netbeans.lib.awtextra.AbsoluteConstraints(352, 517, 76, 39));
 
         phoneNumber1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 phoneNumber1NumberActionPerformed(evt);
             }
         });
+        EditProfile.add(phoneNumber1, new org.netbeans.lib.awtextra.AbsoluteConstraints(295, 412, 200, -1));
 
         jLabel20.setText("Phone Number");
+        EditProfile.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(295, 385, -1, -1));
 
         jLabel21.setText("Address");
+        EditProfile.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(295, 279, -1, -1));
 
         name1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 name1ActionPerformed(evt);
             }
         });
+        EditProfile.add(name1, new org.netbeans.lib.awtextra.AbsoluteConstraints(295, 244, 200, -1));
 
         jLabel22.setText("Name and Surname");
+        EditProfile.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(295, 215, -1, -1));
 
         jLabel24.setText("New Password");
+        EditProfile.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(295, 157, -1, -1));
 
         jLabel25.setText("Username");
+        EditProfile.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(295, 105, -1, -1));
 
         accId1.setEditable(false);
         accId1.addActionListener(new java.awt.event.ActionListener() {
@@ -787,80 +620,24 @@ public class SITwarehouse extends javax.swing.JFrame {
                 accId1ActionPerformed(evt);
             }
         });
+        EditProfile.add(accId1, new org.netbeans.lib.awtextra.AbsoluteConstraints(295, 128, 200, -1));
 
         jLabel52.setText("Password");
+        EditProfile.add(jLabel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(295, 447, -1, -1));
 
         jScrollPane1.setViewportView(address1);
 
-        javax.swing.GroupLayout EditProfileLayout = new javax.swing.GroupLayout(EditProfile);
-        EditProfile.setLayout(EditProfileLayout);
-        EditProfileLayout.setHorizontalGroup(
-            EditProfileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(EditProfileLayout.createSequentialGroup()
-                .addGroup(EditProfileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(EditProfileLayout.createSequentialGroup()
-                        .addGap(352, 352, 352)
-                        .addComponent(submit1, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(EditProfileLayout.createSequentialGroup()
-                        .addGap(101, 101, 101)
-                        .addComponent(backLogin1)
-                        .addGap(123, 123, 123)
-                        .addGroup(EditProfileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(EditProfileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jLabel20)
-                                .addComponent(jLabel52)
-                                .addComponent(phoneNumber1)
-                                .addComponent(jLabel21)
-                                .addComponent(jLabel22)
-                                .addComponent(jLabel24)
-                                .addComponent(jLabel25)
-                                .addComponent(accId1)
-                                .addComponent(jScrollPane1)
-                                .addComponent(name1)
-                                .addComponent(oldPassword)
-                                .addComponent(accPass1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel19))))
-                .addContainerGap(2116, Short.MAX_VALUE))
-        );
-        EditProfileLayout.setVerticalGroup(
-            EditProfileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(EditProfileLayout.createSequentialGroup()
-                .addGap(48, 48, 48)
-                .addGroup(EditProfileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel19, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(backLogin1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel25)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(accId1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel24)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(accPass1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel22)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(name1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel21)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel20)
-                .addGap(11, 11, 11)
-                .addComponent(phoneNumber1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel52)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(oldPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(19, 19, 19)
-                .addComponent(submit1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(326, Short.MAX_VALUE))
-        );
+        EditProfile.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(295, 302, 200, 70));
+        EditProfile.add(oldPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(295, 476, 200, -1));
+        EditProfile.add(accPass1, new org.netbeans.lib.awtextra.AbsoluteConstraints(295, 180, 200, -1));
+
+        bgMem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/image/abstract_wallpaper_best_background_3009_high_quality.jpg"))); // NOI18N
+        EditProfile.add(bgMem1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -120, 1020, 750));
 
         Container.add(EditProfile, "card6");
 
         ListOfWarehouseMember.setBackground(new java.awt.Color(255, 204, 255));
+        ListOfWarehouseMember.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         backLogin2.setText("< Back");
         backLogin2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -873,9 +650,11 @@ public class SITwarehouse extends javax.swing.JFrame {
                 backLogin2ActionPerformed(evt);
             }
         });
+        ListOfWarehouseMember.add(backLogin2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, -1, -1));
 
-        jLabel26.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel26.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel26.setText("List of Available Warehouse");
+        ListOfWarehouseMember.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 70, -1, 53));
 
         search.setText("Search");
         search.addActionListener(new java.awt.event.ActionListener() {
@@ -883,21 +662,25 @@ public class SITwarehouse extends javax.swing.JFrame {
                 searchActionPerformed(evt);
             }
         });
+        ListOfWarehouseMember.add(search, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 480, -1, -1));
 
         textSeach.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 textSeachActionPerformed(evt);
             }
         });
+        ListOfWarehouseMember.add(textSeach, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 480, 100, -1));
 
         jLabel41.setText("Search by:");
+        ListOfWarehouseMember.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 480, -1, -1));
 
-        listSearch.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Warehouse ID", "Price", "Size" }));
+        listSearch.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Warehouse ID", "Price", "Size" }));
         listSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 listSearchActionPerformed(evt);
             }
         });
+        ListOfWarehouseMember.add(listSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 480, 120, -1));
 
         listMbTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -928,55 +711,32 @@ public class SITwarehouse extends javax.swing.JFrame {
         });
         jScrollPane10.setViewportView(listMbTable);
 
-        javax.swing.GroupLayout ListOfWarehouseMemberLayout = new javax.swing.GroupLayout(ListOfWarehouseMember);
-        ListOfWarehouseMember.setLayout(ListOfWarehouseMemberLayout);
-        ListOfWarehouseMemberLayout.setHorizontalGroup(
-            ListOfWarehouseMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(ListOfWarehouseMemberLayout.createSequentialGroup()
-                .addGroup(ListOfWarehouseMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(ListOfWarehouseMemberLayout.createSequentialGroup()
-                        .addGap(374, 374, 374)
-                        .addComponent(jLabel41)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(listSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(textSeach, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(search))
-                    .addGroup(ListOfWarehouseMemberLayout.createSequentialGroup()
-                        .addGap(55, 55, 55)
-                        .addComponent(backLogin2)
-                        .addGap(240, 240, 240)
-                        .addComponent(jLabel26))
-                    .addGroup(ListOfWarehouseMemberLayout.createSequentialGroup()
-                        .addGap(169, 169, 169)
-                        .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 571, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(1866, Short.MAX_VALUE))
-        );
-        ListOfWarehouseMemberLayout.setVerticalGroup(
-            ListOfWarehouseMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(ListOfWarehouseMemberLayout.createSequentialGroup()
-                .addGap(88, 88, 88)
-                .addGroup(ListOfWarehouseMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(backLogin2)
-                    .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(ListOfWarehouseMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(search)
-                    .addComponent(textSeach, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel41)
-                    .addComponent(listSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(337, Short.MAX_VALUE))
-        );
+        ListOfWarehouseMember.add(jScrollPane10, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 150, 571, 305));
+
+        jButton5.setText("See All");
+        jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton5MouseClicked(evt);
+            }
+        });
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+        ListOfWarehouseMember.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(155, 471, 84, -1));
+
+        bgMem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/image/abstract_wallpaper_best_background_3009_high_quality.jpg"))); // NOI18N
+        ListOfWarehouseMember.add(bgMem2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -120, 1020, 750));
 
         Container.add(ListOfWarehouseMember, "card7");
 
         EditWarehouse.setBackground(new java.awt.Color(255, 204, 255));
+        EditWarehouse.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel30.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         jLabel30.setText("Edit");
+        EditWarehouse.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(373, 48, -1, -1));
 
         backLogin4.setText("< Back");
         backLogin4.addActionListener(new java.awt.event.ActionListener() {
@@ -984,80 +744,231 @@ public class SITwarehouse extends javax.swing.JFrame {
                 backLogin4ActionPerformed(evt);
             }
         });
+        EditWarehouse.add(backLogin4, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 67, -1, -1));
 
         submit2.setText("Submit");
+        EditWarehouse.add(submit2, new org.netbeans.lib.awtextra.AbsoluteConstraints(373, 294, -1, -1));
 
         jLabel34.setText("Status");
+        EditWarehouse.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(343, 214, -1, -1));
 
         editWhPrice.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 editWhPriceActionPerformed(evt);
             }
         });
+        EditWarehouse.add(editWhPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(343, 185, 200, -1));
 
         jLabel35.setText("Price");
+        EditWarehouse.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(343, 162, -1, -1));
 
         jLabel36.setText("Warehouse ID");
+        EditWarehouse.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(343, 110, -1, -1));
 
         editWhId.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 editWhIdActionPerformed(evt);
             }
         });
+        EditWarehouse.add(editWhId, new org.netbeans.lib.awtextra.AbsoluteConstraints(343, 133, 200, -1));
 
-        editWhStatus.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "STANDBY", "IN USE", "MAINTENANCE" }));
+        editWhStatus.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "STANDBY", "IN USE", "MAINTENANCE" }));
+        EditWarehouse.add(editWhStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(343, 243, 200, -1));
 
-        javax.swing.GroupLayout EditWarehouseLayout = new javax.swing.GroupLayout(EditWarehouse);
-        EditWarehouse.setLayout(EditWarehouseLayout);
-        EditWarehouseLayout.setHorizontalGroup(
-            EditWarehouseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(EditWarehouseLayout.createSequentialGroup()
-                .addGroup(EditWarehouseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(EditWarehouseLayout.createSequentialGroup()
-                        .addGap(28, 28, 28)
-                        .addComponent(backLogin4)
-                        .addGap(274, 274, 274)
-                        .addGroup(EditWarehouseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(submit2)
-                            .addComponent(jLabel30)))
-                    .addGroup(EditWarehouseLayout.createSequentialGroup()
-                        .addGap(343, 343, 343)
-                        .addGroup(EditWarehouseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel34)
-                            .addComponent(editWhPrice)
-                            .addComponent(jLabel35)
-                            .addComponent(jLabel36)
-                            .addComponent(editWhId)
-                            .addComponent(editWhStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(2063, Short.MAX_VALUE))
-        );
-        EditWarehouseLayout.setVerticalGroup(
-            EditWarehouseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(EditWarehouseLayout.createSequentialGroup()
-                .addGap(48, 48, 48)
-                .addGroup(EditWarehouseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel30)
-                    .addComponent(backLogin4))
-                .addGap(18, 18, 18)
-                .addComponent(jLabel36)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(editWhId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel35)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(editWhPrice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel34)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(editWhStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29)
-                .addComponent(submit2)
-                .addContainerGap(543, Short.MAX_VALUE))
-        );
+        bgEm3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/image/figura.png"))); // NOI18N
+        EditWarehouse.add(bgEm3, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, 0, 840, 630));
 
         Container.add(EditWarehouse, "card8");
 
+        ListOfPermission.setBackground(new java.awt.Color(255, 204, 255));
+        ListOfPermission.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        backLogin5.setText("< Back");
+        backLogin5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                backLogin5MouseClicked(evt);
+            }
+        });
+        backLogin5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backLogin5ActionPerformed(evt);
+            }
+        });
+        ListOfPermission.add(backLogin5, new org.netbeans.lib.awtextra.AbsoluteConstraints(55, 65, -1, -1));
+
+        jLabel42.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jLabel42.setText("List of Permission");
+        ListOfPermission.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 60, -1, -1));
+
+        TablePMS.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "PermissionID", "AgreementID", "PaidDate", "PaidMount", "Ischeck", "BamkName", "BankID"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Long.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        TablePMS.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+                TablePMSAncestorAdded(evt);
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+        });
+        jScrollPane6.setViewportView(TablePMS);
+
+        ListOfPermission.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 130, 694, 287));
+
+        tagSearch.setText("Search");
+        tagSearch.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tagSearchActionPerformed(evt);
+            }
+        });
+        ListOfPermission.add(tagSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 440, -1, -1));
+
+        jLabel45.setText("Search by:");
+        ListOfPermission.add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 440, -1, -1));
+
+        SearchPms.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SearchPmsActionPerformed(evt);
+            }
+        });
+        ListOfPermission.add(SearchPms, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 440, 100, -1));
+
+        SelectPms.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Permission ID", "Agreement ID", " " }));
+        ListOfPermission.add(SelectPms, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 440, 130, -1));
+
+        bgEm2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/image/figura.png"))); // NOI18N
+        ListOfPermission.add(bgEm2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, 0, 840, 630));
+
+        Container.add(ListOfPermission, "card10");
+
+        CreatePermission.setBackground(new java.awt.Color(255, 204, 255));
+        CreatePermission.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel46.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jLabel46.setText("Report the money transfer");
+        CreatePermission.add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(164, 64, -1, -1));
+
+        jLabel47.setText("Transfer Date:");
+        CreatePermission.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(259, 169, -1, -1));
+
+        day.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
+        CreatePermission.add(day, new org.netbeans.lib.awtextra.AbsoluteConstraints(361, 166, -1, -1));
+
+        month.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" }));
+        CreatePermission.add(month, new org.netbeans.lib.awtextra.AbsoluteConstraints(414, 166, -1, -1));
+
+        year.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2559", "2560", "2561", "2562", "2563", "2564", "2565" }));
+        CreatePermission.add(year, new org.netbeans.lib.awtextra.AbsoluteConstraints(467, 166, 70, -1));
+        CreatePermission.add(agreementId, new org.netbeans.lib.awtextra.AbsoluteConstraints(361, 126, 176, -1));
+
+        jLabel48.setText("Agreement ID:");
+        CreatePermission.add(jLabel48, new org.netbeans.lib.awtextra.AbsoluteConstraints(259, 126, -1, -1));
+        CreatePermission.add(money, new org.netbeans.lib.awtextra.AbsoluteConstraints(361, 206, 176, -1));
+
+        jLabel49.setText("Amount of Money:");
+        CreatePermission.add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(238, 206, -1, -1));
+        CreatePermission.add(bankNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(361, 286, 176, -1));
+
+        jLabel50.setText("Bank:");
+        CreatePermission.add(jLabel50, new org.netbeans.lib.awtextra.AbsoluteConstraints(311, 246, -1, -1));
+
+        listBank.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Kasikorn", "Krungthep", "Thaipanit", "Krungthai", "Issaram" }));
+        CreatePermission.add(listBank, new org.netbeans.lib.awtextra.AbsoluteConstraints(361, 246, 176, -1));
+
+        jLabel51.setText("Bank account No:");
+        CreatePermission.add(jLabel51, new org.netbeans.lib.awtextra.AbsoluteConstraints(244, 286, -1, -1));
+
+        SubmitBank.setText("Submit");
+        CreatePermission.add(SubmitBank, new org.netbeans.lib.awtextra.AbsoluteConstraints(331, 336, 94, 38));
+
+        backLogin6.setText("< Back");
+        backLogin6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                backLogin6MouseClicked(evt);
+            }
+        });
+        backLogin6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backLogin6ActionPerformed(evt);
+            }
+        });
+        CreatePermission.add(backLogin6, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 75, -1, -1));
+
+        bgMem4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/image/abstract_wallpaper_best_background_3009_high_quality.jpg"))); // NOI18N
+        CreatePermission.add(bgMem4, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -120, 1020, 750));
+
+        Container.add(CreatePermission, "card11");
+
+        ListAgreement.setBackground(new java.awt.Color(255, 204, 255));
+        ListAgreement.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel11.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jLabel11.setText("Agreement Member");
+        ListAgreement.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 61, -1, -1));
+
+        TableAgrMem.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "AmId", "MemId", "WhId", "TotalDepts", "StartDate", "EndDate", "NpaidDate", "Arrears", "Npaid"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Long.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        TableAgrMem.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+                TableAgrMemAncestorAdded(evt);
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+        });
+        jScrollPane3.setViewportView(TableAgrMem);
+
+        ListAgreement.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(47, 139, 694, 390));
+
+        backLogin7.setText("< Back");
+        backLogin7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                backLogin7MouseClicked(evt);
+            }
+        });
+        backLogin7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backLogin7ActionPerformed(evt);
+            }
+        });
+        ListAgreement.add(backLogin7, new org.netbeans.lib.awtextra.AbsoluteConstraints(61, 61, -1, -1));
+
+        bgMem3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/image/abstract_wallpaper_best_background_3009_high_quality.jpg"))); // NOI18N
+        ListAgreement.add(bgMem3, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -120, 1020, 750));
+
+        Container.add(ListAgreement, "card2");
+
         ListOfWarehouseEmployee.setBackground(new java.awt.Color(255, 204, 255));
+        ListOfWarehouseEmployee.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         backLogin3.setText("< Back");
         backLogin3.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -1065,46 +976,28 @@ public class SITwarehouse extends javax.swing.JFrame {
                 backLogin3MouseClicked(evt);
             }
         });
-        backLogin3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                backLogin3ActionPerformed(evt);
-            }
-        });
+        ListOfWarehouseEmployee.add(backLogin3, new org.netbeans.lib.awtextra.AbsoluteConstraints(55, 65, -1, -1));
 
-        jLabel28.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel28.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         jLabel28.setText("List of Warehouse");
+        ListOfWarehouseEmployee.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 60, -1, -1));
 
         jButton8.setText("Search");
-        jButton8.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton8ActionPerformed(evt);
-            }
-        });
+        ListOfWarehouseEmployee.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 450, -1, -1));
 
         jLabel37.setText("Search by:");
+        ListOfWarehouseEmployee.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 450, -1, -1));
+        ListOfWarehouseEmployee.add(textSeachEM, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 450, 100, -1));
 
-        textSeachEM.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textSeachEMActionPerformed(evt);
-            }
-        });
-
-        listSearchEM.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Warehouse ID", "Price", "Size" }));
+        listSearchEM.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Warehouse ID", "Price", "Size" }));
+        ListOfWarehouseEmployee.add(listSearchEM, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 450, 128, -1));
 
         jLabel38.setText("Warehouse ID:");
-
-        whIdEdit.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                whIdEditActionPerformed(evt);
-            }
-        });
+        ListOfWarehouseEmployee.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 480, -1, -1));
+        ListOfWarehouseEmployee.add(whIdEdit, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 480, 100, -1));
 
         jButton11.setText("Edit");
-        jButton11.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton11ActionPerformed(evt);
-            }
-        });
+        ListOfWarehouseEmployee.add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 480, 70, -1));
 
         listEmTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -1134,359 +1027,25 @@ public class SITwarehouse extends javax.swing.JFrame {
         });
         jScrollPane11.setViewportView(listEmTable);
 
-        javax.swing.GroupLayout ListOfWarehouseEmployeeLayout = new javax.swing.GroupLayout(ListOfWarehouseEmployee);
-        ListOfWarehouseEmployee.setLayout(ListOfWarehouseEmployeeLayout);
-        ListOfWarehouseEmployeeLayout.setHorizontalGroup(
-            ListOfWarehouseEmployeeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ListOfWarehouseEmployeeLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(ListOfWarehouseEmployeeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel38)
-                    .addGroup(ListOfWarehouseEmployeeLayout.createSequentialGroup()
-                        .addComponent(jLabel37)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(listSearchEM, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(ListOfWarehouseEmployeeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(ListOfWarehouseEmployeeLayout.createSequentialGroup()
-                        .addComponent(textSeachEM, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton8))
-                    .addGroup(ListOfWarehouseEmployeeLayout.createSequentialGroup()
-                        .addComponent(whIdEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addGap(110, 110, 110))
-            .addGroup(ListOfWarehouseEmployeeLayout.createSequentialGroup()
-                .addGroup(ListOfWarehouseEmployeeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(ListOfWarehouseEmployeeLayout.createSequentialGroup()
-                        .addGap(55, 55, 55)
-                        .addComponent(backLogin3)
-                        .addGap(265, 265, 265)
-                        .addComponent(jLabel28))
-                    .addGroup(ListOfWarehouseEmployeeLayout.createSequentialGroup()
-                        .addGap(98, 98, 98)
-                        .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 571, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(1925, Short.MAX_VALUE))
-        );
-        ListOfWarehouseEmployeeLayout.setVerticalGroup(
-            ListOfWarehouseEmployeeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(ListOfWarehouseEmployeeLayout.createSequentialGroup()
-                .addGap(64, 64, 64)
-                .addGroup(ListOfWarehouseEmployeeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(backLogin3)
-                    .addComponent(jLabel28))
-                .addGap(38, 38, 38)
-                .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 253, Short.MAX_VALUE)
-                .addGroup(ListOfWarehouseEmployeeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton8)
-                    .addComponent(jLabel37)
-                    .addComponent(textSeachEM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(listSearchEM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(ListOfWarehouseEmployeeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel38)
-                    .addComponent(whIdEdit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton11))
-                .addGap(110, 110, 110))
-        );
+        ListOfWarehouseEmployee.add(jScrollPane11, new org.netbeans.lib.awtextra.AbsoluteConstraints(98, 128, 571, 305));
 
-        Container.add(ListOfWarehouseEmployee, "card7");
-
-        ListOfPermission.setBackground(new java.awt.Color(255, 204, 255));
-
-        backLogin5.setText("< Back");
-        backLogin5.addMouseListener(new java.awt.event.MouseAdapter() {
+        jButton6.setText("See All");
+        jButton6.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                backLogin5MouseClicked(evt);
+                jButton6MouseClicked(evt);
             }
         });
-        backLogin5.addActionListener(new java.awt.event.ActionListener() {
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                backLogin5ActionPerformed(evt);
+                jButton6ActionPerformed(evt);
             }
         });
+        ListOfWarehouseEmployee.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 450, 84, -1));
 
-        jLabel42.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel42.setText("List of Permission");
+        bgEm5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/image/figura.png"))); // NOI18N
+        ListOfWarehouseEmployee.add(bgEm5, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, 0, 840, 630));
 
-        TablePMS.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "PermissionID", "AgreementID", "PaidDate", "PaidMount", "Ischeck", "BamkName", "BankID"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.Long.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-        });
-        TablePMS.addAncestorListener(new javax.swing.event.AncestorListener() {
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
-            }
-            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
-                TablePMSAncestorAdded(evt);
-            }
-            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
-            }
-        });
-        jScrollPane6.setViewportView(TablePMS);
-
-        tagSearch.setText("Search");
-        tagSearch.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tagSearchActionPerformed(evt);
-            }
-        });
-
-        jLabel45.setText("Search by:");
-
-        SearchPms.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SearchPmsActionPerformed(evt);
-            }
-        });
-
-        SelectPms.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Permission ID", "Agreement ID", " " }));
-
-        javax.swing.GroupLayout ListOfPermissionLayout = new javax.swing.GroupLayout(ListOfPermission);
-        ListOfPermission.setLayout(ListOfPermissionLayout);
-        ListOfPermissionLayout.setHorizontalGroup(
-            ListOfPermissionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ListOfPermissionLayout.createSequentialGroup()
-                .addContainerGap(2099, Short.MAX_VALUE)
-                .addComponent(jLabel45)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(SelectPms, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(SearchPms, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(tagSearch)
-                .addGap(128, 128, 128))
-            .addGroup(ListOfPermissionLayout.createSequentialGroup()
-                .addGap(55, 55, 55)
-                .addGroup(ListOfPermissionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(ListOfPermissionLayout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 694, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(ListOfPermissionLayout.createSequentialGroup()
-                        .addComponent(backLogin5)
-                        .addGap(265, 265, 265)
-                        .addComponent(jLabel42)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        ListOfPermissionLayout.setVerticalGroup(
-            ListOfPermissionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(ListOfPermissionLayout.createSequentialGroup()
-                .addGap(64, 64, 64)
-                .addGroup(ListOfPermissionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(backLogin5)
-                    .addComponent(jLabel42))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
-                .addGroup(ListOfPermissionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tagSearch)
-                    .addComponent(jLabel45)
-                    .addComponent(SearchPms, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(SelectPms, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(372, Short.MAX_VALUE))
-        );
-
-        Container.add(ListOfPermission, "card10");
-
-        CreatePermission.setBackground(new java.awt.Color(255, 204, 255));
-
-        jLabel46.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
-        jLabel46.setText("Report the money transfer");
-
-        jLabel47.setText("Transfer Date:");
-
-        day.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
-
-        month.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" }));
-
-        year.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "2559", "2560", "2561", "2562", "2563", "2564", "2565" }));
-
-        jLabel48.setText("Agreement ID:");
-
-        jLabel49.setText("Amount of Money:");
-
-        jLabel50.setText("Bank:");
-
-        listBank.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Kasikorn", "Krungthep", "Thaipanit", "Krungthai", "Issaram" }));
-
-        jLabel51.setText("Bank account No:");
-
-        SubmitBank.setText("Submit");
-
-        backLogin6.setText("< Back");
-        backLogin6.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                backLogin6MouseClicked(evt);
-            }
-        });
-        backLogin6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                backLogin6ActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout CreatePermissionLayout = new javax.swing.GroupLayout(CreatePermission);
-        CreatePermission.setLayout(CreatePermissionLayout);
-        CreatePermissionLayout.setHorizontalGroup(
-            CreatePermissionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(CreatePermissionLayout.createSequentialGroup()
-                .addGroup(CreatePermissionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(CreatePermissionLayout.createSequentialGroup()
-                        .addGap(238, 238, 238)
-                        .addGroup(CreatePermissionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel47)
-                            .addComponent(jLabel48)
-                            .addComponent(jLabel49)
-                            .addComponent(jLabel50)
-                            .addComponent(jLabel51))
-                        .addGap(18, 18, 18)
-                        .addGroup(CreatePermissionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(CreatePermissionLayout.createSequentialGroup()
-                                .addComponent(day, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(month, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(year, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(agreementId)
-                            .addComponent(money)
-                            .addComponent(listBank, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(bankNo)))
-                    .addGroup(CreatePermissionLayout.createSequentialGroup()
-                        .addGap(331, 331, 331)
-                        .addComponent(SubmitBank, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(CreatePermissionLayout.createSequentialGroup()
-                        .addGap(35, 35, 35)
-                        .addComponent(backLogin6)
-                        .addGap(58, 58, 58)
-                        .addComponent(jLabel46)))
-                .addContainerGap(1954, Short.MAX_VALUE))
-        );
-        CreatePermissionLayout.setVerticalGroup(
-            CreatePermissionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(CreatePermissionLayout.createSequentialGroup()
-                .addGroup(CreatePermissionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(CreatePermissionLayout.createSequentialGroup()
-                        .addGap(64, 64, 64)
-                        .addComponent(jLabel46))
-                    .addGroup(CreatePermissionLayout.createSequentialGroup()
-                        .addGap(75, 75, 75)
-                        .addComponent(backLogin6)))
-                .addGap(18, 18, 18)
-                .addGroup(CreatePermissionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel48)
-                    .addComponent(agreementId, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(CreatePermissionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(CreatePermissionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(day, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(month, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel47))
-                    .addComponent(year, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(CreatePermissionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel49)
-                    .addComponent(money, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(CreatePermissionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel50)
-                    .addComponent(listBank, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(CreatePermissionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel51)
-                    .addComponent(bankNo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(28, 28, 28)
-                .addComponent(SubmitBank, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(470, Short.MAX_VALUE))
-        );
-
-        Container.add(CreatePermission, "card11");
-
-        ListAgreement.setBackground(new java.awt.Color(255, 204, 255));
-
-        jLabel11.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
-        jLabel11.setText("Agreement Member");
-
-        TableAgrMem.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "AmId", "MemId", "WhId", "TotalDepts", "StartDate", "EndDate", "NpaidDate", "Arrears", "Npaid"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.Long.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-        });
-        TableAgrMem.addAncestorListener(new javax.swing.event.AncestorListener() {
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
-            }
-            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
-                TableAgrMemAncestorAdded(evt);
-            }
-            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
-            }
-        });
-        jScrollPane3.setViewportView(TableAgrMem);
-
-        backLogin7.setText("< Back");
-        backLogin7.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                backLogin7MouseClicked(evt);
-            }
-        });
-        backLogin7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                backLogin7ActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout ListAgreementLayout = new javax.swing.GroupLayout(ListAgreement);
-        ListAgreement.setLayout(ListAgreementLayout);
-        ListAgreementLayout.setHorizontalGroup(
-            ListAgreementLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(ListAgreementLayout.createSequentialGroup()
-                .addGroup(ListAgreementLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(ListAgreementLayout.createSequentialGroup()
-                        .addGap(61, 61, 61)
-                        .addComponent(backLogin7)
-                        .addGap(108, 108, 108)
-                        .addComponent(jLabel11))
-                    .addGroup(ListAgreementLayout.createSequentialGroup()
-                        .addGap(47, 47, 47)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 694, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(1853, Short.MAX_VALUE))
-        );
-        ListAgreementLayout.setVerticalGroup(
-            ListAgreementLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(ListAgreementLayout.createSequentialGroup()
-                .addGap(61, 61, 61)
-                .addGroup(ListAgreementLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel11)
-                    .addComponent(backLogin7))
-                .addGap(34, 34, 34)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(276, Short.MAX_VALUE))
-        );
-
-        Container.add(ListAgreement, "card2");
+        Container.add(ListOfWarehouseEmployee, "card12");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -1545,9 +1104,7 @@ public class SITwarehouse extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        EmployeeHome.setVisible(false);
-        ListOfWarehouseEmployee.setVisible(true);
-       
+      
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void EditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditActionPerformed
@@ -1582,13 +1139,9 @@ public class SITwarehouse extends javax.swing.JFrame {
 
     }//GEN-LAST:event_backLogin2ActionPerformed
 
-    private void backLogin3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backLogin3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_backLogin3ActionPerformed
-
     private void backLogin4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backLogin4ActionPerformed
         EditWarehouse.setVisible(false);
-        EmployeeHome.setVisible(true);
+        ListOfWarehouseEmployee.setVisible(true);
     }//GEN-LAST:event_backLogin4ActionPerformed
 
     private void editWhPriceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editWhPriceActionPerformed
@@ -1598,10 +1151,6 @@ public class SITwarehouse extends javax.swing.JFrame {
     private void editWhIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editWhIdActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_editWhIdActionPerformed
-
-    private void textSeachEMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textSeachEMActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_textSeachEMActionPerformed
 
     private void searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchActionPerformed
         // TODO add your handling code here:
@@ -1791,42 +1340,35 @@ public class SITwarehouse extends javax.swing.JFrame {
 
     private void backLogin2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backLogin2MouseClicked
         // TODO add your handling code here:
-         DefaultTableModel model = (DefaultTableModel) listMbTable.getModel();
+        DefaultTableModel model = (DefaultTableModel) listMbTable.getModel();
         this.ListOfWarehouseMember.setVisible(false);
         this.MemberHome.setVisible(true);
         textSeach.setText("");
-         model.setNumRows(0);
+        listSearch.setActionCommand("Warehouse ID");
+        model.setNumRows(0);
     }//GEN-LAST:event_backLogin2MouseClicked
 
     private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
         // TODO add your handling code here:
-        DefaultTableModel models = (DefaultTableModel) emTable.getModel();
-         models.setNumRows(0);
         this.EmployeeHome.setVisible(false);
         this.ListOfWarehouseEmployee.setVisible(true);
     }//GEN-LAST:event_jButton4MouseClicked
 
-    private void backLogin3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backLogin3MouseClicked
-        // TODO add your handling code here:
-        DefaultTableModel model = (DefaultTableModel) listEmTable.getModel();
-        model.setNumRows(0);
-        this.ListOfWarehouseEmployee.setVisible(false);
-        this.EmployeeHome.setVisible(true);
-        textSeachEM.setText(" ");
-    }//GEN-LAST:event_backLogin3MouseClicked
-
     private void logoutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutMouseClicked
-        // TODO add your handling code here:
-      
-
+        DefaultTableModel model = (DefaultTableModel) emTable.getModel();
+        model.setNumRows(0);
+         SITOperation.logout("employee");
+        EmployeeHome.setVisible(false);
+        Login.setVisible(true);
+         userName.setText("");
+        passWord.setText("");
     }//GEN-LAST:event_logoutMouseClicked
 
     private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
-        // TODO add your handling code here:
-        DefaultTableModel models = (DefaultTableModel) emTable.getModel();
-         models.setNumRows(0);
+
         this.EmployeeHome.setVisible(false);
         this.ListOfPermission.setVisible(true);
+        
     }//GEN-LAST:event_jButton3MouseClicked
 
     private void backLogin6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backLogin6ActionPerformed
@@ -1838,53 +1380,16 @@ public class SITwarehouse extends javax.swing.JFrame {
     }//GEN-LAST:event_logOutActionPerformed
 
     private void logoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutActionPerformed
-        DefaultTableModel models = (DefaultTableModel) emTable.getModel();
-         models.setNumRows(0);
-        SITOperation.logout("employee");
-        EmployeeHome.setVisible(false);
-        Login.setVisible(true);
-         userName.setText("");
-        passWord.setText("");
+
     }//GEN-LAST:event_logoutActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        EmployeeHome.setVisible(false);
-        ListOfPermission.setVisible(true);
+        
     }//GEN-LAST:event_jButton3ActionPerformed
-
-    private void whIdEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_whIdEditActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_whIdEditActionPerformed
-
-    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
-        ListOfWarehouseEmployee.setVisible(false);
-        EditWarehouse.setVisible(true);
-    }//GEN-LAST:event_jButton11ActionPerformed
 
     private void mbTableAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_mbTableAncestorAdded
         // TODO add your handling code here:
     }//GEN-LAST:event_mbTableAncestorAdded
-
-    private void emTableAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_emTableAncestorAdded
-        // TODO add your handling code here:
-         DefaultTableModel models = (DefaultTableModel) emTable.getModel();
-        try {
-            Connection cnb = ConnectionBuilder.connect();
-            Statement stmt = cnb.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT MEMID,ACCID,MEMNAME,MEMADDRESS,MEMPHONENUMBER FROM MYDB.MEMBER");
-            while (rs.next()) {
-                models.addRow(new Object[]{rs.getLong(1), rs.getString(2), rs.getString(3), rs.getString(4),rs.getString(5)});
-            }
-            cnb.close();
-
-        } catch (SQLException err) {
-            System.out.print(err);
-        } catch (ClassNotFoundException err) {
-            System.out.print(err);
-        }
-         
-        
-    }//GEN-LAST:event_emTableAncestorAdded
 
     private void listMbTableAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_listMbTableAncestorAdded
         // TODO add your handling code here:
@@ -1907,10 +1412,12 @@ public class SITwarehouse extends javax.swing.JFrame {
     }//GEN-LAST:event_listMbTableAncestorAdded
 
     private void backLogin5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backLogin5MouseClicked
-         DefaultTableModel model = (DefaultTableModel)TablePMS.getModel();
-         model.setNumRows(0);
-        ListOfPermission.setVisible(false);
-        EmployeeHome.setVisible(true);
+         DefaultTableModel model1 = (DefaultTableModel)TablePMS.getModel();
+         model1.setNumRows(0);
+         DefaultTableModel model2 = (DefaultTableModel) emTable.getModel();
+         model2.setNumRows(0);
+         ListOfPermission.setVisible(false);
+         EmployeeHome.setVisible(true);
         
         // TablePMS.setToolTipText("");
     }//GEN-LAST:event_backLogin5MouseClicked
@@ -1935,65 +1442,6 @@ public class SITwarehouse extends javax.swing.JFrame {
     private void listSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listSearchActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_listSearchActionPerformed
-
-    private void listEmTableAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_listEmTableAncestorAdded
-        // TODO add your handling code here:
-        DefaultTableModel model = (DefaultTableModel) listEmTable.getModel();
-        try {
-            Connection cnb = ConnectionBuilder.connect();
-            Statement stmt = cnb.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT * FROM MYDB.WAREHOUSE");
-
-            while (rs.next()) {
-                model.addRow(new Object[]{rs.getLong(1), rs.getString(2), rs.getString(3), rs.getString(4)});
-            }
-        } catch (SQLException err) {
-            System.out.print(err);
-        } catch (ClassNotFoundException err) {
-            System.out.print(err);
-        }
-    }//GEN-LAST:event_listEmTableAncestorAdded
-
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-        // TODO add your handling code here:
-        try {
-            DefaultTableModel model = (DefaultTableModel) listEmTable.getModel();
-            String list = (String) listSearchEM.getSelectedItem();
-            String text = textSeachEM.getText().toUpperCase();
-            if (list.equalsIgnoreCase("Warehouse ID")) {
-                Connection cnb = ConnectionBuilder.connect();
-                Statement stmt = cnb.createStatement();
-                String SQL = "SELECT * FROM WAREHOUSE WHERE WAREHOUSEID=" + text;
-                ResultSet rs = stmt.executeQuery(SQL);
-                model.setNumRows(0);
-                while (rs.next()) {
-                    model.addRow(new Object[]{rs.getLong(1), rs.getString(2), rs.getString(3), rs.getString(4)});
-                }
-            } else if (list.equalsIgnoreCase("Price")) {
-                Connection cnb = ConnectionBuilder.connect();
-                Statement stmt = cnb.createStatement();
-                String SQL = "SELECT * FROM WAREHOUSE WHERE PRICE=" + text;
-                ResultSet rs = stmt.executeQuery(SQL);
-                model.setNumRows(0);
-                while (rs.next()) {
-                    model.addRow(new Object[]{rs.getLong(1), rs.getString(2), rs.getString(3), rs.getString(4)});
-                }
-            } else {
-                Connection cnb = ConnectionBuilder.connect();
-                Statement stmt = cnb.createStatement();
-                String SQL = "SELECT * FROM WAREHOUSE WHERE SIZE='" + text + "'";
-                ResultSet rs = stmt.executeQuery(SQL);
-                model.setNumRows(0);
-                while (rs.next()) {
-                    model.addRow(new Object[]{rs.getLong(1), rs.getString(2), rs.getString(3), rs.getString(4)});
-                }
-            }
-        } catch (SQLException err) {
-            System.out.print(err);
-        } catch (ClassNotFoundException err) {
-            System.out.print(err);
-        }
-    }//GEN-LAST:event_jButton8ActionPerformed
 
     private void TablePMSAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_TablePMSAncestorAdded
         // TODO add your handling code here:
@@ -2087,14 +1535,79 @@ public class SITwarehouse extends javax.swing.JFrame {
         ListAgreement.setVisible(true);
     }//GEN-LAST:event_AgrMemMouseClicked
 
-    private void EditwarehouseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditwarehouseActionPerformed
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
+        DefaultTableModel model = (DefaultTableModel) listMbTable.getModel();
+        this.ListOfWarehouseMember.setVisible(false);
+        this.ListOfWarehouseMember.setVisible(true);
+        textSeach.setText("");
+        model.setNumRows(0);
+        
+    }//GEN-LAST:event_jButton5MouseClicked
+
+    private void emTableAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_emTableAncestorAdded
         // TODO add your handling code here:
         DefaultTableModel models = (DefaultTableModel) emTable.getModel();
-         models.setNumRows(0);
-        this.EmployeeHome.setVisible(false);
-        this.EditWarehouse.setVisible(true);
-         
-    }//GEN-LAST:event_EditwarehouseActionPerformed
+        try {
+            Connection cnb = ConnectionBuilder.connect();
+            Statement stmt = cnb.createStatement();
+            ResultSet rs = stmt.executeQuery("SELECT MEMID,ACCID,MEMNAME,MEMADDRESS,MEMPHONENUMBER FROM MYDB.MEMBER");
+            while (rs.next()) {
+                models.addRow(new Object[]{rs.getLong(1), rs.getString(2), rs.getString(3), rs.getString(4),rs.getString(5)});
+            }
+            cnb.close();
+
+        } catch (SQLException err) {
+            System.out.print(err);
+        } catch (ClassNotFoundException err) {
+            System.out.print(err);
+        }
+
+    }//GEN-LAST:event_emTableAncestorAdded
+
+    private void backLogin3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backLogin3MouseClicked
+        DefaultTableModel model1 = (DefaultTableModel) listMbTable.getModel();
+        this.ListOfWarehouseEmployee.setVisible(false);
+        this.EmployeeHome.setVisible(true);
+        textSeachEM.setText("");
+        listSearchEM.setActionCommand("Warehouse ID");
+        model1.setNumRows(0);
+        DefaultTableModel model2 = (DefaultTableModel) emTable.getModel();
+        model2.setNumRows(0);
+    }//GEN-LAST:event_backLogin3MouseClicked
+
+    private void listEmTableAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_listEmTableAncestorAdded
+        DefaultTableModel model = (DefaultTableModel) listEmTable.getModel();
+        try {
+            Connection cnb = ConnectionBuilder.connect();
+            Statement stmt = cnb.createStatement();
+            ResultSet rs = stmt.executeQuery("SELECT * FROM MYDB.WAREHOUSE");
+            while (rs.next()) {
+                model.addRow(new Object[]{rs.getLong(1), rs.getString(2), rs.getString(3), rs.getString(4)});
+            }
+            cnb.close();
+
+        } catch (SQLException err) {
+            System.out.print(err);
+        } catch (ClassNotFoundException err) {
+            System.out.print(err);
+        }
+    }//GEN-LAST:event_listEmTableAncestorAdded
+
+    private void jButton6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MouseClicked
+        DefaultTableModel model = (DefaultTableModel) listEmTable.getModel();
+        this.ListOfWarehouseEmployee.setVisible(false);
+        this.ListOfWarehouseEmployee.setVisible(true);
+        textSeachEM.setText("");
+        model.setNumRows(0);
+    }//GEN-LAST:event_jButton6MouseClicked
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton6ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -2142,7 +1655,6 @@ public class SITwarehouse extends javax.swing.JFrame {
     private javax.swing.JButton Edit;
     private javax.swing.JPanel EditProfile;
     private javax.swing.JPanel EditWarehouse;
-    private javax.swing.JButton Editwarehouse;
     private javax.swing.JPanel EmployeeHome;
     private javax.swing.JLabel HelloMember;
     private javax.swing.JPanel ListAgreement;
@@ -2173,6 +1685,17 @@ public class SITwarehouse extends javax.swing.JFrame {
     private javax.swing.JButton backLogin6;
     private javax.swing.JButton backLogin7;
     private javax.swing.JTextField bankNo;
+    private javax.swing.JLabel bgEm2;
+    private javax.swing.JLabel bgEm3;
+    private javax.swing.JLabel bgEm4;
+    private javax.swing.JLabel bgEm5;
+    private javax.swing.JLabel bgMem;
+    private javax.swing.JLabel bgMem1;
+    private javax.swing.JLabel bgMem2;
+    private javax.swing.JLabel bgMem3;
+    private javax.swing.JLabel bgMem4;
+    private javax.swing.JLabel bgRegister;
+    private javax.swing.JLabel bgRegister1;
     private javax.swing.JPasswordField cfAccPass;
     private javax.swing.JLabel date;
     private javax.swing.JLabel dateEmpHome;
@@ -2188,6 +1711,8 @@ public class SITwarehouse extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton8;
     private javax.swing.JFrame jFrame1;
     private javax.swing.JLabel jLabel1;
