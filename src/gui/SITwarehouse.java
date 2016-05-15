@@ -139,9 +139,6 @@ public class SITwarehouse extends javax.swing.JFrame {
         ListOfWarehouseMember = new javax.swing.JPanel();
         backLogin2 = new javax.swing.JButton();
         jLabel26 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jButton7 = new javax.swing.JButton();
-        jLabel27 = new javax.swing.JLabel();
         search = new javax.swing.JButton();
         textSeach = new javax.swing.JTextField();
         jLabel41 = new javax.swing.JLabel();
@@ -195,7 +192,7 @@ public class SITwarehouse extends javax.swing.JFrame {
         jLabel51 = new javax.swing.JLabel();
         SubmitBank = new javax.swing.JButton();
         backLogin6 = new javax.swing.JButton();
-        Agreement = new javax.swing.JPanel();
+        ListAgreement = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         TableAgrMem = new javax.swing.JTable();
@@ -220,8 +217,9 @@ public class SITwarehouse extends javax.swing.JFrame {
 
         Container.setLayout(new java.awt.CardLayout());
 
+        Login.setBackground(new java.awt.Color(255, 204, 255));
+
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Welcome");
 
         jLabel2.setText("Username");
@@ -305,8 +303,9 @@ public class SITwarehouse extends javax.swing.JFrame {
 
         Container.add(Login, "card2");
 
+        Register.setBackground(new java.awt.Color(255, 204, 255));
+
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Register");
 
         accId.addActionListener(new java.awt.event.ActionListener() {
@@ -443,6 +442,8 @@ public class SITwarehouse extends javax.swing.JFrame {
         );
 
         Container.add(Register, "card3");
+
+        MemberHome.setBackground(new java.awt.Color(255, 204, 255));
 
         HelloMember.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         HelloMember.setText("Hello");
@@ -596,6 +597,8 @@ public class SITwarehouse extends javax.swing.JFrame {
 
         Container.add(MemberHome, "card4");
 
+        EmployeeHome.setBackground(new java.awt.Color(255, 204, 255));
+
         jButton3.setText("Check Transaction");
         jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -727,6 +730,8 @@ public class SITwarehouse extends javax.swing.JFrame {
 
         Container.add(EmployeeHome, "card5");
 
+        EditProfile.setBackground(new java.awt.Color(255, 204, 255));
+
         jLabel19.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         jLabel19.setForeground(new java.awt.Color(255, 255, 255));
         jLabel19.setText("Edit Profile");
@@ -785,30 +790,28 @@ public class SITwarehouse extends javax.swing.JFrame {
             .addGroup(EditProfileLayout.createSequentialGroup()
                 .addGroup(EditProfileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(EditProfileLayout.createSequentialGroup()
-                        .addGap(28, 28, 28)
-                        .addComponent(backLogin1)
-                        .addGap(196, 196, 196)
-                        .addComponent(jLabel19))
-                    .addGroup(EditProfileLayout.createSequentialGroup()
                         .addGap(352, 352, 352)
-                        .addComponent(submit1, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, EditProfileLayout.createSequentialGroup()
-                .addContainerGap(2023, Short.MAX_VALUE)
-                .addGroup(EditProfileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel20)
-                    .addComponent(jLabel52)
-                    .addComponent(phoneNumber1, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                    .addComponent(jLabel21)
-                    .addComponent(jLabel22)
-                    .addComponent(jLabel24)
-                    .addComponent(jLabel25)
-                    .addComponent(accId1, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                    .addComponent(jScrollPane1)
-                    .addComponent(name1, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                    .addComponent(oldPassword)
-                    .addComponent(accPass1))
-                .addGap(371, 371, 371))
+                        .addComponent(submit1, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(EditProfileLayout.createSequentialGroup()
+                        .addGap(101, 101, 101)
+                        .addComponent(backLogin1)
+                        .addGap(123, 123, 123)
+                        .addGroup(EditProfileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(EditProfileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jLabel20)
+                                .addComponent(jLabel52)
+                                .addComponent(phoneNumber1)
+                                .addComponent(jLabel21)
+                                .addComponent(jLabel22)
+                                .addComponent(jLabel24)
+                                .addComponent(jLabel25)
+                                .addComponent(accId1)
+                                .addComponent(jScrollPane1)
+                                .addComponent(name1)
+                                .addComponent(oldPassword)
+                                .addComponent(accPass1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel19))))
+                .addContainerGap(2116, Short.MAX_VALUE))
         );
         EditProfileLayout.setVerticalGroup(
             EditProfileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -841,12 +844,14 @@ public class SITwarehouse extends javax.swing.JFrame {
                 .addComponent(jLabel52)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(oldPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(13, 13, 13)
+                .addGap(19, 19, 19)
                 .addComponent(submit1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(332, Short.MAX_VALUE))
+                .addContainerGap(326, Short.MAX_VALUE))
         );
 
         Container.add(EditProfile, "card6");
+
+        ListOfWarehouseMember.setBackground(new java.awt.Color(255, 204, 255));
 
         backLogin2.setText("< Back");
         backLogin2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -861,23 +866,7 @@ public class SITwarehouse extends javax.swing.JFrame {
         });
 
         jLabel26.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel26.setForeground(new java.awt.Color(255, 255, 255));
         jLabel26.setText("List of Available Warehouse");
-
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
-            }
-        });
-
-        jButton7.setText("Buy");
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
-            }
-        });
-
-        jLabel27.setText("Warehouse ID:");
 
         search.setText("Search");
         search.addActionListener(new java.awt.event.ActionListener() {
@@ -934,27 +923,17 @@ public class SITwarehouse extends javax.swing.JFrame {
         ListOfWarehouseMember.setLayout(ListOfWarehouseMemberLayout);
         ListOfWarehouseMemberLayout.setHorizontalGroup(
             ListOfWarehouseMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ListOfWarehouseMemberLayout.createSequentialGroup()
-                .addContainerGap(2121, Short.MAX_VALUE)
-                .addGroup(ListOfWarehouseMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGroup(ListOfWarehouseMemberLayout.createSequentialGroup()
+                .addGroup(ListOfWarehouseMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(ListOfWarehouseMemberLayout.createSequentialGroup()
+                        .addGap(374, 374, 374)
                         .addComponent(jLabel41)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(listSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(textSeach, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(search)
-                        .addGap(22, 22, 22))
-                    .addGroup(ListOfWarehouseMemberLayout.createSequentialGroup()
-                        .addComponent(jLabel27)
-                        .addGap(13, 13, 13)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton7)))
-                .addGap(110, 110, 110))
-            .addGroup(ListOfWarehouseMemberLayout.createSequentialGroup()
-                .addGroup(ListOfWarehouseMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(search))
                     .addGroup(ListOfWarehouseMemberLayout.createSequentialGroup()
                         .addGap(55, 55, 55)
                         .addComponent(backLogin2)
@@ -971,27 +950,23 @@ public class SITwarehouse extends javax.swing.JFrame {
                 .addGap(88, 88, 88)
                 .addGroup(ListOfWarehouseMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(backLogin2)
-                    .addComponent(jLabel26))
+                    .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(15, 15, 15)
+                .addGap(18, 18, 18)
                 .addGroup(ListOfWarehouseMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(search)
                     .addComponent(textSeach, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel41)
                     .addComponent(listSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(ListOfWarehouseMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel27)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton7))
-                .addContainerGap(333, Short.MAX_VALUE))
+                .addContainerGap(337, Short.MAX_VALUE))
         );
 
         Container.add(ListOfWarehouseMember, "card7");
 
+        EditWarehouse.setBackground(new java.awt.Color(255, 204, 255));
+
         jLabel30.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
-        jLabel30.setForeground(new java.awt.Color(255, 255, 255));
         jLabel30.setText("Edit");
 
         backLogin4.setText("< Back");
@@ -1027,24 +1002,25 @@ public class SITwarehouse extends javax.swing.JFrame {
         EditWarehouse.setLayout(EditWarehouseLayout);
         EditWarehouseLayout.setHorizontalGroup(
             EditWarehouseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, EditWarehouseLayout.createSequentialGroup()
-                .addContainerGap(2097, Short.MAX_VALUE)
-                .addGroup(EditWarehouseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel34)
-                    .addComponent(editWhPrice, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                    .addComponent(jLabel35)
-                    .addComponent(jLabel36)
-                    .addComponent(editWhId, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                    .addComponent(editWhStatus, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(297, 297, 297))
             .addGroup(EditWarehouseLayout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addComponent(backLogin4)
-                .addGap(274, 274, 274)
                 .addGroup(EditWarehouseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(submit2)
-                    .addComponent(jLabel30))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(EditWarehouseLayout.createSequentialGroup()
+                        .addGap(28, 28, 28)
+                        .addComponent(backLogin4)
+                        .addGap(274, 274, 274)
+                        .addGroup(EditWarehouseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(submit2)
+                            .addComponent(jLabel30)))
+                    .addGroup(EditWarehouseLayout.createSequentialGroup()
+                        .addGap(343, 343, 343)
+                        .addGroup(EditWarehouseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel34)
+                            .addComponent(editWhPrice)
+                            .addComponent(jLabel35)
+                            .addComponent(jLabel36)
+                            .addComponent(editWhId)
+                            .addComponent(editWhStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(2063, Short.MAX_VALUE))
         );
         EditWarehouseLayout.setVerticalGroup(
             EditWarehouseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1053,7 +1029,7 @@ public class SITwarehouse extends javax.swing.JFrame {
                 .addGroup(EditWarehouseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel30)
                     .addComponent(backLogin4))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel36)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(editWhId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1065,12 +1041,14 @@ public class SITwarehouse extends javax.swing.JFrame {
                 .addComponent(jLabel34)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(editWhStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(54, 54, 54)
+                .addGap(29, 29, 29)
                 .addComponent(submit2)
-                .addContainerGap(525, Short.MAX_VALUE))
+                .addContainerGap(543, Short.MAX_VALUE))
         );
 
         Container.add(EditWarehouse, "card8");
+
+        ListOfWarehouseEmployee.setBackground(new java.awt.Color(255, 204, 255));
 
         backLogin3.setText("< Back");
         backLogin3.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -1085,7 +1063,6 @@ public class SITwarehouse extends javax.swing.JFrame {
         });
 
         jLabel28.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel28.setForeground(new java.awt.Color(255, 255, 255));
         jLabel28.setText("List of Warehouse");
 
         jButton8.setText("Search");
@@ -1208,6 +1185,8 @@ public class SITwarehouse extends javax.swing.JFrame {
 
         Container.add(ListOfWarehouseEmployee, "card7");
 
+        ListOfPermission.setBackground(new java.awt.Color(255, 204, 255));
+
         backLogin5.setText("< Back");
         backLogin5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -1221,7 +1200,6 @@ public class SITwarehouse extends javax.swing.JFrame {
         });
 
         jLabel42.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel42.setForeground(new java.awt.Color(255, 255, 255));
         jLabel42.setText("List of Permission");
 
         TablePMS.setModel(new javax.swing.table.DefaultTableModel(
@@ -1314,8 +1292,9 @@ public class SITwarehouse extends javax.swing.JFrame {
 
         Container.add(ListOfPermission, "card10");
 
+        CreatePermission.setBackground(new java.awt.Color(255, 204, 255));
+
         jLabel46.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
-        jLabel46.setForeground(new java.awt.Color(255, 255, 255));
         jLabel46.setText("Report the money transfer");
 
         jLabel47.setText("Transfer Date:");
@@ -1426,8 +1405,9 @@ public class SITwarehouse extends javax.swing.JFrame {
 
         Container.add(CreatePermission, "card11");
 
+        ListAgreement.setBackground(new java.awt.Color(255, 204, 255));
+
         jLabel11.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("Agreement Member");
 
         TableAgrMem.setModel(new javax.swing.table.DefaultTableModel(
@@ -1469,27 +1449,27 @@ public class SITwarehouse extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout AgreementLayout = new javax.swing.GroupLayout(Agreement);
-        Agreement.setLayout(AgreementLayout);
-        AgreementLayout.setHorizontalGroup(
-            AgreementLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(AgreementLayout.createSequentialGroup()
-                .addGroup(AgreementLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(AgreementLayout.createSequentialGroup()
+        javax.swing.GroupLayout ListAgreementLayout = new javax.swing.GroupLayout(ListAgreement);
+        ListAgreement.setLayout(ListAgreementLayout);
+        ListAgreementLayout.setHorizontalGroup(
+            ListAgreementLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ListAgreementLayout.createSequentialGroup()
+                .addGroup(ListAgreementLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(ListAgreementLayout.createSequentialGroup()
                         .addGap(61, 61, 61)
                         .addComponent(backLogin7)
                         .addGap(108, 108, 108)
                         .addComponent(jLabel11))
-                    .addGroup(AgreementLayout.createSequentialGroup()
+                    .addGroup(ListAgreementLayout.createSequentialGroup()
                         .addGap(47, 47, 47)
                         .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 694, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(1853, Short.MAX_VALUE))
         );
-        AgreementLayout.setVerticalGroup(
-            AgreementLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(AgreementLayout.createSequentialGroup()
+        ListAgreementLayout.setVerticalGroup(
+            ListAgreementLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ListAgreementLayout.createSequentialGroup()
                 .addGap(61, 61, 61)
-                .addGroup(AgreementLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(ListAgreementLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel11)
                     .addComponent(backLogin7))
                 .addGap(34, 34, 34)
@@ -1497,7 +1477,7 @@ public class SITwarehouse extends javax.swing.JFrame {
                 .addContainerGap(276, Short.MAX_VALUE))
         );
 
-        Container.add(Agreement, "card2");
+        Container.add(ListAgreement, "card2");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -1591,10 +1571,6 @@ public class SITwarehouse extends javax.swing.JFrame {
         // TODO add your handling code here:
 
     }//GEN-LAST:event_backLogin2ActionPerformed
-
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void backLogin3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backLogin3ActionPerformed
         // TODO add your handling code here:
@@ -1927,10 +1903,6 @@ public class SITwarehouse extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_listSearchActionPerformed
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton7ActionPerformed
-
     private void listEmTableAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_listEmTableAncestorAdded
         // TODO add your handling code here:
         DefaultTableModel model = (DefaultTableModel) listEmTable.getModel();
@@ -2047,7 +2019,7 @@ public class SITwarehouse extends javax.swing.JFrame {
     private void backLogin7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backLogin7MouseClicked
         // TODO add your handling code here:
          DefaultTableModel model = (DefaultTableModel) TableAgrMem.getModel();
-        Agreement.setVisible(false);
+        ListAgreement.setVisible(false);
         MemberHome.setVisible(true);
         model.setNumRows(0);
      //   TableAgrMem.setrow
@@ -2079,7 +2051,7 @@ public class SITwarehouse extends javax.swing.JFrame {
     private void AgrMemMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AgrMemMouseClicked
         // TODO add your handling code here:
         this.MemberHome.setVisible(false);
-        Agreement.setVisible(true);
+        ListAgreement.setVisible(true);
     }//GEN-LAST:event_AgrMemMouseClicked
 
     /**
@@ -2122,7 +2094,6 @@ public class SITwarehouse extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AgrMem;
-    private javax.swing.JPanel Agreement;
     private javax.swing.JLabel Chackpass;
     private javax.swing.JPanel Container;
     private javax.swing.JPanel CreatePermission;
@@ -2131,6 +2102,7 @@ public class SITwarehouse extends javax.swing.JFrame {
     private javax.swing.JPanel EditWarehouse;
     private javax.swing.JPanel EmployeeHome;
     private javax.swing.JLabel HelloMember;
+    private javax.swing.JPanel ListAgreement;
     private javax.swing.JPanel ListOfPermission;
     private javax.swing.JPanel ListOfWarehouseEmployee;
     private javax.swing.JPanel ListOfWarehouseMember;
@@ -2173,7 +2145,6 @@ public class SITwarehouse extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JFrame jFrame1;
     private javax.swing.JLabel jLabel1;
@@ -2190,7 +2161,6 @@ public class SITwarehouse extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
-    private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
@@ -2225,7 +2195,6 @@ public class SITwarehouse extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JComboBox<String> listBank;
     private javax.swing.JTable listEmTable;
     private javax.swing.JTable listMbTable;
