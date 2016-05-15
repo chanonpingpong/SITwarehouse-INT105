@@ -42,7 +42,7 @@ public class People {
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
-
+  
     @Override
     public String toString() {
         return "People{" + "name=" + name + ", address=" + address + ", phoneNumber=" + phoneNumber + '}';
