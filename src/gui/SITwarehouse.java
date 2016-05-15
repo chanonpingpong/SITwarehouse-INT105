@@ -122,7 +122,11 @@ public class SITwarehouse extends javax.swing.JFrame {
         logout = new javax.swing.JButton();
         jScrollPane8 = new javax.swing.JScrollPane();
         emTable = new javax.swing.JTable();
+<<<<<<< HEAD
         bgEm4 = new javax.swing.JLabel();
+=======
+        Editwarehouse = new javax.swing.JButton();
+>>>>>>> origin/Develop
         EditProfile = new javax.swing.JPanel();
         jLabel19 = new javax.swing.JLabel();
         backLogin1 = new javax.swing.JButton();
@@ -511,7 +515,10 @@ public class SITwarehouse extends javax.swing.JFrame {
         EmployeeHome.add(dateEmpHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(96, 134, -1, -1));
 
         jLabel18.setText("List of Member");
+<<<<<<< HEAD
         EmployeeHome.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(96, 166, -1, -1));
+=======
+>>>>>>> origin/Develop
 
         logout.setText("Logout");
         logout.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -531,11 +538,19 @@ public class SITwarehouse extends javax.swing.JFrame {
 
             },
             new String [] {
+<<<<<<< HEAD
                 "Member ID", "Account ID", "Name", "Address", "Phonenumber"
             }
         ) {
             Class[] types = new Class [] {
                 java.lang.Long.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+=======
+                "MemberId", "AccountId", "MemberName", "MemberAddress", "MemberPhoneNumber"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Long.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class
+>>>>>>> origin/Develop
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -554,10 +569,76 @@ public class SITwarehouse extends javax.swing.JFrame {
         });
         jScrollPane8.setViewportView(emTable);
 
+<<<<<<< HEAD
         EmployeeHome.add(jScrollPane8, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 200, 570, 270));
 
         bgEm4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/image/figura.png"))); // NOI18N
         EmployeeHome.add(bgEm4, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, 0, 840, 630));
+=======
+        Editwarehouse.setText("Edit warehouse");
+        Editwarehouse.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EditwarehouseActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout EmployeeHomeLayout = new javax.swing.GroupLayout(EmployeeHome);
+        EmployeeHome.setLayout(EmployeeHomeLayout);
+        EmployeeHomeLayout.setHorizontalGroup(
+            EmployeeHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(EmployeeHomeLayout.createSequentialGroup()
+                .addGroup(EmployeeHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(EmployeeHomeLayout.createSequentialGroup()
+                        .addGap(96, 96, 96)
+                        .addGroup(EmployeeHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel18)
+                            .addGroup(EmployeeHomeLayout.createSequentialGroup()
+                                .addComponent(dateEmpHome)
+                                .addGap(303, 303, 303)
+                                .addComponent(logout, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(EmployeeHomeLayout.createSequentialGroup()
+                                .addGroup(EmployeeHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(EmployeeHomeLayout.createSequentialGroup()
+                                        .addComponent(empIdGui)
+                                        .addGap(198, 198, 198)
+                                        .addComponent(jButton4))
+                                    .addComponent(jLabel15))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(EmployeeHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(Editwarehouse, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                    .addGroup(EmployeeHomeLayout.createSequentialGroup()
+                        .addGap(105, 105, 105)
+                        .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 596, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(1905, Short.MAX_VALUE))
+        );
+        EmployeeHomeLayout.setVerticalGroup(
+            EmployeeHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(EmployeeHomeLayout.createSequentialGroup()
+                .addGroup(EmployeeHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(EmployeeHomeLayout.createSequentialGroup()
+                        .addGap(56, 56, 56)
+                        .addComponent(jLabel15)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(empIdGui))
+                    .addGroup(EmployeeHomeLayout.createSequentialGroup()
+                        .addGap(68, 68, 68)
+                        .addComponent(Editwarehouse)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(EmployeeHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButton3)
+                            .addComponent(jButton4))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(EmployeeHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(dateEmpHome)
+                    .addComponent(logout))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel18)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(345, Short.MAX_VALUE))
+        );
+>>>>>>> origin/Develop
 
         Container.add(EmployeeHome, "card5");
 
@@ -1104,7 +1185,13 @@ public class SITwarehouse extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+<<<<<<< HEAD
       
+=======
+        EmployeeHome.setVisible(false);
+        ListOfWarehouseEmployee.setVisible(true);
+       
+>>>>>>> origin/Develop
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void EditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditActionPerformed
@@ -1141,7 +1228,7 @@ public class SITwarehouse extends javax.swing.JFrame {
 
     private void backLogin4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backLogin4ActionPerformed
         EditWarehouse.setVisible(false);
-        ListOfWarehouseEmployee.setVisible(true);
+        EmployeeHome.setVisible(true);
     }//GEN-LAST:event_backLogin4ActionPerformed
 
     private void editWhPriceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editWhPriceActionPerformed
@@ -1350,6 +1437,8 @@ public class SITwarehouse extends javax.swing.JFrame {
 
     private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
         // TODO add your handling code here:
+        DefaultTableModel models = (DefaultTableModel) emTable.getModel();
+         models.setNumRows(0);
         this.EmployeeHome.setVisible(false);
         this.ListOfWarehouseEmployee.setVisible(true);
     }//GEN-LAST:event_jButton4MouseClicked
@@ -1365,7 +1454,13 @@ public class SITwarehouse extends javax.swing.JFrame {
     }//GEN-LAST:event_logoutMouseClicked
 
     private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
+<<<<<<< HEAD
 
+=======
+        // TODO add your handling code here:
+        DefaultTableModel models = (DefaultTableModel) emTable.getModel();
+         models.setNumRows(0);
+>>>>>>> origin/Develop
         this.EmployeeHome.setVisible(false);
         this.ListOfPermission.setVisible(true);
         
@@ -1380,7 +1475,17 @@ public class SITwarehouse extends javax.swing.JFrame {
     }//GEN-LAST:event_logOutActionPerformed
 
     private void logoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutActionPerformed
+<<<<<<< HEAD
 
+=======
+        DefaultTableModel models = (DefaultTableModel) emTable.getModel();
+         models.setNumRows(0);
+        SITOperation.logout("employee");
+        EmployeeHome.setVisible(false);
+        Login.setVisible(true);
+         userName.setText("");
+        passWord.setText("");
+>>>>>>> origin/Develop
     }//GEN-LAST:event_logoutActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -1391,6 +1496,30 @@ public class SITwarehouse extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_mbTableAncestorAdded
 
+<<<<<<< HEAD
+=======
+    private void emTableAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_emTableAncestorAdded
+        // TODO add your handling code here:
+         DefaultTableModel models = (DefaultTableModel) emTable.getModel();
+        try {
+            Connection cnb = ConnectionBuilder.connect();
+            Statement stmt = cnb.createStatement();
+            ResultSet rs = stmt.executeQuery("SELECT MEMID,ACCID,MEMNAME,MEMADDRESS,MEMPHONENUMBER FROM MYDB.MEMBER");
+            while (rs.next()) {
+                models.addRow(new Object[]{rs.getLong(1), rs.getString(2), rs.getString(3), rs.getString(4),rs.getString(5)});
+            }
+            cnb.close();
+
+        } catch (SQLException err) {
+            System.out.print(err);
+        } catch (ClassNotFoundException err) {
+            System.out.print(err);
+        }
+         
+        
+    }//GEN-LAST:event_emTableAncestorAdded
+
+>>>>>>> origin/Develop
     private void listMbTableAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_listMbTableAncestorAdded
         // TODO add your handling code here:
         DefaultTableModel model = (DefaultTableModel) listMbTable.getModel();
@@ -1535,6 +1664,7 @@ public class SITwarehouse extends javax.swing.JFrame {
         ListAgreement.setVisible(true);
     }//GEN-LAST:event_AgrMemMouseClicked
 
+<<<<<<< HEAD
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton5ActionPerformed
@@ -1608,6 +1738,16 @@ public class SITwarehouse extends javax.swing.JFrame {
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton6ActionPerformed
+=======
+    private void EditwarehouseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditwarehouseActionPerformed
+        // TODO add your handling code here:
+        DefaultTableModel models = (DefaultTableModel) emTable.getModel();
+         models.setNumRows(0);
+        this.EmployeeHome.setVisible(false);
+        this.EditWarehouse.setVisible(true);
+         
+    }//GEN-LAST:event_EditwarehouseActionPerformed
+>>>>>>> origin/Develop
 
     /**
      * @param args the command line arguments
@@ -1655,6 +1795,7 @@ public class SITwarehouse extends javax.swing.JFrame {
     private javax.swing.JButton Edit;
     private javax.swing.JPanel EditProfile;
     private javax.swing.JPanel EditWarehouse;
+    private javax.swing.JButton Editwarehouse;
     private javax.swing.JPanel EmployeeHome;
     private javax.swing.JLabel HelloMember;
     private javax.swing.JPanel ListAgreement;
