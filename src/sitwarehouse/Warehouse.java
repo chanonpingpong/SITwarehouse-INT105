@@ -84,76 +84,14 @@ public class Warehouse {
         }        
     }    
 
-    public static void getDetailsById(long id){
+    public static void changeStatus(long id){
         try{
-            System.out.println("\n-----------GET WAREHOUSE DETAILS-----------");
+            String SQL = "UPDATE MYDB.WAREHOUSE SET STATUS=INUSE,WHERE WAREHOUSEID=?";
             Connection cnb = ConnectionBuilder.connect();
-            String SQL = "SELECT * FROM MYDB.WAREHOUSE WHERE WAREHOUSEID=?";            
             PreparedStatement ps = cnb.prepareStatement(SQL);
             ps.setLong(1, id);
-            ResultSet rs = ps.executeQuery();
-            if(rs.next()){
-                long warehouseId = rs.getLong(1);
-                String size = rs.getString(2);
-                String price = rs.getString(3);
-                String status = rs.getString(4);
-                System.out.println("ID: "+warehouseId+"\nSize: "+size+"\nPrice: "+price+"\nStatus: "+status);
-            }else{
-                System.out.println("Sorry this id does not exist.");
-            }
+            ps.executeUpdate();
             cnb.close();
-        }
-        catch(SQLException err){
-            System.out.println(err);
-        }
-        catch(ClassNotFoundException err){
-            System.out.println(err);
-        }        
-    }
-
-    public static void changeDetailsById(long id, String size, Double price, String status){
-        try{
-            System.out.println("\n-----------SELECT WAREHOUSE TO CHANGE BY ID-----------");
-            Connection cnb = ConnectionBuilder.connect();
-            String querySQL = "SELECT * FROM MYDB.WAREHOUSE WHERE WAREHOUSEID=?";
-            PreparedStatement ps = cnb.prepareStatement(querySQL);
-            ResultSet rs = ps.executeQuery();
-            rs.next();
-            long warehouseId = rs.getLong(1);
-            String querySize = rs.getString(2);
-            Double queryPrice = rs.getDouble(3);
-            String queryStatus = rs.getString(4);
-            System.out.println("---- BEFORE CHANGE ----");
-            System.out.println("ID: "+warehouseId+"\nSize: "+querySize+"\nPrice: "+queryPrice+"\nStatus: "+queryStatus);
-            cnb.close();
-            
-            String updateSize,updateStatus;
-            Double updatePrice;
-            if(size.equalsIgnoreCase("n")){
-                updateSize = querySize;
-            }else{
-                updateSize = size.toUpperCase();
-            }
-            if(price == -1){
-                updatePrice = queryPrice;
-            }else{
-                updatePrice = price;
-            }
-            if(status.equalsIgnoreCase("n")){
-                updateStatus = queryStatus;
-            }else{
-                updateStatus = status.toUpperCase();
-            }
-            String updateSQL = "UPDATE MYDB.WAREHOUSE SET SIZE=?,PRICE=?,STATUS=?,WHERE WAREHOUSEID=?";
-            Connection cnb2 = ConnectionBuilder.connect();
-            PreparedStatement ps2 = cnb2.prepareStatement(updateSQL);
-            ps.setString(1, updateSize);
-            ps.setDouble(2, updatePrice);
-            ps.setString(3, updateStatus);
-            ps.setLong(4, id);
-            ps2.executeUpdate();
-            System.out.println("---- CHANGE DETAILS SUCCESSFULLY ----");
-            cnb2.close();
         }
         catch(SQLException err){
             System.out.println("Warehouse ID is wrong, Please try again.");
@@ -161,6 +99,55 @@ public class Warehouse {
         catch(ClassNotFoundException err){
             System.out.println(err);
         }
+    }
+    
+            public static String getStatus(long id){
+        try{
+            System.out.println("\n-----------GET WAREHOUSE DETAILS-----------");
+            Connection cnb = ConnectionBuilder.connect();
+            String SQL = "SELECT STATUS FROM MYDB.WAREHOUSE WHERE WAREHOUSEID=?";            
+            PreparedStatement ps = cnb.prepareStatement(SQL);
+            ps.setLong(1, id);
+            ResultSet rs = ps.executeQuery();
+            String status;
+            if(rs.next()){
+                status = rs.getString(1);
+            }else{
+                System.out.println("Sorry this id does not exist.");
+                status = "";
+            }
+            cnb.close();
+            return status;
+        }
+        catch(SQLException err){
+            System.out.println(err);
+            return "";
+        }
+        catch(ClassNotFoundException err){
+            System.out.println(err);
+            return "";
+        }        
+    }
+
+    public static boolean changeDetailsById(long id, String size, Double price, String status){
+        try{
+            String SQL = "UPDATE MYDB.WAREHOUSE SET SIZE='"+size+"',PRICE="+price+",STATUS='"+status+"' WHERE WAREHOUSEID="+id;
+            Connection cnb = ConnectionBuilder.connect();
+            Statement stmt = cnb.createStatement();
+            stmt.executeUpdate(SQL);
+            System.out.println("---- CHANGE DETAILS SUCCESSFULLY ----");
+            cnb.close();
+            return true;
+        }
+        catch(SQLException err){
+            System.out.println("Warehouse ID is wrong, Please try again.");
+            return false;
+        }
+        catch(ClassNotFoundException err){
+            System.out.println(err);
+            return false;
+        }
+        
     }
     
     public static void list(){
@@ -185,6 +172,31 @@ public class Warehouse {
         catch(ClassNotFoundException err){
             System.out.print(err);
         }
+    }
+    
+    public static double getPrice(long id){
+        try{
+            System.out.println("\n-----------GET WAREHOUSE DETAILS-----------");
+            Connection cnb = ConnectionBuilder.connect();
+            String SQL = "SELECT PRICE FROM MYDB.WAREHOUSE WHERE WAREHOUSEID="+id;            
+            Statement stmt = cnb.createStatement();
+            ResultSet rs = stmt.executeQuery(SQL);
+            if(rs.next()){
+                String priceFromDB = rs.getString(1);
+                double priceOutput = Double.parseDouble(priceFromDB);
+                return priceOutput;
+            }else{
+                System.out.println("Sorry this id does not exist.");
+            }
+            cnb.close();
+        }
+        catch(SQLException err){
+            System.out.println(err);
+        }
+        catch(ClassNotFoundException err){
+            System.out.println(err);
+        }
+        return 0;
     }
 
     @Override

@@ -16,9 +16,6 @@ public class TestPattern {
     
     
     public static void main(String[] args) {
-        Pattern p = Pattern.compile("\\d+");
-    Matcher m = p.matcher("123");
-    boolean b = m.matches();
-        System.out.println(b);
+        
     }
 }

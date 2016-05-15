@@ -10,110 +10,31 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 
 public class Agreement {
-    private long warehouseId;
-    private double totalDepts;
-    private String startDate;
-    private String endDate;
-    private double nextPaid;
-    private String nPaidDate;
-    private double arrears;
 
-    public Agreement() {
-    }
-
-    public Agreement(long warehouseId, double totalDepts, String startDate, String endDate, double nextPaid, String nPaidDate, double arrears) {
-        this.warehouseId = warehouseId;
-        this.totalDepts = totalDepts;
-        this.startDate = startDate;
-        this.endDate = endDate;
-        this.nextPaid = nextPaid;
-        this.nPaidDate = nPaidDate;
-        this.arrears = arrears;
-    }
-
-    public long getWarehouseId() {
-        return warehouseId;
-    }
-
-    public void setWarehouseId(long warehouseId) {
-        this.warehouseId = warehouseId;
-    }
-    
-
-    public double getTotalDepts() {
-        return totalDepts;
-    }
-
-    public void setTotalDepts(double totalDepts) {
-        this.totalDepts = totalDepts;
-    }
-
-    public String getStartDate() {
-        return startDate;
-    }
-
-    public void setStartDate(String startDate) {
-        this.startDate = startDate;
-    }
-
-    public String getEndDate() {
-        return endDate;
-    }
-
-    public void setEndDate(String endDate) {
-        this.endDate = endDate;
-    }
-
-    public double getNextPaid() {
-        return nextPaid;
-    }
-
-    public void setNextPaid(double nextPaid) {
-        this.nextPaid = nextPaid;
-    }
-
-    public String getnPaidDate() {
-        return nPaidDate;
-    }
-
-    public void setnPaidDate(String nPaidDate) {
-        this.nPaidDate = nPaidDate;
-    }
-
-    public double getArrears() {
-        return arrears;
-    }
-
-    public void setArrears(double arrears) {
-        this.arrears = arrears;
-    }
-    
-    public void calcTotalDepts(double amount){
-        totalDepts -= amount;
-    }
-    public void calcNextPaid(){
-        nextPaid += arrears;
-    }
-
-    public static void createAgreement(long warehouseId,double total, long memId, double nextPaid, double arrears, int AmountOfMonth){
+    public static boolean createAgreement(long warehouseId,double total, long memId, int AmountOfMonth){
         try{    
+            if(Warehouse.getStatus(warehouseId).equalsIgnoreCase("STANDBY")){
+                
+                Warehouse.changeStatus(warehouseId);
+                
                 GregorianCalendar startDate,endDate,nextWeek;
                 startDate = new GregorianCalendar();
                 endDate = new GregorianCalendar();
                 nextWeek = new GregorianCalendar();
                 
-                nextWeek.add(GregorianCalendar.MONTH, 1);
+                nextWeek.add(GregorianCalendar.MONTH, 3);
                 endDate.add(GregorianCalendar.MONTH, AmountOfMonth);
                 
                 DateFormat df = DateFormat.getDateInstance(DateFormat.LONG);
                 Date firstDate = startDate.getTime();
                 Date lastDate = endDate.getTime();
                 Date nextWeekDate = nextWeek.getTime();
+                
                 String fd = df.format(firstDate); 
                 String ld = df.format(lastDate);
                 String nw = df.format(nextWeekDate);
                 
-                nextPaid = arrears / AmountOfMonth;
+                double nextAmount = total / AmountOfMonth;
                 
                 Connection cnb = ConnectionBuilder.connect();
                 String SQL = "INSERT INTO AGREEMENT VALUES(?,?,?,?,?,?,?,?,?)";
@@ -125,17 +46,24 @@ public class Agreement {
                 ps.setString(5, fd);
                 ps.setString(6, ld);
                 ps.setString(7, nw);
-                ps.setDouble(8, arrears);
-                ps.setDouble(9, nextPaid);
+                ps.setDouble(8, total);
+                ps.setDouble(9, nextAmount);
                 ps.executeUpdate();
                 ps.close();
                 System.out.println("----------- AGREEMENT ADDED -----------");
+                return true;
+            }else{
+                System.out.println("This warehouse not Available.");
+                return false;
+            }       
         }
         catch(SQLException err){
             System.err.println(err);
+            return false;
         }
         catch(ClassNotFoundException err){
             System.err.println(err);
+            return false;
         }         
     }
 
@@ -238,31 +166,50 @@ public class Agreement {
         }        
     }
     
-    private static void changeAgreementDetails(){
-        
-    }
-
-    private static void updateNextPaidDate(){
-        
-    }
-    
-    
-    public static void createPermission(long amtId, String paidDate, double paidAmount){
+    private static void changeAgreementDetails(long id,String nextPayDate, double arrears){
         try{
+            Connection cnb = ConnectionBuilder.connect();
+            String SQL = "UPDATE AGREEMENT SET NPAIDDATE=?,ARREARS=? WHERE AMTID=?";
+            PreparedStatement ps = cnb.prepareStatement(SQL);
+            ps.setLong(3, id);
+            ps.setString(1, nextPayDate);
+            ps.setDouble(2, arrears);
+            ps.executeUpdate(SQL);
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }        
+    }
+    
+    public static boolean createPermission(long amtId, double amount, String bName, String bId){
+        try{    
+            if(amount < getNextAmount(amtId)){
+                return false;
+            }else{
+                DateFormat df = DateFormat.getDateInstance(DateFormat.LONG);
+                GregorianCalendar startDate = new GregorianCalendar();
+                Date day = startDate.getTime();
+                String payDate = df.format(day);
+                
                 Connection cnb = ConnectionBuilder.connect();
-                String SQL = "INSERT INTO PERMISSION VALUES(?,?,?,?,?)";
+                String SQL = "INSERT INTO PERMISSION VALUES(?,?,?,?,?,?,?)";
                 PreparedStatement pstmt = cnb.prepareStatement(SQL);
                 pstmt.setLong(1, genPmsId());
                 pstmt.setLong(2, amtId);
-                pstmt.setString(3, paidDate);
-                pstmt.setDouble(4, paidAmount);
+                pstmt.setString(3, payDate);
+                pstmt.setDouble(4, amount);
                 pstmt.setBoolean(5, false);
+                pstmt.setString(6, bName);
+                pstmt.setString(7, bId);
                 pstmt.executeUpdate();
                 pstmt.close();
                 System.out.println("----------- PERMISSION HAS BEEN ADDED -----------");
+                return true;
+            }
         }
         catch(Exception err){
             err.printStackTrace();
+            return false;
         }         
     }
     
@@ -286,52 +233,97 @@ public class Agreement {
         return 0;        
     }
     
-    public static void submitPermission(long id, char cf){
+    public static boolean submitPermission(long id){
         try{
             Connection cnb = ConnectionBuilder.connect();
             Statement stmt = cnb.createStatement();
             String SQL = "SELECT * FROM PERMISSION WHERE PERMISSIONID="+id;
             ResultSet rs = stmt.executeQuery(SQL);
-            rs.next();
-            long outputId = rs.getLong(1);
-            Boolean isCheck = rs.getBoolean(5);
-            System.out.println("Permission ID: "+outputId);
-            if(isCheck == true){
-                System.out.println("Status: CONFIRMED");                
-            }else{
-                System.out.println("Status: NOT CONFIRM YET");
-                if(cf == 'y' || cf == 'Y'){
-                    confirmPermission(id);
-                }else if(cf == 'n' || cf == 'N'){
-                    System.out.println("-------- THIS PERMISSION HAVE NOTHING CHANGE ---------");
+            if(rs.next()){
+                long pmId = rs.getLong(1);
+                long amtId = rs.getLong(2);
+                String date = rs.getString(3);
+                double amount = rs.getDouble(4);
+                boolean isCheck = rs.getBoolean(5);
+                if(isCheck){
+                    return false;
                 }else{
-                    System.out.println("-------- THIS METHOD ARE UNDER TESTING AND YOU INPUT THE WRONG ANSWER ----------");
+                    double updateArrears = getArrears(amtId) - amount;
+                    
+                    //Create date and format for GregorianCalendar
+                    DateFormat df = DateFormat.getDateInstance(DateFormat.LONG);
+                    Date dateFromString = df.parse(date);
+                    
+                    //Create GregorianCalendar and add 1 Month for next pay date
+                    GregorianCalendar GCfromDate = new GregorianCalendar();
+                    GCfromDate.setTime(dateFromString);
+                    GCfromDate.add(GregorianCalendar.MONTH, 1);
+                    
+                    //Convert Date to String for store in Database
+                    Date DateFromGC = GCfromDate.getTime();
+                    String newDate = df.format(DateFromGC);
+                    
+                    changeAgreementDetails(amtId, newDate, updateArrears);
+                    return true;
                 }
+            }else{
+                return false;
             }
-
+            
         }
         catch(Exception e){
             e.printStackTrace();
+            return false;
         }
     }
     
-    public static void confirmPermission(long id){
+    
+    public static double getNextAmount(long id){
+        try{
+            Connection cnb = ConnectionBuilder.connect();
+            Statement stmt = cnb.createStatement();
+            String SQL = "SELECT NPAID FROM AGREEMENT WHERE AMTID="+id;
+            ResultSet rs = stmt.executeQuery(SQL);
+            rs.next();
+            double nextAmout = rs.getDouble(1);
+            return nextAmout;
+        }
+        catch(Exception e){
+            e.printStackTrace();
+            return 0;
+        }
+    }
+
+    public static double getArrears(long id){
+        try{
+            Connection cnb = ConnectionBuilder.connect();
+            Statement stmt = cnb.createStatement();
+            String SQL = "SELECT ARREARS FROM AGREEMENT WHERE AMTID="+id;
+            ResultSet rs = stmt.executeQuery(SQL);
+            rs.next();
+            double arrears = rs.getDouble(1);
+            return arrears;
+        }
+        catch(Exception e){
+            e.printStackTrace();
+            return 0;
+        }
+    }    
+    
+    public static boolean confirmPermission(long id){
         try{
             Connection cnb = ConnectionBuilder.connect();
             Statement stmt = cnb.createStatement();
             String SQL = "UPDATE PERMISSION SET ISCHECK=TRUE WHERE PERMISSIONID="+id;
             stmt.executeUpdate(SQL);
             System.out.println("----------- CONFIRM PERMISSION NUMBER "+id+" SUCCESSFULLY ------------");
+            return true;
         }
         catch(Exception e){
             e.printStackTrace();
+            return false;
         } 
     }    
     
-    
-    @Override
-    public String toString() {
-        return "Agreement{" + "warehouseId=" + warehouseId + ", totalDepts=" + totalDepts + ", startDate=" + startDate + ", endDate=" + endDate + ", nextPaid=" + nextPaid + ", nPaidDate=" + nPaidDate + ", arrears=" + arrears + '}';
-    }
     
 }
