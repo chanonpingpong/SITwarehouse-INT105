@@ -119,6 +119,7 @@ public class SITwarehouse extends javax.swing.JFrame {
         logout = new javax.swing.JButton();
         jScrollPane8 = new javax.swing.JScrollPane();
         emTable = new javax.swing.JTable();
+        Editwarehouse = new javax.swing.JButton();
         EditProfile = new javax.swing.JPanel();
         jLabel19 = new javax.swing.JLabel();
         backLogin1 = new javax.swing.JButton();
@@ -630,7 +631,7 @@ public class SITwarehouse extends javax.swing.JFrame {
 
         dateEmpHome.setText("Date: ");
 
-        jLabel18.setText("List of Warehouse");
+        jLabel18.setText("List of Member");
 
         logout.setText("Logout");
         logout.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -646,19 +647,14 @@ public class SITwarehouse extends javax.swing.JFrame {
 
         emTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "ID", "SIZE", "PRICE", "STATUS"
+                "MemberId", "AccountId", "MemberName", "MemberAddress", "MemberPhoneNumber"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Long.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.Long.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -677,6 +673,13 @@ public class SITwarehouse extends javax.swing.JFrame {
         });
         jScrollPane8.setViewportView(emTable);
 
+        Editwarehouse.setText("Edit warehouse");
+        Editwarehouse.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EditwarehouseActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout EmployeeHomeLayout = new javax.swing.GroupLayout(EmployeeHome);
         EmployeeHome.setLayout(EmployeeHomeLayout);
         EmployeeHomeLayout.setHorizontalGroup(
@@ -686,34 +689,40 @@ public class SITwarehouse extends javax.swing.JFrame {
                     .addGroup(EmployeeHomeLayout.createSequentialGroup()
                         .addGap(96, 96, 96)
                         .addGroup(EmployeeHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(EmployeeHomeLayout.createSequentialGroup()
-                                .addComponent(empIdGui)
-                                .addGap(198, 198, 198)
-                                .addComponent(jButton4)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton3))
-                            .addComponent(jLabel15)
                             .addComponent(jLabel18)
                             .addGroup(EmployeeHomeLayout.createSequentialGroup()
                                 .addComponent(dateEmpHome)
                                 .addGap(303, 303, 303)
-                                .addComponent(logout, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(logout, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(EmployeeHomeLayout.createSequentialGroup()
+                                .addGroup(EmployeeHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(EmployeeHomeLayout.createSequentialGroup()
+                                        .addComponent(empIdGui)
+                                        .addGap(198, 198, 198)
+                                        .addComponent(jButton4))
+                                    .addComponent(jLabel15))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(EmployeeHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(Editwarehouse, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
                     .addGroup(EmployeeHomeLayout.createSequentialGroup()
-                        .addGap(133, 133, 133)
-                        .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 571, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(1890, Short.MAX_VALUE))
+                        .addGap(105, 105, 105)
+                        .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 596, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(1905, Short.MAX_VALUE))
         );
         EmployeeHomeLayout.setVerticalGroup(
             EmployeeHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(EmployeeHomeLayout.createSequentialGroup()
-                .addGap(56, 56, 56)
-                .addComponent(jLabel15)
                 .addGroup(EmployeeHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(EmployeeHomeLayout.createSequentialGroup()
+                        .addGap(56, 56, 56)
+                        .addComponent(jLabel15)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(empIdGui))
                     .addGroup(EmployeeHomeLayout.createSequentialGroup()
-                        .addGap(17, 17, 17)
+                        .addGap(68, 68, 68)
+                        .addComponent(Editwarehouse)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(EmployeeHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jButton3)
                             .addComponent(jButton4))))
@@ -1538,6 +1547,7 @@ public class SITwarehouse extends javax.swing.JFrame {
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         EmployeeHome.setVisible(false);
         ListOfWarehouseEmployee.setVisible(true);
+       
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void EditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditActionPerformed
@@ -1578,7 +1588,7 @@ public class SITwarehouse extends javax.swing.JFrame {
 
     private void backLogin4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backLogin4ActionPerformed
         EditWarehouse.setVisible(false);
-        ListOfWarehouseEmployee.setVisible(true);
+        EmployeeHome.setVisible(true);
     }//GEN-LAST:event_backLogin4ActionPerformed
 
     private void editWhPriceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editWhPriceActionPerformed
@@ -1790,6 +1800,8 @@ public class SITwarehouse extends javax.swing.JFrame {
 
     private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
         // TODO add your handling code here:
+        DefaultTableModel models = (DefaultTableModel) emTable.getModel();
+         models.setNumRows(0);
         this.EmployeeHome.setVisible(false);
         this.ListOfWarehouseEmployee.setVisible(true);
     }//GEN-LAST:event_jButton4MouseClicked
@@ -1811,6 +1823,8 @@ public class SITwarehouse extends javax.swing.JFrame {
 
     private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
         // TODO add your handling code here:
+        DefaultTableModel models = (DefaultTableModel) emTable.getModel();
+         models.setNumRows(0);
         this.EmployeeHome.setVisible(false);
         this.ListOfPermission.setVisible(true);
     }//GEN-LAST:event_jButton3MouseClicked
@@ -1824,6 +1838,8 @@ public class SITwarehouse extends javax.swing.JFrame {
     }//GEN-LAST:event_logOutActionPerformed
 
     private void logoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutActionPerformed
+        DefaultTableModel models = (DefaultTableModel) emTable.getModel();
+         models.setNumRows(0);
         SITOperation.logout("employee");
         EmployeeHome.setVisible(false);
         Login.setVisible(true);
@@ -1851,6 +1867,23 @@ public class SITwarehouse extends javax.swing.JFrame {
 
     private void emTableAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_emTableAncestorAdded
         // TODO add your handling code here:
+         DefaultTableModel models = (DefaultTableModel) emTable.getModel();
+        try {
+            Connection cnb = ConnectionBuilder.connect();
+            Statement stmt = cnb.createStatement();
+            ResultSet rs = stmt.executeQuery("SELECT MEMID,ACCID,MEMNAME,MEMADDRESS,MEMPHONENUMBER FROM MYDB.MEMBER");
+            while (rs.next()) {
+                models.addRow(new Object[]{rs.getLong(1), rs.getString(2), rs.getString(3), rs.getString(4),rs.getString(5)});
+            }
+            cnb.close();
+
+        } catch (SQLException err) {
+            System.out.print(err);
+        } catch (ClassNotFoundException err) {
+            System.out.print(err);
+        }
+         
+        
     }//GEN-LAST:event_emTableAncestorAdded
 
     private void listMbTableAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_listMbTableAncestorAdded
@@ -2054,6 +2087,15 @@ public class SITwarehouse extends javax.swing.JFrame {
         ListAgreement.setVisible(true);
     }//GEN-LAST:event_AgrMemMouseClicked
 
+    private void EditwarehouseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditwarehouseActionPerformed
+        // TODO add your handling code here:
+        DefaultTableModel models = (DefaultTableModel) emTable.getModel();
+         models.setNumRows(0);
+        this.EmployeeHome.setVisible(false);
+        this.EditWarehouse.setVisible(true);
+         
+    }//GEN-LAST:event_EditwarehouseActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -2100,6 +2142,7 @@ public class SITwarehouse extends javax.swing.JFrame {
     private javax.swing.JButton Edit;
     private javax.swing.JPanel EditProfile;
     private javax.swing.JPanel EditWarehouse;
+    private javax.swing.JButton Editwarehouse;
     private javax.swing.JPanel EmployeeHome;
     private javax.swing.JLabel HelloMember;
     private javax.swing.JPanel ListAgreement;
