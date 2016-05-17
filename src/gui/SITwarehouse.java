@@ -1469,6 +1469,7 @@ public class SITwarehouse extends javax.swing.JFrame {
                     EditProfile.setVisible(false);
                     oldPassword.setText("");
                     HelloMember.setText("Hello " + name1.getText());
+                    SITOperation.mem.setName(name1.getText());
                     MemberHome.setVisible(true);
                 } else {
                     jLabel52.setForeground(new java.awt.Color(255, 0, 0));
