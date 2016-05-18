@@ -112,7 +112,6 @@ public class SITwarehouse extends javax.swing.JFrame {
         jLabel14 = new javax.swing.JLabel();
         Edit = new javax.swing.JButton();
         logOut = new javax.swing.JButton();
-        AgrMem = new javax.swing.JButton();
         bgMb = new javax.swing.JLabel();
         EmployeeHome = new javax.swing.JPanel();
         jButton3 = new javax.swing.JButton();
@@ -208,12 +207,6 @@ public class SITwarehouse extends javax.swing.JFrame {
         backLogin6 = new javax.swing.JButton();
         payDate = new javax.swing.JTextField();
         bgMb3 = new javax.swing.JLabel();
-        ListAgreement = new javax.swing.JPanel();
-        jLabel11 = new javax.swing.JLabel();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        TableAgrMem = new javax.swing.JTable();
-        backLogin7 = new javax.swing.JButton();
-        bgMb5 = new javax.swing.JLabel();
         createAgreement = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
         memIdCA = new javax.swing.JTextField();
@@ -414,7 +407,7 @@ public class SITwarehouse extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        MemberHome.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(549, 44, -1, -1));
+        MemberHome.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 60, -1, -1));
 
         jButton2.setText("Send Money Transfer");
         jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -422,18 +415,18 @@ public class SITwarehouse extends javax.swing.JFrame {
                 jButton2MouseClicked(evt);
             }
         });
-        MemberHome.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(529, 108, -1, -1));
+        MemberHome.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 20, -1, -1));
 
         mbTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "ID", "SIZE", "PRICE"
+                "Agreement ID", "Member ID", "Warehouse ID", "Total Amount", "Start Date", "End Date", "Next Pay Date", "Arrears", "Next Amount"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Long.class, java.lang.String.class, java.lang.String.class
+                java.lang.Long.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -453,7 +446,7 @@ public class SITwarehouse extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(mbTable);
 
-        MemberHome.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(113, 206, 571, 305));
+        MemberHome.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, 700, 305));
 
         jLabel14.setText("Your warehouse");
         MemberHome.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(113, 172, -1, -1));
@@ -469,7 +462,7 @@ public class SITwarehouse extends javax.swing.JFrame {
                 EditActionPerformed(evt);
             }
         });
-        MemberHome.add(Edit, new org.netbeans.lib.awtextra.AbsoluteConstraints(591, 76, -1, -1));
+        MemberHome.add(Edit, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 100, -1, -1));
 
         logOut.setText("Logout");
         logOut.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -483,14 +476,6 @@ public class SITwarehouse extends javax.swing.JFrame {
             }
         });
         MemberHome.add(logOut, new org.netbeans.lib.awtextra.AbsoluteConstraints(613, 140, -1, -1));
-
-        AgrMem.setText("Agreement");
-        AgrMem.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                AgrMemMouseClicked(evt);
-            }
-        });
-        MemberHome.add(AgrMem, new org.netbeans.lib.awtextra.AbsoluteConstraints(511, 140, -1, -1));
 
         bgMb.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         bgMb.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/image/abstract_wallpaper_best_background_3009_high_quality.jpg"))); // NOI18N
@@ -1071,7 +1056,7 @@ public class SITwarehouse extends javax.swing.JFrame {
         jLabel50.setText("Bank:");
         CreatePermission.add(jLabel50, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 276, -1, -1));
 
-        listBank.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Kasikorn", "Krungthep", "Thaipanit", "Krungthai", "Issaram" }));
+        listBank.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Kasikorn", "krungsri", "SCB", "KTB", "ISLAMIC" }));
         CreatePermission.add(listBank, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 273, 164, -1));
 
         jLabel51.setText("Bank account No:");
@@ -1110,61 +1095,6 @@ public class SITwarehouse extends javax.swing.JFrame {
         CreatePermission.add(bgMb3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 600));
 
         Container.add(CreatePermission, "card11");
-
-        ListAgreement.setBackground(new java.awt.Color(255, 204, 255));
-        ListAgreement.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel11.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
-        jLabel11.setText("Agreement Member");
-        ListAgreement.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 30, -1, -1));
-
-        TableAgrMem.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Agreement ID", "Member ID", "Warehouse ID", "Total Amount", "Start Date", "End Date", "Next Pay Date", "Arrears", "Next Amount"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.Long.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-        });
-        TableAgrMem.addAncestorListener(new javax.swing.event.AncestorListener() {
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
-            }
-            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
-                TableAgrMemAncestorAdded(evt);
-            }
-            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
-            }
-        });
-        jScrollPane3.setViewportView(TableAgrMem);
-
-        ListAgreement.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 104, 736, 364));
-
-        backLogin7.setText("< Back");
-        backLogin7.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                backLogin7MouseClicked(evt);
-            }
-        });
-        backLogin7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                backLogin7ActionPerformed(evt);
-            }
-        });
-        ListAgreement.add(backLogin7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, -1, -1));
-
-        bgMb5.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        bgMb5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/image/abstract_wallpaper_best_background_3009_high_quality.jpg"))); // NOI18N
-        ListAgreement.add(bgMb5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 600));
-
-        Container.add(ListAgreement, "card2");
 
         createAgreement.setBackground(new java.awt.Color(255, 204, 255));
         createAgreement.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1660,19 +1590,21 @@ public class SITwarehouse extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton11ActionPerformed
 
     private void mbTableAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_mbTableAncestorAdded
-     DefaultTableModel models = (DefaultTableModel) emTable.getModel();
       try {
-         Connection cnb = ConnectionBuilder.connect();       
-         Statement stmt = cnb.createStatement();        
-         ResultSet rs = stmt.executeQuery("SELECT * FROM MYDB.WAREHOUSE");
-           while (rs.next()) {
-               models.addRow(new Object[]{rs.getLong(1), rs.getString(2), rs.getString(3),rs.getString(4)});
+            DefaultTableModel model = (DefaultTableModel) mbTable.getModel();
+            Connection cnb = ConnectionBuilder.connect();
+            Statement stmt = cnb.createStatement();
+            String SQL = "SELECT * FROM AGREEMENT WHERE MEMID="+ SITOperation.mem.getMemId();
+            ResultSet rs = stmt.executeQuery(SQL);
+            while (rs.next()) {
+                model.addRow(new Object[]{rs.getLong(1), rs.getString(2), rs.getString(3), rs.getString(4),
+                    rs.getString(5), rs.getString(6), rs.getString(7),rs.getString(8),rs.getString(9)});
         }
-         cnb.close();
-       } catch (SQLException err) {
-           System.out.print(err);
-      } catch (ClassNotFoundException err) {
-         System.out.print(err);      }
+        } catch (SQLException err) {
+            System.out.print(err);
+        } catch (ClassNotFoundException err) {
+            System.out.print(err);
+        }
     }//GEN-LAST:event_mbTableAncestorAdded
 
     private void emTableAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_emTableAncestorAdded
@@ -1865,46 +1797,6 @@ public class SITwarehouse extends javax.swing.JFrame {
             System.out.print(err);
         }
     }//GEN-LAST:event_tagSearchActionPerformed
-
-    private void backLogin7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backLogin7MouseClicked
-        // TODO add your handling code here:
-        DefaultTableModel model = (DefaultTableModel) TableAgrMem.getModel();
-        ListAgreement.setVisible(false);
-        MemberHome.setVisible(true);
-        model.setNumRows(0);
-        DefaultTableModel model2 = (DefaultTableModel) mbTable.getModel();
-        model2.setNumRows(0);
-     //   TableAgrMem.setrow
-    }//GEN-LAST:event_backLogin7MouseClicked
-
-    private void backLogin7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backLogin7ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_backLogin7ActionPerformed
-
-    private void TableAgrMemAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_TableAgrMemAncestorAdded
-       
-        try {
-            DefaultTableModel model = (DefaultTableModel) TableAgrMem.getModel();
-                Connection cnb = ConnectionBuilder.connect();
-                Statement stmt = cnb.createStatement();
-                String SQL = "SELECT * FROM AGREEMENT WHERE MEMID="+ SITOperation.mem.getMemId();
-                ResultSet rs = stmt.executeQuery(SQL);
-                while (rs.next()) {
-                    model.addRow(new Object[]{rs.getLong(1), rs.getString(2), rs.getString(3), rs.getString(4), 
-                        rs.getString(5), rs.getString(6), rs.getString(7),rs.getString(8),rs.getString(9)});
-            }
-        } catch (SQLException err) {
-            System.out.print(err);
-        } catch (ClassNotFoundException err) {
-            System.out.print(err);
-        }
-    }//GEN-LAST:event_TableAgrMemAncestorAdded
-
-    private void AgrMemMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AgrMemMouseClicked
-        // TODO add your handling code here:
-        this.MemberHome.setVisible(false);    
-        ListAgreement.setVisible(true);
-    }//GEN-LAST:event_AgrMemMouseClicked
 
     private void createAgreementButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createAgreementButtonActionPerformed
            
@@ -2118,7 +2010,6 @@ public class SITwarehouse extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton AgrMem;
     private javax.swing.JTable AgrTable;
     private javax.swing.JLabel Chackpass;
     private javax.swing.JLabel Chackpass1;
@@ -2129,7 +2020,6 @@ public class SITwarehouse extends javax.swing.JFrame {
     private javax.swing.JPanel EditWarehouse;
     private javax.swing.JPanel EmployeeHome;
     private javax.swing.JLabel HelloMember;
-    private javax.swing.JPanel ListAgreement;
     private javax.swing.JPanel ListOfPermission;
     private javax.swing.JPanel ListOfWarehouseEmployee;
     private javax.swing.JPanel ListOfWarehouseMember;
@@ -2140,7 +2030,6 @@ public class SITwarehouse extends javax.swing.JFrame {
     private javax.swing.JTextField SearchPms;
     private javax.swing.JComboBox<String> SelectPms;
     private javax.swing.JButton SubmitBank;
-    private javax.swing.JTable TableAgrMem;
     private javax.swing.JTable TablePMS;
     private javax.swing.JTextField accId;
     private javax.swing.JTextField accId1;
@@ -2156,7 +2045,6 @@ public class SITwarehouse extends javax.swing.JFrame {
     private javax.swing.JButton backLogin4;
     private javax.swing.JButton backLogin5;
     private javax.swing.JButton backLogin6;
-    private javax.swing.JButton backLogin7;
     private javax.swing.JButton backLogin8;
     private javax.swing.JTextField bankNo;
     private javax.swing.JLabel bgEm;
@@ -2170,7 +2058,6 @@ public class SITwarehouse extends javax.swing.JFrame {
     private javax.swing.JLabel bgMb1;
     private javax.swing.JLabel bgMb2;
     private javax.swing.JLabel bgMb3;
-    private javax.swing.JLabel bgMb5;
     private javax.swing.JLabel bgRegi;
     private javax.swing.JPasswordField cfAccPass;
     private javax.swing.JButton cfButton;
@@ -2198,7 +2085,6 @@ public class SITwarehouse extends javax.swing.JFrame {
     private javax.swing.JFrame jFrame1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
@@ -2244,7 +2130,6 @@ public class SITwarehouse extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane11;
     private javax.swing.JScrollPane jScrollPane12;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
