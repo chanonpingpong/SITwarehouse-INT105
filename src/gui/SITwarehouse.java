@@ -581,13 +581,13 @@ public class SITwarehouse extends javax.swing.JFrame {
         });
         EmployeeHome.add(createAgreementButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 68, -1, -1));
 
-        jButton12.setText("Ware House");
+        jButton12.setText("List of Agreement");
         jButton12.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton12ActionPerformed(evt);
             }
         });
-        EmployeeHome.add(jButton12, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 70, -1, -1));
+        EmployeeHome.add(jButton12, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 70, 140, -1));
 
         bgEm.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         bgEm.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/image/wallpaper_geometric_color_22_2k_uhd_by_airworldking-d9pj983.png"))); // NOI18N
