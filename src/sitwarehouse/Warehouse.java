@@ -86,11 +86,12 @@ public class Warehouse {
 
     public static void changeStatus(long id){
         try{
-            String SQL = "UPDATE MYDB.WAREHOUSE SET STATUS=INUSE,WHERE WAREHOUSEID=?";
+            String SQL = "UPDATE MYDB.WAREHOUSE SET STATUS='INUSE' WHERE WAREHOUSEID=?";
             Connection cnb = ConnectionBuilder.connect();
             PreparedStatement ps = cnb.prepareStatement(SQL);
             ps.setLong(1, id);
             ps.executeUpdate();
+            System.out.println("\n-----------GET WAREHOUSE STATUS-----------");
             cnb.close();
         }
         catch(SQLException err){
@@ -103,12 +104,11 @@ public class Warehouse {
     
             public static String getStatus(long id){
         try{
-            System.out.println("\n-----------GET WAREHOUSE DETAILS-----------");
+            System.out.println("\n-----------GET WAREHOUSE STATUS-----------");
             Connection cnb = ConnectionBuilder.connect();
-            String SQL = "SELECT STATUS FROM MYDB.WAREHOUSE WHERE WAREHOUSEID=?";            
-            PreparedStatement ps = cnb.prepareStatement(SQL);
-            ps.setLong(1, id);
-            ResultSet rs = ps.executeQuery();
+            String SQL = "SELECT STATUS FROM MYDB.WAREHOUSE WHERE WAREHOUSEID="+id;            
+            Statement stmt = cnb.createStatement();
+            ResultSet rs = stmt.executeQuery(SQL);
             String status;
             if(rs.next()){
                 status = rs.getString(1);
@@ -176,7 +176,7 @@ public class Warehouse {
     
     public static double getPrice(long id){
         try{
-            System.out.println("\n-----------GET WAREHOUSE DETAILS-----------");
+            System.out.println("\n-----------GET WAREHOUSE PRICE-----------");
             Connection cnb = ConnectionBuilder.connect();
             String SQL = "SELECT PRICE FROM MYDB.WAREHOUSE WHERE WAREHOUSEID="+id;            
             Statement stmt = cnb.createStatement();

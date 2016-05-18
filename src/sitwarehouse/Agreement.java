@@ -64,7 +64,10 @@ public class Agreement {
         catch(ClassNotFoundException err){
             System.err.println(err);
             return false;
-        }         
+        }
+        catch(Exception err){
+            return false;
+        }
     }
 
     private static long genAmtId(){
@@ -171,10 +174,10 @@ public class Agreement {
             Connection cnb = ConnectionBuilder.connect();
             String SQL = "UPDATE AGREEMENT SET NPAIDDATE=?,ARREARS=? WHERE AMTID=?";
             PreparedStatement ps = cnb.prepareStatement(SQL);
-            ps.setLong(3, id);
             ps.setString(1, nextPayDate);
             ps.setDouble(2, arrears);
-            ps.executeUpdate(SQL);
+            ps.setLong(3, id);
+            ps.executeUpdate();
         }
         catch(Exception e){
             e.printStackTrace();
@@ -264,6 +267,7 @@ public class Agreement {
                     String newDate = df.format(DateFromGC);
                     
                     changeAgreementDetails(amtId, newDate, updateArrears);
+                    confirmPermission(pmId);
                     return true;
                 }
             }else{

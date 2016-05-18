@@ -1874,8 +1874,10 @@ public class SITwarehouse extends javax.swing.JFrame {
         if(Agreement.submitPermission(Long.parseLong(id))){
             JOptionPane.showMessageDialog(null, "Confirm Successfully.");
             ListOfPermission.setVisible(false);
-            DefaultTableModel models = (DefaultTableModel) listEmTable.getModel();
+            DefaultTableModel models = (DefaultTableModel) emTable.getModel();
             models.setNumRows(0);
+            DefaultTableModel model = (DefaultTableModel)TablePMS.getModel();
+            model.setNumRows(0);
             EmployeeHome.setVisible(true);
         }else{
             JOptionPane.showMessageDialog(null, "Something wrong.");
