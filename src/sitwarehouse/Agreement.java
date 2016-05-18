@@ -168,7 +168,7 @@ public class Agreement {
             ps.setString(1, nextPayDate);
             ps.setDouble(2, arrears);
             System.out.println("Before Store = " + arrears / compareDate(id));
-            ps.setDouble(3, arrears / compareDate(id));
+            ps.setDouble(3, Math.floor(arrears / compareDate(id)));
             ps.setLong(4, id);
             ps.executeUpdate();
         } catch (Exception e) {
