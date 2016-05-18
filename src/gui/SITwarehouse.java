@@ -125,6 +125,7 @@ public class SITwarehouse extends javax.swing.JFrame {
         jScrollPane8 = new javax.swing.JScrollPane();
         emTable = new javax.swing.JTable();
         createAgreementButton = new javax.swing.JButton();
+        jButton12 = new javax.swing.JButton();
         bgEm = new javax.swing.JLabel();
         EditProfile = new javax.swing.JPanel();
         jLabel19 = new javax.swing.JLabel();
@@ -225,6 +226,12 @@ public class SITwarehouse extends javax.swing.JFrame {
         nMonthCA = new javax.swing.JComboBox<String>();
         whIdCA = new javax.swing.JTextField();
         bgEm4 = new javax.swing.JLabel();
+        LsitOfPermissionEmployee = new javax.swing.JPanel();
+        jScrollPane12 = new javax.swing.JScrollPane();
+        AgrTable = new javax.swing.JTable();
+        jLabel17 = new javax.swing.JLabel();
+        jButton9 = new javax.swing.JButton();
+        bgEm5 = new javax.swing.JLabel();
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
@@ -588,6 +595,14 @@ public class SITwarehouse extends javax.swing.JFrame {
             }
         });
         EmployeeHome.add(createAgreementButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 68, -1, -1));
+
+        jButton12.setText("Ware House");
+        jButton12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton12ActionPerformed(evt);
+            }
+        });
+        EmployeeHome.add(jButton12, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 70, -1, -1));
 
         bgEm.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         bgEm.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/image/wallpaper_geometric_color_22_2k_uhd_by_airworldking-d9pj983.png"))); // NOI18N
@@ -1207,6 +1222,57 @@ public class SITwarehouse extends javax.swing.JFrame {
 
         Container.add(createAgreement, "card3");
 
+        LsitOfPermissionEmployee.setBackground(new java.awt.Color(255, 204, 255));
+        LsitOfPermissionEmployee.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        AgrTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Argeement Id", "Member Id", "WareHouse Id", "Total depts", "Start Date", "End Date", "Paid Date", "Arrears", "Amount"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Long.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        AgrTable.setToolTipText("");
+        AgrTable.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+                AgrTableAncestorAdded(evt);
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+        });
+        jScrollPane12.setViewportView(AgrTable);
+
+        LsitOfPermissionEmployee.add(jScrollPane12, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, 690, 400));
+
+        jLabel17.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jLabel17.setText("List Of Agreement");
+        LsitOfPermissionEmployee.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 70, 420, 50));
+
+        jButton9.setText("Back");
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
+        LsitOfPermissionEmployee.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 90, 30));
+
+        bgEm5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        bgEm5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/image/wallpaper_geometric_color_22_2k_uhd_by_airworldking-d9pj983.png"))); // NOI18N
+        LsitOfPermissionEmployee.add(bgEm5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 600));
+
+        Container.add(LsitOfPermissionEmployee, "card5");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -1594,21 +1660,19 @@ public class SITwarehouse extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton11ActionPerformed
 
     private void mbTableAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_mbTableAncestorAdded
-//        DefaultTableModel models = (DefaultTableModel) emTable.getModel();
-//        try {
-//            Connection cnb = ConnectionBuilder.connect();
-//            Statement stmt = cnb.createStatement();
-//            ResultSet rs = stmt.executeQuery("SELECT WAREHOUSEID,SIZEID,PRICE FROM MYDB.WAREHOUSE");
-//            while (rs.next()) {
-//                models.addRow(new Object[]{rs.getLong(1), rs.getString(2), rs.getString(3)});
-//            }
-//            cnb.close();
-//
-//        } catch (SQLException err) {
-//            System.out.print(err);
-//        } catch (ClassNotFoundException err) {
-//            System.out.print(err);
-//        }
+     DefaultTableModel models = (DefaultTableModel) emTable.getModel();
+      try {
+         Connection cnb = ConnectionBuilder.connect();       
+         Statement stmt = cnb.createStatement();        
+         ResultSet rs = stmt.executeQuery("SELECT * FROM MYDB.WAREHOUSE");
+           while (rs.next()) {
+               models.addRow(new Object[]{rs.getLong(1), rs.getString(2), rs.getString(3),rs.getString(4)});
+        }
+         cnb.close();
+       } catch (SQLException err) {
+           System.out.print(err);
+      } catch (ClassNotFoundException err) {
+         System.out.print(err);      }
     }//GEN-LAST:event_mbTableAncestorAdded
 
     private void emTableAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_emTableAncestorAdded
@@ -1976,6 +2040,45 @@ public class SITwarehouse extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_memIdCAActionPerformed
 
+    private void AgrTableAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_AgrTableAncestorAdded
+        // TODO add your handling code here:
+         DefaultTableModel model = (DefaultTableModel) AgrTable.getModel();
+        try {
+            Connection cnb = ConnectionBuilder.connect();
+            Statement stmt = cnb.createStatement();
+            ResultSet rs = stmt.executeQuery("SELECT * FROM MYDB.AGREEMENT");
+            while (rs.next()) {
+                model.addRow(new Object[]{rs.getLong(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7)
+                ,rs.getString(8),rs.getString(9)});
+            }
+            cnb.close();
+
+        } catch (SQLException err) {
+            System.out.print(err);
+        } catch (ClassNotFoundException err) {
+            System.out.print(err);
+        }
+    }//GEN-LAST:event_AgrTableAncestorAdded
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        // TODO add your handling code here:
+        DefaultTableModel model = (DefaultTableModel) AgrTable.getModel();
+        LsitOfPermissionEmployee.setVisible(false);
+        EmployeeHome.setVisible(true);
+        model.setNumRows(0);
+       DefaultTableModel model2 = (DefaultTableModel) emTable.getModel();
+        model2.setNumRows(0);
+    }//GEN-LAST:event_jButton9ActionPerformed
+
+    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
+        // TODO add your handling code here:
+        DefaultTableModel model = (DefaultTableModel) AgrTable.getModel();
+        model.setNumRows(0);
+        EmployeeHome.setVisible(false);
+        LsitOfPermissionEmployee.setVisible(true);
+        
+    }//GEN-LAST:event_jButton12ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -2016,6 +2119,7 @@ public class SITwarehouse extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AgrMem;
+    private javax.swing.JTable AgrTable;
     private javax.swing.JLabel Chackpass;
     private javax.swing.JLabel Chackpass1;
     private javax.swing.JPanel Container;
@@ -2024,14 +2128,13 @@ public class SITwarehouse extends javax.swing.JFrame {
     private javax.swing.JPanel EditProfile;
     private javax.swing.JPanel EditWarehouse;
     private javax.swing.JPanel EmployeeHome;
-    private javax.swing.JPanel EmployeeHome1;
-    private javax.swing.JPanel EmployeeHome2;
     private javax.swing.JLabel HelloMember;
     private javax.swing.JPanel ListAgreement;
     private javax.swing.JPanel ListOfPermission;
     private javax.swing.JPanel ListOfWarehouseEmployee;
     private javax.swing.JPanel ListOfWarehouseMember;
     private javax.swing.JPanel Login;
+    private javax.swing.JPanel LsitOfPermissionEmployee;
     private javax.swing.JPanel MemberHome;
     private javax.swing.JPanel Register;
     private javax.swing.JTextField SearchPms;
@@ -2062,7 +2165,6 @@ public class SITwarehouse extends javax.swing.JFrame {
     private javax.swing.JLabel bgEm3;
     private javax.swing.JLabel bgEm4;
     private javax.swing.JLabel bgEm5;
-    private javax.swing.JLabel bgEm6;
     private javax.swing.JLabel bgLogin;
     private javax.swing.JLabel bgMb;
     private javax.swing.JLabel bgMb1;
@@ -2074,27 +2176,17 @@ public class SITwarehouse extends javax.swing.JFrame {
     private javax.swing.JButton cfButton;
     private javax.swing.JPanel createAgreement;
     private javax.swing.JButton createAgreementButton;
-    private javax.swing.JButton createAgreementButton1;
-    private javax.swing.JButton createAgreementButton2;
     private javax.swing.JLabel dateEmpHome;
-    private javax.swing.JLabel dateEmpHome1;
-    private javax.swing.JLabel dateEmpHome2;
     private javax.swing.JLabel dateMemHome;
     private javax.swing.JTextField editWhId;
     private javax.swing.JTextField editWhPrice;
     private javax.swing.JTextField editWhSize;
     private javax.swing.JComboBox<String> editWhStatus;
     private javax.swing.JTable emTable;
-    private javax.swing.JTable emTable1;
-    private javax.swing.JTable emTable2;
     private javax.swing.JLabel empIdGui;
-    private javax.swing.JLabel empIdGui1;
-    private javax.swing.JLabel empIdGui2;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;
-    private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -2123,12 +2215,9 @@ public class SITwarehouse extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
-    private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
-    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
-    private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
@@ -2154,7 +2243,6 @@ public class SITwarehouse extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane11;
     private javax.swing.JScrollPane jScrollPane12;
-    private javax.swing.JScrollPane jScrollPane13;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane6;
@@ -2170,8 +2258,6 @@ public class SITwarehouse extends javax.swing.JFrame {
     private javax.swing.JButton logOut;
     private javax.swing.JButton login;
     private javax.swing.JButton logout;
-    private javax.swing.JButton logout1;
-    private javax.swing.JButton logout2;
     private javax.swing.JTable mbTable;
     private javax.swing.JTextField memIdCA;
     private javax.swing.JLabel memIdGui;
